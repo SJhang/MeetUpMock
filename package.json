@@ -1,0 +1,24 @@
+{
+  "name": "MeetUpMock",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "webpack.config.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.1.x"
+  },
+
+  "scripts": {
+    "postinstall": "./node_modules/.bin/webpack"
+  },
+}
