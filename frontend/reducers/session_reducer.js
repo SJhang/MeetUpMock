@@ -11,7 +11,7 @@ let _defaultState = {
   errors: []
 };
 
-const SessionReducer = (state = _defaultState) => next => action => {
+export default (state = _defaultState) => next => action => {
   Object.freeze(state);
 
   switch (action.type) {
@@ -25,5 +25,3 @@ const SessionReducer = (state = _defaultState) => next => action => {
       return state;
   }
 };
-
-export default SessionReducer;
