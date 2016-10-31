@@ -4,7 +4,7 @@ import {
   LOGOUT
 } from '../actions/session_actions.js';
 
-import merge from 'lodash/merge';
+import {merge} from 'lodash';
 
 let _defaultState = {
   username: null,
