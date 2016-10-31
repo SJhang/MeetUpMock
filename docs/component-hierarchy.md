@@ -5,55 +5,55 @@
     - SessionForm
 
   **HomeContainer**
-   - Header
-   - AuthForm
-   - groupItems
-   - Footer
+    - Header
+    - AuthForm
+    - groupItems
+    - Footer
 
   **GroupsContainer**
-   - Header
-   - navBar
-    - searchBox
-   - groupScroller
-   - Footer
+    - Header
+    - navBar
+      - searchBox
+    - groupScroller
+    - Footer
 
   **GroupContainer**
-   - Header
-   - groupCover
-   - groupNavBar
+    - Header
+    - groupCover
+    - groupNavBar
     - groupNavItem
-   * groupContainer
-    - organizerInfo
-    - groupInfo
-   * groupMemberContainer
-    - groupDescription
-    - groupMembers
-    * reviewContainer
-      - reviews
-   * groupCalendarContainer
-    - calendar
-   - Footer
+    * groupContainer
+      - organizerInfo
+      - groupInfo
+    * groupMemberContainer
+      - groupDescription
+      - groupMembers
+      * reviewContainer
+        - reviews
+    * groupCalendarContainer
+      - calendar
+    - Footer
 
   **GroupMemberContainer**
-  - groupDescription
-  - groupMembers
+    - groupDescription
+    - groupMembers
 
   **GroupCalendarContainer**
-  - Header
-  - groupNav
-  - groupSidebar
-  - calendar
-  - recentlyJoinedMembers
-  - Footer
+    - Header
+    - groupNav
+    - groupSidebar
+    - calendar
+    - recentlyJoinedMembers
+    - Footer
 
   **ProfileContainer**
-  - Header
-  - ProfileContent
-  - ProfileImg
-  - Footer
+    - Header
+    - ProfileContent
+    - ProfileImg
+    - Footer
 
   **Footer**
-  - FooterItems
+    - FooterItems
 
   **Routes**
 
@@ -67,4 +67,4 @@
   | "/groups/" | "GroupsContainer" |
   | "/groups/:groupId/" | "GroupContainer" |
   | "/groups/:groupId/events/" | "EventsContainer" |
-  | "/groupts/:groupId/events/:eventId/" | "EventContainer" |
+  | "/groups/:groupId/events/:eventId/" | "EventContainer" |
