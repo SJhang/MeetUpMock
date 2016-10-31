@@ -28,8 +28,8 @@ column name | data type | details
 id          | integer   | not null, primary key
 title       | string    | not null
 description | text      | not null
-start_date  | date      | not null
-end_date    | date      | not null
+date        | date      | not null
+start_time  | datetime  | not null
 location_lat| float     | not null
 location_lng| float     | not null
 group_id    | integer   | not null, foreign key (references users), indexed
