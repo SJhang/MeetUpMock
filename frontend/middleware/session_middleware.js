@@ -6,18 +6,19 @@ import {
   SIGNUP
 } from '../actions/session_actions';
 import {login, logout, signup} from '../util/session_api_util';
+import {hashHistory} from 'react-router';
 
-export default ({getState, dispatch}) => next => action => {
+export default ({dispatch}) => next => action => {
   const successCallback = user => dispatch(receiveCurrentUser(user));
-  const errorCallback = errors => dispatch(receiveErrors(errors));
-
+  const errorCallback = errors => dispatch(receiveErrors(errors.responseJSON));
+  
   switch (action.type) {
     case LOGIN:
       login(action.user, successCallback, errorCallback);
       return next(action);
     case LOGOUT:
       logout(()=>next(action));
-      break;
+      return next(action);
     case SIGNUP:
       signup(action.user, successCallback, errorCallback);
       return next(action);

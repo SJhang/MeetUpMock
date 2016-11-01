@@ -46,11 +46,6 @@
 - `GET /api/rsvps/:id`
 - `DELETE /api/rsvps/:id`
 
-### Locations
-
-- `GET /api/locations`
-- `GET /api/locations/:id`
-
 ### Reviews
 
 - `GET /api/reviews`

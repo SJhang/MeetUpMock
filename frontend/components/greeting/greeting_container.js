@@ -11,4 +11,7 @@ const mapDispatchToProps = dispatch => ({
   login: guest => dispatch(login(guest))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Greeting);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Greeting);

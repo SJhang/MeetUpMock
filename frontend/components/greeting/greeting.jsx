@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 
 const Greeting = ({currentUser, logout, login}) => {
-  if (currentUser){
+
+  if (currentUser) {
     return (
       <div>
         <h1>Welcome {currentUser.username}</h1>

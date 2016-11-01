@@ -6,9 +6,21 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
         username: "",
-        password: ""
+        password: "",
+        email: ""
     };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  componentDidUpdate() {
+		this.redirectIfLoggedIn();
+	}
+
+  redirectIfLoggedIn() {
+		if (this.props.loggedIn) {
+			this.props.router.push("/");
+		}
+	}
 
   handleSubmit(e) {
     e.preventDefault();
@@ -16,17 +28,10 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  // displayErrors(){
-  // }
-
-  update(property){
-    return ( e => this.setState({[property]: e.target.value}));
-  }
-
-  oppositePath(){
-    if(window.location.hash === "#/signup"){
-      return "#/login";
-    } else { return "#/signup"; }
+  update(property) {
+    return e => (
+      this.setState({[property]: e.target.value})
+    );
   }
 
   navLink(){
@@ -36,7 +41,6 @@ class SessionForm extends React.Component {
 			return <Link to="/login">log in instead</Link>;
 		}
   }
-
 
   render(){
     return (
@@ -61,8 +65,18 @@ class SessionForm extends React.Component {
             </input>
           </label>
 
+          <label>Email:
+            <input
+              type="text"
+              value={this.state.email}
+              onChange={this.update("email")}>
+            </input>
+
+          </label>
+
           <input type="submit" value="Submit"/>
         </form>
+
       </div>
     );
   }

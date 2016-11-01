@@ -11,17 +11,22 @@ let _defaultState = {
   errors: []
 };
 
-export default (state = _defaultState) => next => action => {
+export const SessionReducer = (state = _defaultState, action) => {
   Object.freeze(state);
 
+  debugger
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      return merge({}, state, action.currentUser);
+      let currentUser = action.currentUser;
+      return merge({}, _defaultState, { currentUser });
     case RECEIVE_ERRORS:
-      return merge({}, state, action.errors);
+      let errors = action.errors;
+      return merge({}, _defaultState, {errors});
     case LOGOUT:
-      return merge({}, state, action.user, action.errors);
+      return merge({}, _defaultState);
     default:
       return state;
   }
 };
+
+export default SessionReducer;

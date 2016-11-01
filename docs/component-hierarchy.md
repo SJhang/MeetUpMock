@@ -8,25 +8,29 @@
     - Footer
 
   **GroupsContainer**
-    - navBar
-      - searchBox
-      - searchOption
-    - groupCarousel
+    - GroupNavBar
+      - SearchBox
+      - SearchOption
+    - GroupCarousel
 
   **GroupContainer**
-    - groupCover
-    - groupNavBar
-      - groupNavItem
-    * groupSidebar
-      - organizerInfo
-      - groupInfo
-    * groupMain
-      - eventsList
-        - eventsListItem
-      - groupDescription
-      - groupMembers
-    * groupTime
-      - calendar
+    - GroupShow
+      - GroupNav
+        - GroupNavItem
+
+      - GroupDescription
+
+      - GroupSidebar
+        - OrganizerInfo
+
+      - GroupMain
+        - EventsList
+          - EventsListItem
+
+      - GroupDescription
+      - GroupMembers
+    - GroupTime
+      - Calendar
 
   **ProfileContainer**
     - ProfileContent
