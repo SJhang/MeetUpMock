@@ -17,7 +17,8 @@ column name  | data type | details
 id           | integer   | not null, primary key
 name         | string    | not null, indexed, unique
 description  | text      | not null
-location_id  | integer   | not null, foreign key (references locations), indexed
+city         | string    | not null
+state        | string    | not null
 organizer_id | integer   | not null, foreign key (references users), indexed
 creation_date| date      | not null
 image        | string    | not null
@@ -30,26 +31,25 @@ title       | string    | not null
 description | text      | not null
 date        | date      | not null
 start_time  | datetime  | not null
-location_lat| float     | not null
-location_lng| float     | not null
+lat         | float     | not null
+lng         | float     | not null
 group_id    | integer   | not null, foreign key (references users), indexed
 
-## RSVPs
+## memberships(join table)
+column name | data type | details
+------------|-----------|-----------------------
+id          | integer   | not null, primary key
+member_id   | integer   | not null, foreign key (references users), indexed
+group_id    | integer   | not null, foreign key (references groups), indexed
+
+## RSVP(join table)
 column name | data type | details
 ------------|-----------|------------------------
 id          | integer   | not null, primary key
 attendee_id | integer   | not null, foreign key (references users), indexed
 event_id    | integer   | not null, foreign key (references events), indexed
-attending   | boolean   | default false
 
-## locations
-column name | data type | details
-------------|-----------|------------------------
-id          | integer   | not null, primary key
-city        | string    | not null
-state       | string    | not null
-
-## reviews
+## Bonus:reviews
 column name | data type | details
 ------------|-----------|------------------------
 id          | integer   | not null, primary key

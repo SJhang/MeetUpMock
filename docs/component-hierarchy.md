@@ -1,70 +1,36 @@
   ## Component Hierarchy
 
-
   **AuthFormContainer**
     - SessionForm
 
-  **HomeContainer**
+  **App**
     - Header
-    - AuthForm
-    - groupItems
     - Footer
 
   **GroupsContainer**
-    - Header
     - navBar
       - searchBox
-    - groupScroller
-    - Footer
+      - searchOption
+    - groupCarousel
 
   **GroupContainer**
-    - Header
     - groupCover
     - groupNavBar
-    - groupNavItem
-    * groupContainer
+      - groupNavItem
+    * groupSidebar
       - organizerInfo
       - groupInfo
-    * groupMemberContainer
+    * groupMain
+      - eventsList
+        - eventsListItem
       - groupDescription
       - groupMembers
-      * reviewContainer
-        - reviews
-    * groupCalendarContainer
+    * groupTime
       - calendar
-    - Footer
-
-  **GroupMemberContainer**
-    - groupDescription
-    - groupMembers
-
-  **GroupCalendarContainer**
-    - Header
-    - groupNav
-    - groupSidebar
-    - calendar
-    - recentlyJoinedMembers
-    - Footer
 
   **ProfileContainer**
-    - Header
     - ProfileContent
     - ProfileImg
-    - Footer
 
   **Footer**
     - FooterItems
-
-  **Routes**
-
-  |Path   | Component   |
-  |-------|-------------|
-  | "/"  | "HomeContainer" |
-  | "/sign-up" | "AuthFormContainer" |
-  | "/sign-in" | "AuthFormContainer" |
-  | "/home/" | "HomeContainer" |
-  | "/home/profile" | "ProfileContainer" |
-  | "/groups/" | "GroupsContainer" |
-  | "/groups/:groupId/" | "GroupContainer" |
-  | "/groups/:groupId/events/" | "EventsContainer" |
-  | "/groups/:groupId/events/:eventId/" | "EventContainer" |

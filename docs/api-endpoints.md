@@ -39,11 +39,12 @@
   - index of all RSVPs for an event
 - `DELETE /api/events/:id`
 
-### RSVP
 
-- `POST /api/rsvp`
-- `GET /api/rsvp/:id`
-- `DELETE /api/rsvp/:id`
+### RSVPs
+
+- `POST /api/rsvps`
+- `GET /api/rsvps/:id`
+- `DELETE /api/rsvps/:id`
 
 ### Locations
 

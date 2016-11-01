@@ -8,21 +8,15 @@
   forms: {
     signUp: {errors: []},
     logIn: {errors: []},
-    createGroup: {errors: ["Invalid type"]},
-    leaveReview: {}
+    createGroup: {errors: ["Invalid input"]},
+    createEvent: {errors: ["Invalid input"]}
   },
-  group: {
-    1: {
-      name: "app Academy",
-      profile_img: "path/to/img",
-      attendee_name: "coders"
-    }
-  }
-  groupDetail: {
+  groups: {
     1: {
       name: "app Academy",
       description: "keep it chill",
-      location_id: 1,
+      city: "San Francisco",
+      state: "CA",
       organizer_id: 1,
       creation_date: 2016-10-31,
       image: "path/to/img",
@@ -38,41 +32,30 @@
           }
           ...users
         }
-      ]
+      ],
+      reviews: {
+        1: {
+          body: "14th floor has great views",
+          reviewer_id: 2,
+          group_id: 1
+        }
+      }
     },
-    reviews: {
-      body: "14th floor has great views",
-      reviewer_id: 2,
-      group_id: 1
-    }
+    ...groups
   },
-  event: {
-    title: "Halloween",
-    location: "San Francisco",
-    date: 2016-10-31
-  }
-  eventDetail: {
-    title: "Halloween",
-    description: "dress up to win 15 bucks!",
-    date: 2016-10-31,
-    start_time: 19:00 PST
-    location_lat: 37.7913765,
-    location_lng: -122.3936249,
-    group_id: 1,
-    rsvp_yes_count: 70
-  },
-  locations: [
-    {
-      1: {
-        city: "San Francisco",
-        state: "CA"
-      },
-      2: {
-        city: "Austin",
-        state: "TX"
-      },
-      ...locations
+  events: {
+    1: {
+      title: "Halloween",
+      description: "dress up to win 15 bucks!",
+      date: 2016-10-31,
+      start_time: 19:00 PST
+      lat: 37.7913765,
+      lng: -122.3936249,
+      group_id: 1,
+      rsvps: [
+        ...attendee_id
+      ]
     }
-  ]
 
+  }
 }
