@@ -5,20 +5,21 @@ const Greeting = ({currentUser, logout, login}) => {
 
   if (currentUser) {
     return (
-      <div>
+      <div className="greeting-page">
         <h1>Welcome {currentUser.username}</h1>
         <button onClick={() => logout()}>Logout</button>
       </div>
     );
   } else {
     return (
-      <div>
+      <div className="auth-items">
         <Link to='/login'>Login</Link>
         <br/>
         <Link to='/signup'>Sign Up</Link>
         <br/>
-        <a onClick={ () => login({username: "guest", password: "password"})}>
-        </a>
+        <button onClick={ () => login({username: "guest", password: "password"})}>
+          Guest Login
+        </button>
       </div>
     );
   }
