@@ -15,9 +15,17 @@ class SessionForm extends React.Component {
 		this.redirectIfLoggedIn();
 	}
 
+  displayErrorMessages(errorType) {
+    if (this.props.errors[errorType]) {
+      this.props.errors[errorType].map(errors => (
+        <h6>{errors}</h6>
+      ));
+    }
+  }
+
   redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
-			this.props.router.push("/");
+			this.props.router.push("/home");
 		}
 	}
 
@@ -35,38 +43,57 @@ class SessionForm extends React.Component {
 
   navLink(){
     if (this.props.formType === "login") {
-			return <Link to="/signup">sign up instead</Link>;
+			return (
+        <h5>New to Meet Ups? &nbsp;
+          <Link to="/signup">Create an account</Link>
+        </h5>
+      );
 		} else {
-			return <Link to="/login">log in instead</Link>;
+			return (
+        <h5>Already a member? &nbsp;
+          <Link to="/login">Log in</Link>
+        </h5>
+      );
 		}
   }
 
   render(){
+    debugger;
     return (
-      <div className="session-form">
-        <h1>{this.props.formType}</h1>
-        {this.navLink()}
+      <div className="session-cont">
+        <div className="grad-line"></div>
+        <div className="session-form">
 
-        <form onSubmit={this.handleSubmit}>
-          <label>Username:
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}>
-            </input>
-          </label>
+          <h1>{this.props.formType}</h1>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              <input
+                type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+                placeholder="Username">
+              </input>
+              {this.displayErrorMessages('username')}
+            </label>
 
-          <label>Password:
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}>
-            </input>
-          </label>
+            <h6>{this.props.errors}</h6>
 
-          <input type="submit" value="Submit"/>
-        </form>
+            <label>
+              <input
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+                placeholder="Password">
+              </input>
+              {this.displayErrorMessages('password')}
+            </label>
 
+            <button>Submit</button>
+          </form>
+          <div>
+            {this.navLink()}
+          </div>
+        </div>
       </div>
     );
   }
