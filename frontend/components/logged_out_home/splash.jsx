@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import UpcomingEvents from './upcoming_events';
 import MainVideo from './main_video';
-import Header from '../shared/header';
+import SplashHeader from './splash_header';
 import Footer from '../shared/footer';
 
 class Splash extends React.Component {
@@ -11,28 +11,23 @@ class Splash extends React.Component {
 
   }
 
-  redirectIfLoggedIn() {
-		if (this.props.loggedIn) {
-			this.props.router.push("/");
-		}
-	}
-
   render () {
     return (
       <div>
-        <Header />
+        <SplashHeader />
         <div className="view">
-        <div className="view-body">
-          <section className="video-wrap">
-              <MainVideo />
-          </section>
+          <div className="view-body">
+            <section className="video-wrap">
+                <MainVideo />
+            </section>
 
-          <secion className="events-wrap">
-            <UpcomingEvents />
-          </secion>
+            <secion className="events-wrap">
+              <UpcomingEvents />
+            </secion>
 
+          </div>
         </div>
-        </div>
+        {this.props.children}
         <Footer />
       </div>
     );

@@ -14,7 +14,7 @@
  *= require_self
  */
 
- html, body, h1, p, div, span, ul section {
+ html, body, h1, p, div, span, ul section, h6 {
    margin: 0;
    border: 0;
    padding: 0;

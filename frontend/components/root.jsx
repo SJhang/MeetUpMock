@@ -8,12 +8,12 @@ import HomeContainer from './logged_in_home/home_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
-    const currentUser = store.getState().session.currentUser;
+    const currentUser = store.getState().session.currentUser.username;
     if (!currentUser) replace('/login');
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
-    const currentUser = store.getState().session.currentUser;
+    const currentUser = store.getState().session.currentUser.username;
     if (currentUser) replace('/home');
   };
 

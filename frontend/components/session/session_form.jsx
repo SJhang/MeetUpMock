@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
   }
 
   navLink(){
-    if (this.props.formType === "login") {
+    if (this.props.formType === "Log in") {
 			return (
         <h5>New to Meet Ups? &nbsp;
           <Link to="/signup">Create an account</Link>
@@ -50,7 +50,7 @@ class SessionForm extends React.Component {
       );
 		} else {
 			return (
-        <h5>Already a member? &nbsp;
+        <h5>Already a member? &nbsp;&nbsp;&nbsp;
           <Link to="/login">Log in</Link>
         </h5>
       );
@@ -58,13 +58,13 @@ class SessionForm extends React.Component {
   }
 
   render(){
-    debugger;
     return (
       <div className="session-cont">
         <div className="grad-line"></div>
         <div className="session-form">
 
           <h1>{this.props.formType}</h1>
+
           <form onSubmit={this.handleSubmit}>
             <label>
               <input
@@ -88,9 +88,11 @@ class SessionForm extends React.Component {
               {this.displayErrorMessages('password')}
             </label>
 
+            <h6>{this.props.errors}</h6>
+
             <button>Submit</button>
           </form>
-          <div>
+          <div className="session-redirect">
             {this.navLink()}
           </div>
         </div>

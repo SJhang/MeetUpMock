@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link } from 'react-router';
 
-const Header = (props) => {
+const Header = ({currentUser, logout}) => {
   return (
     <nav>
       <ul>
         <li></li>
-        <li></li>
-        <li><Link to='/login'>Log in</Link></li>
-        <li><Link to='/signup'>Sign Up</Link></li>
+        <li>{currentUser.username}</li>
+        <li><button onClick={logout}>Log Out</button></li>
       </ul>
     </nav>
   );

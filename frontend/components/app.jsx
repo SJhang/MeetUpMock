@@ -1,12 +1,12 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
 import Footer from './shared/footer';
-import Header from './shared/header';
+import HomeContainer from './logged_in_home/home_container';
 
 const App = ({ children }) => (
   <main>
-    <Header />
-    { children }
+    <HomeContainer />
+    {children}
     <Footer />
   </main>
 );

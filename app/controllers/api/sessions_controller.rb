@@ -5,17 +5,17 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render 'api/sessions/show'
     else
-      render json: @user.errors, status: 401
+      render json: ["lolol"], status: 401
     end
   end
 
   def destroy
     if current_user.nil?
       render json: ["user not found"], status: 404
-      return
+    else
+      logout
+      render json: {}
     end
-    logout
-    render json: {}
   end
 
   def show

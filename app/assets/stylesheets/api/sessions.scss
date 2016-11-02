@@ -2,57 +2,51 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .session-cont{
+  width: 250px;
+  height:300px;
+  margin: 50px auto;
+}
 
-
+.grad-line {
+  height: 8px;
+  background: linear-gradient(to right, lightblue, darkblue);
 }
 
 .session-form {
-  margin: 50px auto;
-  border: 1px solid grey;
+
   padding: 50px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.8);
   text-align: center;
+}
 
-  width: 350px;
-  height:400px;
+.session-form > h1 {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .session-form form {
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  height: 250px;
+}
 
+.session-form form label input{
+  font-size: 15px;
+}
+
+.session-form form h6 {
+  height: 13px;
+  font-size: 13px;
+  color: red;
 }
 
 .session-form form button {
-  margin-top: 5px;
-  height: 45px;
-  border: none;
+  margin-top: 8px;
+  height: 20px;
   color: white;
   border-radius: 4px;
 }
 
-.session-form form input {
-  height: 45px;
-  width: 220px;
+.session-redirect {
   margin-top: 20px;
-
-}
-.session-form > h1 {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
-
-.session-form h6 {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-}
-
-.grad-line {
-  background: linear-gradient(to right, orange, red);
-  height: 10px;
-  width: auto;
 }
