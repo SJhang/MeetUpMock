@@ -1,16 +1,32 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory, withRouter } from 'react-router';
 
-const Header = ({currentUser, logout}) => {
-  return (
-    <nav>
-      <ul>
-        <li></li>
-        <li>{currentUser.username}</li>
-        <li><button onClick={logout}>Log Out</button></li>
-      </ul>
-    </nav>
-  );
-};
+class Header extends React.Component {
 
-export default Header;
+  logout() {
+    this.props.logout();
+    this.props.router.push('/');
+  }
+
+  headerText() {
+    if (this.props.currentUser.username) {
+
+    }
+  }
+
+  render () {
+
+    return (
+      <nav className="global-header">
+        <div>logo</div>
+        <ul>
+          <li>{this.props.currentUser.username}</li>
+          <li><Link to='/login'>Log in</Link></li>
+          <li><button onClick={this.logout.bind(this)}>Log Out</button></li>
+        </ul>
+      </nav>
+    );
+  }
+}
+
+export default withRouter(Header);

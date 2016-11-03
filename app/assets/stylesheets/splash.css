@@ -1,0 +1,22 @@
+.video-wrap {
+  background: lightyellow;
+  width: auto;
+  height: 500px;
+}
+
+.events-name {
+  display: flex;
+  justify-content: space-around;
+  vertical-align: middle;
+}
+
+.events-name a {
+
+}
+
+.splash-video {
+  position: relative;
+  display: flex;
+  width: auto;
+  height: auto;
+}

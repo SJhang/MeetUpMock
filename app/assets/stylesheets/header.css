@@ -1,0 +1,29 @@
+.global-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid black;
+
+  list-style: none;
+  font-size: 18px;
+  height: 60px;
+}
+
+.global-header div {
+  margin: 0 auto;
+}
+
+.global-header ul {
+  display: flex;
+  justify-content: space-around;
+  margin-right: 20px;
+
+}
+
+.global-header ul li {
+  padding-left: 10px;
+}

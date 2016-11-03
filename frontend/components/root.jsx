@@ -8,11 +8,13 @@ import HomeContainer from './logged_in_home/home_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
+    console.log(currentUser, "logged in ensuer");
     const currentUser = store.getState().session.currentUser.username;
     if (!currentUser) replace('/login');
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
+    console.log(currentUser, "logged in redirect");
     const currentUser = store.getState().session.currentUser.username;
     if (currentUser) replace('/home');
   };
@@ -20,19 +22,16 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path='/' component={SplashContainer}>
-          <Route
-            path='/signup'
-            component={SessionFormContainer}
-            onEnter={_redirectIfLoggedIn}/>
-          <Route
-            path='/login'
-            component={SessionFormContainer}
-            onEnter={_redirectIfLoggedIn} />
+        <Route path='/' component={App}>
+          <IndexRoute component={SplashContainer} />
+          <Route path='/home' component={HomeContainer} onEnter={_ensureLoggedIn} />
         </Route>
-        <Route path='/home' component={App} onEnter={_ensureLoggedIn}>
-          <IndexRoute component={HomeContainer} onEnter={_ensureLoggedIn}/>
-        </Route>
+        <Route
+          path='/signup'
+          component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+        <Route
+          path='/login'
+          component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
       </Router>
     </Provider>
   );

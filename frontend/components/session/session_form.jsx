@@ -45,7 +45,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === "Log in") {
 			return (
         <h5>New to Meet Ups? &nbsp;
-          <Link to="/signup">Create an account</Link>
+          <Link to="/signup">Create account</Link>
         </h5>
       );
 		} else {
@@ -60,40 +60,45 @@ class SessionForm extends React.Component {
   render(){
     return (
       <div className="session-cont">
-        <div className="grad-line"></div>
+        <h1>LOGO</h1>
+        <div><h1>{this.props.formType} to Meetups</h1></div>
         <div className="session-form">
+            <form onSubmit={this.handleSubmit}>
+              <div className="grad-line"></div>
+              <div className="auth-form">
+                <div>
+                  <input
+                    className="input-block"
+                    type="text"
+                    value={this.state.username}
+                    onChange={this.update("username")}
+                    placeholder="Username">
+                  </input>
+                  {this.displayErrorMessages('username')}
 
-          <h1>{this.props.formType}</h1>
+                  <h6>{this.props.errors}</h6>
 
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-                placeholder="Username">
-              </input>
-              {this.displayErrorMessages('username')}
-            </label>
+                  <input
+                    className="input-block"
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update("password")}
+                    placeholder="Password">
+                  </input>
+                  {this.displayErrorMessages('password')}
 
-            <h6>{this.props.errors}</h6>
+                  <h6>{this.props.errors}</h6>
 
-            <label>
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                placeholder="Password">
-              </input>
-              {this.displayErrorMessages('password')}
-            </label>
+                  <button>Submit</button>
+                </div>
+              </div>
+            </form>
 
-            <h6>{this.props.errors}</h6>
-
-            <button>Submit</button>
-          </form>
           <div className="session-redirect">
             {this.navLink()}
+            <h5>Feeling lazy? &nbsp;
+              <button className="guest-button">Guest Log in</button>
+            </h5>
           </div>
         </div>
       </div>

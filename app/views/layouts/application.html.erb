@@ -2,11 +2,11 @@
 <html>
   <head>
     <title>MeetUps</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
     <script type="text/javascript">
       <% if logged_in? %>
           window.currentUser = <%= render("api/user.json.jbuilder",

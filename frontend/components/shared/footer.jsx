@@ -3,15 +3,15 @@ import { Link, withRouter } from 'react-router';
 
 const Footer = () => {
   return (
-    <div>
-      <div>
+    <div className="footer-container">
+      <div className="footer-top">
         <div><a>Start a Meet Up</a></div>
         <div><Link to='/login'>Log in</Link></div>
       </div>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>facebook</li>
+        <li>twitter</li>
+        <li>github</li>
       </ul>
       <ul>
         <li></li>

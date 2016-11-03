@@ -2,8 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import UpcomingEvents from './upcoming_events';
 import MainVideo from './main_video';
-import SplashHeader from './splash_header';
-import Footer from '../shared/footer';
+
 
 class Splash extends React.Component {
 
@@ -14,7 +13,6 @@ class Splash extends React.Component {
   render () {
     return (
       <div>
-        <SplashHeader />
         <div className="view">
           <div className="view-body">
             <section className="video-wrap">
@@ -27,11 +25,9 @@ class Splash extends React.Component {
 
           </div>
         </div>
-        {this.props.children}
-        <Footer />
       </div>
     );
   }
 }
 
-export default withRouter(Splash);
+export default Splash;
