@@ -3,8 +3,9 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_many :groups
-  belongs_to :group
+  has_many :memberships
+  has_one :group, through: :memberships
+  has_many :groups, through: :memberships
 
   attr_reader :password
 
