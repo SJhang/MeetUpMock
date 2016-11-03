@@ -20,7 +20,6 @@ description  | text      | not null
 city         | string    | not null
 state        | string    | not null
 organizer_id | integer   | not null, foreign key (references users), indexed
-creation_date| date      | not null
 image        | string    | not null
 
 ## events
