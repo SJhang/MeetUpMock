@@ -6,6 +6,7 @@ class CreateGroups < ActiveRecord::Migration[5.0]
       t.string :city, null: false
       t.string :state, null: false
       t.integer :organizer_id, null: false
+      t.string :image
       t.timestamps
     end
     add_index :groups, :name, unique: true
