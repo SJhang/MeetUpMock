@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="footer-container">
       <div className="footer-top">
         <div><a>Start a Meet Up</a></div>
-        <div><Link to='/login'>Log in</Link></div>
+        <div><Link to='/login'>Sign in</Link></div>
       </div>
       <ul>
         <li>facebook</li>

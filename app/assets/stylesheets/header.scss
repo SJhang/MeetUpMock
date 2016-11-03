@@ -13,17 +13,27 @@
   height: 60px;
 }
 
-.global-header div {
-  margin: 0 auto;
+.header-logo {
+  margin-left: 50px;
 }
-
 .global-header ul {
   display: flex;
   justify-content: space-around;
+  width: 160px;
   margin-right: 20px;
-
 }
 
 .global-header ul li {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
+  border-radius: 4px;
+  padding: 5px;
   padding-left: 10px;
+  padding-right: 10px;
+  font-weight: 500px;
+  font-size: 15px;
+
+}
+
+.session-sign-up {
+  background: linear-gradient(orange, red);
 }

@@ -5,6 +5,7 @@ import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import SplashContainer from './logged_out_home/splash_container';
 import HomeContainer from './logged_in_home/home_container';
+import GroupContainer from './group/group_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -25,12 +26,11 @@ const Root = ({ store }) => {
         <Route path='/' component={App}>
           <IndexRoute component={SplashContainer} />
           <Route path='/home' component={HomeContainer} onEnter={_ensureLoggedIn} />
+          <Route path='/group/:groupId' component={GroupContainer} onEnter={_ensureLoggedIn} />
         </Route>
-        <Route
-          path='/signup'
+        <Route path='/signup'
           component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-        <Route
-          path='/login'
+        <Route path='/login'
           component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
       </Router>
     </Provider>

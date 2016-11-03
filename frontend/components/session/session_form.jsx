@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
         password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
   componentDidUpdate() {
@@ -42,7 +43,7 @@ class SessionForm extends React.Component {
   }
 
   navLink(){
-    if (this.props.formType === "Log in") {
+    if (this.props.formType === "Sign in") {
 			return (
         <h5>New to Meet Ups? &nbsp;
           <Link to="/signup">Create account</Link>
@@ -51,39 +52,52 @@ class SessionForm extends React.Component {
 		} else {
 			return (
         <h5>Already a member? &nbsp;&nbsp;&nbsp;
-          <Link to="/login">Log in</Link>
+          <Link to="/login">Sign in</Link>
         </h5>
       );
 		}
   }
 
+  handleGuestLogin(e) {
+    e.preventDefault();
+    let usern = "sonikjhang";
+    let pass = "asdfasdf";
+    this.state = {username: usern, password: pass};
+    let user = this.state;
+    this.props.login(user);
+  }
+
   render(){
     return (
       <div className="session-cont">
-        <h1>LOGO</h1>
-        <div><h1>{this.props.formType} to Meetups</h1></div>
+        <h1 className="session-logo" onClick={()=>this.props.router.push('/')}>LOGO</h1>
+        <div><h1>{this.props.formType}</h1></div>
         <div className="session-form">
             <form onSubmit={this.handleSubmit}>
               <div className="grad-line"></div>
               <div className="auth-form">
                 <div>
+                  <label htmlFor="login-field">Username</label>
                   <input
+                    id="login-field"
                     className="input-block"
                     type="text"
                     value={this.state.username}
                     onChange={this.update("username")}
-                    placeholder="Username">
+                    placeholder="Enter your Username">
                   </input>
                   {this.displayErrorMessages('username')}
 
                   <h6>{this.props.errors}</h6>
 
+                  <label htmlFor="password-field">Password</label>
                   <input
+                    id="password-field"
                     className="input-block"
                     type="password"
                     value={this.state.password}
                     onChange={this.update("password")}
-                    placeholder="Password">
+                    placeholder="Enter your Password">
                   </input>
                   {this.displayErrorMessages('password')}
 
@@ -97,7 +111,9 @@ class SessionForm extends React.Component {
           <div className="session-redirect">
             {this.navLink()}
             <h5>Feeling lazy? &nbsp;
-              <button className="guest-button">Guest Log in</button>
+              <button
+                className="guest-button"
+                onClick={this.handleGuestLogin}>Guest Sign in</button>
             </h5>
           </div>
         </div>
