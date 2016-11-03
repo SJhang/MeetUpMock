@@ -8,7 +8,7 @@ import HomeContainer from './logged_in_home/home_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
-    console.log(currentUser, "logged in ensuer");
+    console.log(currentUser, "logged in ensure");
     const currentUser = store.getState().session.currentUser.username;
     if (!currentUser) replace('/login');
   };
