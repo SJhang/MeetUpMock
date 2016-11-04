@@ -32,17 +32,18 @@
 .header-clickables li {
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
   border-radius: 4px;
-
-
-  width: 80px;
+  width: 100px;
   height: 40px;
   display: flex;
   justify-content: space-around;
 }
 
-.header-clickables > button {
+.header-clickables button {
   font-size: 20px;
+  width: 100px;
+  text-align: center;
 }
+
 .header-sign-up {
   background: green;
   color: white;
@@ -61,4 +62,10 @@
 
 .header-sign-up:hover {
   background: orange;
+}
+
+.header-profile {
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
 }

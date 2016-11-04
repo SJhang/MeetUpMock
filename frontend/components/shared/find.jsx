@@ -18,9 +18,14 @@ class Find extends React.Component {
             <div className="find-inside">
               <form className="find-form">
                 <div>
-                  <input className="find-searchbar"></input>
+                  <input className="find-searchbar"
+                    placeholder="All meetups"></input>
                   <ul className="dropdown-menu"></ul>
                 </div>
+                <div>within</div>
+                <div></div>
+                <div>of</div>
+                <div>{this.props.location}</div>
               </form>
             </div>
             <div className="options-inside">

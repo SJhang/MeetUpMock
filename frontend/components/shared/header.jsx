@@ -20,7 +20,7 @@ class Header extends React.Component {
     if (this.props.currentUser.username) {
       return (
         <ul>
-          <li>{this.props.currentUser.username}</li>
+          <li><button>{this.props.currentUser.username}</button></li>
           <li><button onClick={this.logout.bind(this)}>Log Out</button></li>
         </ul>
       );
