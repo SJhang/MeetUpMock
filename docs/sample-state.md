@@ -20,7 +20,7 @@
       organizer_id: 1,
       creation_date: 2016-10-31,
       image: "path/to/img",
-      members: [
+      members: {
         {
           1: {
             name: "sonik",
@@ -32,7 +32,7 @@
           }
           ...users
         }
-      ],
+      },
       reviews: {
         1: {
           body: "14th floor has great views",

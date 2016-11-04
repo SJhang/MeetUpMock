@@ -16,6 +16,7 @@
 class Event < ApplicationRecord
   validates :title, :description, :date, :lat, :lng, presence: true
   validates :date, uniqueness: true
+  validates_associated :rsvps, :attendees, :group
 
   has_many :rsvps,
     primary_key: :id,
@@ -24,4 +25,11 @@ class Event < ApplicationRecord
   has_many :attendees, through: :rsvps, source: :attendee
 
   belongs_to :group
+
+  # def self.in_bounds(bounds)
+  #   self.where("lat < ?", bounds[:northEast][:lat])
+  #       .where("lat > ?", bounds[:southWest][:lat])
+  #       .where("lng > ?", bounds[:southWest][:lng])
+  #       .where("lng < ?", bounds[:northEast][:lng])
+  # end
 end

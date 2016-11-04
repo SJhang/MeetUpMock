@@ -2,6 +2,10 @@ import React from 'react';
 import { Link, hashHistory, withRouter } from 'react-router';
 
 class Header extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
 
   logout() {
     this.props.logout();
@@ -17,7 +21,7 @@ class Header extends React.Component {
   }
 
   redirectToProfile() {
-    this.props.router.push('/users/:userId');
+    this.props.router.push(`/users/${this.props.currentUser.id}`);
   }
 
   clickLogo() {

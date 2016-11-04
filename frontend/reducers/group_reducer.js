@@ -1,7 +1,8 @@
 import {
-  RECEIVE_CURRENT_USER,
+  RECEIVE_ALL_GROUPS,
+  RECEIVE_GROUP,
+  DELETE_GROUP,
   RECEIVE_ERRORS,
-  LOGOUT
 } from '../actions/session_actions.js';
 
 import {merge} from 'lodash';
@@ -14,10 +15,26 @@ let _defaultState = {
       state: null,
       date: null,
       image: null,
-      groupMembers: []
+      members: {}
     }
   };
 
 export const GroupReducer = (state = _defaultState, action) => {
   Object.freeze(state);
+  switch (action.type) {
+    case RECEIVE_ALL_GROUPS:
+      return merge({}, action.groups);
+    case RECEIVE_GROUP:
+      let currentGroup = action.currentGroup;
+      return merge({}, state, { currentGroup });
+    case DELETE_GROUP:
+      return merge({}, _defaultState);
+    case RECEIVE_ERRORS:
+      let errors = action.errors;
+      return merge({}, state, { errors });
+    default:
+      return state;
+  }
 };
+
+export default GroupReducer;

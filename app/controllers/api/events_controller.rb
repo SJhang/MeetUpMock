@@ -9,18 +9,17 @@ class Api::EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    @events = Event.all.includes(:attendees)
   end
 
   def show
-    @event = Event.find(params[:id])
-    @rsvps = @event.rsvps
+    @event = Event.find(params[:id]).includes(:attendees)
   end
 
   def destroy
     event = Event.find(params[:id])
     event.destroy
-    render "api/events/index"
+    render :show
   end
 
   def update

@@ -1,6 +1,6 @@
 class Api::GroupsController < ApplicationController
   def index
-    @groups = Group.all
+    @groups = Group.all.includes(:members)
     # if params[:search] && !params[:search].empty?
     #   @groups = @groups.where(
     #     [
@@ -12,8 +12,7 @@ class Api::GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id])
-    @members = @group.members
+    @group = Group.find(params[:id]).includes(:members)
   end
 
   def create
@@ -36,7 +35,7 @@ class Api::GroupsController < ApplicationController
   def destroy
     group = Group.find(params[:id])
     group.destroy
-    render "api/groups/index"
+    render :show
   end
 
   def search_params
