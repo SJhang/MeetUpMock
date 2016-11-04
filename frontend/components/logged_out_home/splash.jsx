@@ -12,7 +12,7 @@ class Splash extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="splash-view">
         <div className="view">
           <div className="view-body">
             <section className="video-wrap">

@@ -17,7 +17,6 @@ class Group < ApplicationRecord
   validates :name, :description, :city, :state, :organizer_id, presence: true
   validates :name, uniqueness: true
 
-
   attr_reader :location
 
   has_many :events

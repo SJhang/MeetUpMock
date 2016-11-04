@@ -15,7 +15,6 @@
 
 class Event < ApplicationRecord
   validates :title, :description, :date, :lat, :lng, presence: true
-  validates :date, uniqueness: true
 
   has_many :rsvps,
     primary_key: :id,

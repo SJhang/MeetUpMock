@@ -8,7 +8,7 @@ import {
 import {merge} from 'lodash';
 
 let _defaultState = {
-    groupId: {
+    group: {
       name: null,
       description: null,
       city: null,
@@ -16,7 +16,8 @@ let _defaultState = {
       date: null,
       image: null,
       members: {}
-    }
+    },
+    errors: []
   };
 
 export const GroupReducer = (state = _defaultState, action) => {

@@ -8,14 +8,15 @@ import {
 import {merge} from 'lodash';
 
 let _defaultState = {
-    eventId: {
+    event: {
       title: null,
       description: null,
       lat: null,
       lng: null,
       group_id: null,
       rsvps: {}
-    }
+    },
+    errors: []
   };
 
 export const EventReducer = (state = _defaultState, action) => {

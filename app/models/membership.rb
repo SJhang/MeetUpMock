@@ -10,7 +10,7 @@
 #
 
 class Membership < ApplicationRecord
-  validates_uniqueness_of :group_id, scope: :member_id
+  validates_uniqueness_of :member_id, scope: :group_id
 
   belongs_to :member,
     primary_key: :id,

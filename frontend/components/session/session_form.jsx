@@ -69,52 +69,54 @@ class SessionForm extends React.Component {
 
   render(){
     return (
-      <div className="session-cont">
-        <h1 className="session-logo" onClick={()=>this.props.router.push('/')}>LOGO</h1>
-        <div><h1>{this.props.formType}</h1></div>
-        <div className="session-form">
-            <form onSubmit={this.handleSubmit}>
-              <div className="grad-line"></div>
-              <div className="auth-form">
-                <div>
-                  <label htmlFor="login-field">Username</label>
-                  <input
-                    id="login-field"
-                    className="input-block"
-                    type="text"
-                    value={this.state.username}
-                    onChange={this.update("username")}
-                    placeholder="Enter your Username">
-                  </input>
-                  {this.displayErrorMessages('username')}
+      <div className="session-container">
+        <div className="session-cont">
+          <h1 className="session-logo" onClick={()=>this.props.router.push('/')}>LOGO</h1>
+          <div><h1>{this.props.formType}</h1></div>
+          <div className="session-form">
+              <form onSubmit={this.handleSubmit}>
+                <div className="grad-line"></div>
+                <div className="auth-form">
+                  <div>
+                    <label htmlFor="login-field">Username</label>
+                    <input
+                      id="login-field"
+                      className="input-block"
+                      type="text"
+                      value={this.state.username}
+                      onChange={this.update("username")}
+                      placeholder="Enter your Username">
+                    </input>
+                    {this.displayErrorMessages('username')}
 
-                  <h6>{this.props.errors}</h6>
+                    <h6>{this.props.errors}</h6>
 
-                  <label htmlFor="password-field">Password</label>
-                  <input
-                    id="password-field"
-                    className="input-block"
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.update("password")}
-                    placeholder="Enter your Password">
-                  </input>
-                  {this.displayErrorMessages('password')}
+                    <label htmlFor="password-field">Password</label>
+                    <input
+                      id="password-field"
+                      className="input-block"
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.update("password")}
+                      placeholder="Enter your Password">
+                    </input>
+                    {this.displayErrorMessages('password')}
 
-                  <h6>{this.props.errors}</h6>
+                    <h6>{this.props.errors}</h6>
 
-                  <button>Submit</button>
+                    <button>Submit</button>
+                  </div>
                 </div>
-              </div>
-            </form>
+              </form>
 
-          <div className="session-redirect">
-            {this.navLink()}
-            <h5>Feeling lazy? &nbsp;
-              <button
-                className="guest-button"
-                onClick={this.handleGuestLogin}>Guest Sign in</button>
-            </h5>
+            <div className="session-redirect">
+              {this.navLink()}
+              <h5>Feeling lazy? &nbsp;
+                <button
+                  className="guest-button"
+                  onClick={this.handleGuestLogin}>Guest Sign in</button>
+              </h5>
+            </div>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@
 #
 
 class Rsvp < ApplicationRecord
-  validates_uniqueness_of :event_id, scope: :attendee_id
+  validates_uniqueness_of :attendee_id, scope: :event_id
 
   belongs_to :attendee,
     primary_key: :id,
