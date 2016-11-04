@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, hashHistory, withRouter } from 'react-router';
 import Header from '../shared/header';
+import FindContainer from '../shared/find_container';
 
 
 class Home extends React.Component {
@@ -8,23 +9,7 @@ class Home extends React.Component {
   render () {
     return (
       <div className="authenticated-body">
-        <div className="home-pre-body">
-          <section>
-            <div>
-              <a></a>
-            </div>
-          </section>
-          <div className="find-nav-bar">
-            <div className="find-nav">
-              <div className="find-inside">
-                <form></form>
-              </div>
-              <div className="options-inside">
-                <ul></ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <FindContainer />
 
         <div className="home-main-body">
           <div className="main-context">
@@ -34,7 +19,7 @@ class Home extends React.Component {
                 <div className="units">
                   <div className="margin-top">&nbsp;</div>
                   <ul>
-                    
+
                   </ul>
                 </div>
               </div>

@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103162810) do
+ActiveRecord::Schema.define(version: 20161103204612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.text     "description", null: false
+    t.datetime "date",        null: false
+    t.float    "lat",         null: false
+    t.float    "lng",         null: false
+    t.integer  "group_id",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["date"], name: "index_events_on_date", unique: true, using: :btree
+  end
 
   create_table "groups", force: :cascade do |t|
     t.string   "name",         null: false
@@ -33,6 +45,17 @@ ActiveRecord::Schema.define(version: 20161103162810) do
     t.integer  "group_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_memberships_on_group_id", unique: true, using: :btree
+    t.index ["member_id"], name: "index_memberships_on_member_id", unique: true, using: :btree
+  end
+
+  create_table "rsvps", force: :cascade do |t|
+    t.integer  "attendee_id", null: false
+    t.integer  "event_id",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["attendee_id"], name: "index_rsvps_on_attendee_id", unique: true, using: :btree
+    t.index ["event_id"], name: "index_rsvps_on_event_id", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|

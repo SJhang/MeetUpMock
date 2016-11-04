@@ -28,7 +28,7 @@ class Header extends React.Component {
       return (
         <ul>
           <li><button onClick={this.login.bind(this)}>Sign in</button></li>
-          <li className="header-sign-up"><button onClick={this.signup.bind(this)}>Sign up</button></li>
+          <li><button onClick={this.signup.bind(this)}>Sign up</button></li>
         </ul>
       );
     }
@@ -39,7 +39,7 @@ class Header extends React.Component {
     return (
       <nav className="global-header">
         <div className="header-logo">logo</div>
-        <div>
+        <div className="header-clickables">
           {
             this.headerText()
           }

@@ -47,8 +47,7 @@
     1: {
       title: "Halloween",
       description: "dress up to win 15 bucks!",
-      date: 2016-10-31,
-      start_time: 19:00 PST
+      date: 2016-10-31 19:00 PST,
       lat: 37.7913765,
       lng: -122.3936249,
       group_id: 1,

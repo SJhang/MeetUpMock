@@ -7,6 +7,7 @@ import SplashContainer from './logged_out_home/splash_container';
 import HomeContainer from './logged_in_home/home_container';
 import GroupContainer from './group/group_container';
 
+
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
     console.log(currentUser, "logged in ensure");
@@ -25,7 +26,7 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path='/' component={App}>
           <IndexRoute component={SplashContainer} />
-          <Route path='/home' component={HomeContainer} onEnter={_ensureLoggedIn} />
+          <Route path='/home' component={HomeContainer} onEnter={_ensureLoggedIn}/>
           <Route path='/group/:groupId' component={GroupContainer} onEnter={_ensureLoggedIn} />
         </Route>
         <Route path='/signup'

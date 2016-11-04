@@ -1,0 +1,93 @@
+.authenticated-body {
+  line-height: 1.5;
+}
+
+.home-pre-body {
+  width: auto;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-size: cover;
+  margin-bottom: 44px;
+}
+
+
+.home-main-body {
+  max-width: 980px;
+  margin: 0 auto;
+  min-height: 300px;
+}
+
+.home-pre-body > section {
+  background-color: red;
+  display: flex;
+}
+
+.home-pre-body > section > div {
+  padding: 32px 0 30px;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.find-header > ul {
+  text-align: center;
+}
+
+.find-header > ul > li {
+  font-size: 30px;
+  font-weight: 800;
+  color: white;
+}
+
+.find-nav {
+  max-width: 980px;
+  margin: 0 auto;
+  background: black;
+  color: white;
+  align-items: center;
+}
+
+.find-nav-bar {
+  width: 100%;
+  z-index: 2;
+  position: absolute;
+  top: auto;
+  bottom: -42px;
+}
+
+.find-nav {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+
+.find-inside {
+  width: 70%;
+}
+
+.options-inside {
+  padding: 12px 12px 12px 15px;
+  display: table-cell;
+  width: auto;
+}
+
+.find-form {
+  display: table;
+  width: 100%;
+  padding: 12px;
+  font-size: 0;
+}
+
+.find-searchbar {
+  margin: 0 3px 0 0;
+  border-radius: 3px;
+  padding: 8px 32px 8px 8px;
+  border: 1px solid #000;
+  font-size: 16px;
+  height: 45px;
+  width: 280px;
+  color: #353e48;
+  background-color: #FFF;
+}

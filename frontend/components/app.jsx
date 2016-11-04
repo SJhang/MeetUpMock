@@ -5,11 +5,11 @@ import HeaderContainer from './shared/header_container';
 import HomeContainer from './logged_in_home/home_container';
 
 const App = ({ children }) => (
-  <main>
+  <div>
     <HeaderContainer />
-    {children}
+      {children}
     <Footer />
-  </main>
+  </div>
 );
 
 export default App;

@@ -55,6 +55,9 @@
    height: auto;
  }
 
+ div {
+  display: block;
+ }
  button,
  input[type="submit"] {
    cursor: pointer;
@@ -75,3 +78,7 @@
    display: block;
    clear: both;
  }
+
+.main-body {
+
+}

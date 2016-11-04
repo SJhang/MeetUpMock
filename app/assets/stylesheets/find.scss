@@ -1,0 +1,17 @@
+.home-pre-body {
+  width: 100%;
+
+  background: red;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-size: cover;
+  margin-bottom: 44px;
+}
+
+.home-pre-body > section {
+  padding: 32px 0 48px;
+  max-width: 950px;
+  margin: 0 auto;
+}

@@ -11,29 +11,54 @@
   list-style: none;
   font-size: 18px;
   height: 60px;
+  z-index: 3;
 }
 
 .header-logo {
   margin-left: 50px;
 }
-.global-header ul {
+
+.header-logo:hover {
+  cursor: pointer;
+}
+
+.header-clickables ul {
   display: flex;
   justify-content: space-around;
-  width: 160px;
+  width: 240px;
   margin-right: 20px;
 }
 
-.global-header ul li {
+.header-clickables li {
   box-shadow: 0 2px 4px 0 rgba(0,0,0,0.3);
   border-radius: 4px;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-weight: 500px;
-  font-size: 15px;
 
+
+  width: 80px;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
 }
 
-.session-sign-up {
-  background: linear-gradient(orange, red);
+.header-clickables > button {
+  font-size: 20px;
+}
+.header-sign-up {
+  background: green;
+  color: white;
+}
+
+.header-log-in {
+  background: white;
+  color: black;
+}
+
+.header-clickables li:hover {
+  cursor: pointer;
+  background: lightgreen;
+}
+
+
+.header-sign-up:hover {
+  background: orange;
 }
