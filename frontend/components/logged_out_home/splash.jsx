@@ -19,9 +19,9 @@ class Splash extends React.Component {
                 <MainVideo />
             </section>
 
-            <secion className="events-wrap">
+            <section className="events-wrap">
               <UpcomingEvents />
-            </secion>
+            </section>
 
           </div>
         </div>

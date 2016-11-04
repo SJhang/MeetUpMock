@@ -1,13 +1,24 @@
 import React from 'react';
+import Slider from 'react-slick';
 
 class Carousel extends React.Component {
+  settings() {
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
+  }
+
   render () {
-    return(
+    return (
       <div className="upcoming-carousel">
         <div className="viewport">
-          <div className="slideviews">
+          <Slider className="slideviews">
             <div className="many-carousels"></div>
-          </div>
+          </Slider>
         </div>
         <button className="previous-button"><svg></svg></button>
         <button className="next-button"><svg></svg></button>

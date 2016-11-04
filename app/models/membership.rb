@@ -11,7 +11,7 @@
 
 class Membership < ApplicationRecord
   validates :member_id, :group_id, uniqueness: true
-  
-  belongs_to :user
+
+  belongs_to :member
   belongs_to :group
 end

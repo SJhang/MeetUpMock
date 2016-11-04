@@ -20,7 +20,7 @@
       organizer_id: 1,
       creation_date: 2016-10-31,
       image: "path/to/img",
-      groupMemebers: [
+      members: [
         {
           1: {
             name: "sonik",

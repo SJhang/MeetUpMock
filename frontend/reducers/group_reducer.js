@@ -8,7 +8,7 @@ import {merge} from 'lodash';
 
 let _defaultState = {
     groupId: {
-      naem: null,
+      name: null,
       description: null,
       city: null,
       state: null,

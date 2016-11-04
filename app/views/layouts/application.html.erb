@@ -4,16 +4,21 @@
     <title>MeetUps</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <script src="http://widget.cloudinary.com/global/all.js" type="text/javascript"></script>
     <script type="text/javascript">
       <% if logged_in? %>
           window.currentUser = <%= render("api/user.json.jbuilder",
           user: current_user).html_safe %>
       <% end %>
     </script>
-
+    <script type="text/javascript">
+      window.cloudinary_opts = {
+        cloud_name: "<%= ENV['CLOUD_NAME'] %>",
+        upload_preset: "<%= ENV['UPLOAD_PRESET'] %>"
+      };
+    </script>
   </head>
 
   <body>

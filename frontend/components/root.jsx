@@ -6,18 +6,20 @@ import SessionFormContainer from './session/session_form_container';
 import SplashContainer from './logged_out_home/splash_container';
 import HomeContainer from './logged_in_home/home_container';
 import GroupContainer from './group/group_container';
+import EventContainer from './event/event_container';
+import UserContainer from './user_profile/user_container';
 
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
-    console.log(currentUser, "logged in ensure");
     const currentUser = store.getState().session.currentUser.username;
+    console.log(currentUser, "logged in ensure");
     if (!currentUser) replace('/login');
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
-    console.log(currentUser, "logged in redirect");
     const currentUser = store.getState().session.currentUser.username;
+    console.log(currentUser, "logged in redirect");
     if (currentUser) replace('/home');
   };
 
@@ -27,7 +29,9 @@ const Root = ({ store }) => {
         <Route path='/' component={App}>
           <IndexRoute component={SplashContainer} />
           <Route path='/home' component={HomeContainer} onEnter={_ensureLoggedIn}/>
-          <Route path='/group/:groupId' component={GroupContainer} onEnter={_ensureLoggedIn} />
+          <Route path='/groups' component={GroupContainer} onEnter={_ensureLoggedIn} />
+          <Route path='/events' component={EventContainer} />
+          <Route path='/users/:userId' component={UserContainer} onEnter={_ensureLoggedIn}/>
         </Route>
         <Route path='/signup'
           component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />

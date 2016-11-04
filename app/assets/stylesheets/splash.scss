@@ -10,10 +10,20 @@
   display: flex;
   justify-content: space-around;
   vertical-align: middle;
+  font-size: 23px;
 }
 
 .events-name a {
+  color: blue;
+  font-size: 20px;
+}
 
+.see-all {
+  padding-top: 10px;
+}
+
+.events-name a:hover {
+  cursor: pointer;
 }
 
 .splash-video {
@@ -21,4 +31,8 @@
   display: flex;
   width: auto;
   height: auto;
+}
+
+.events-wrap {
+  padding: 16px;
 }

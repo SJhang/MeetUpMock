@@ -17,9 +17,25 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_one :group
-  has_many :groups, through: :memberships
-  has_many :events, through: :rsvps
+
+  has_many :organized_groups,
+    primary_key: :id,
+    foreign_key: :organizer_id,
+    class_name: :Group
+
+  has_many :memberships,
+    primary_key: :id,
+    foreign_key: :member_id,
+    class_name: :Membership
+
+  has_many :groups, through: :memberships, source: :group
+
+  has_many :rsvps,
+    primary_key: :id,
+    foreign_key: :attendee_id,
+    class_name: :Rsvp
+
+  has_many :events, through: :rsvps, source: :event
 
   attr_reader :password
 

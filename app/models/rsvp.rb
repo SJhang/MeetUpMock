@@ -12,6 +12,10 @@
 class Rsvp < ApplicationRecord
   validates :attendee_id, :event_id, uniqueness: true
 
-  belongs_to :user
+  belongs_to :attendee,
+    primary_key: :id,
+    foreign_key: :attendee_id,
+    class_name: :User
+    
   belongs_to :event
 end
