@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103204612) do
+ActiveRecord::Schema.define(version: 20161104185118) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20161103204612) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.index ["date"], name: "index_events_on_date", unique: true, using: :btree
+    t.index ["group_id"], name: "index_events_on_group_id", using: :btree
   end
 
   create_table "groups", force: :cascade do |t|
@@ -37,7 +38,7 @@ ActiveRecord::Schema.define(version: 20161103204612) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["name"], name: "index_groups_on_name", unique: true, using: :btree
-    t.index ["organizer_id"], name: "index_groups_on_organizer_id", unique: true, using: :btree
+    t.index ["organizer_id"], name: "index_groups_on_organizer_id", using: :btree
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -45,8 +46,7 @@ ActiveRecord::Schema.define(version: 20161103204612) do
     t.integer  "group_id",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["group_id"], name: "index_memberships_on_group_id", unique: true, using: :btree
-    t.index ["member_id"], name: "index_memberships_on_member_id", unique: true, using: :btree
+    t.index ["member_id", "group_id"], name: "index_memberships_on_member_id_and_group_id", unique: true, using: :btree
   end
 
   create_table "rsvps", force: :cascade do |t|
@@ -54,8 +54,7 @@ ActiveRecord::Schema.define(version: 20161103204612) do
     t.integer  "event_id",    null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["attendee_id"], name: "index_rsvps_on_attendee_id", unique: true, using: :btree
-    t.index ["event_id"], name: "index_rsvps_on_event_id", unique: true, using: :btree
+    t.index ["attendee_id", "event_id"], name: "index_rsvps_on_attendee_id_and_event_id", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|

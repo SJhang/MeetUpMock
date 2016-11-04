@@ -9,11 +9,11 @@ class Api::EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all.includes(:attendees)
+    @events = Event.includes(:attendees).all
   end
 
   def show
-    @event = Event.find(params[:id]).includes(:attendees)
+    @event = Event.includes(:attendees).find(params[:id])
   end
 
   def destroy

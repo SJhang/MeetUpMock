@@ -1,6 +1,6 @@
 class Api::GroupsController < ApplicationController
   def index
-    @groups = Group.all.includes(:members)
+    @groups = Group.includes(:members).all
     # if params[:search] && !params[:search].empty?
     #   @groups = @groups.where(
     #     [
@@ -12,7 +12,7 @@ class Api::GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.find(params[:id]).includes(:members)
+    @group = Group.includes(:members).find(params[:id])
   end
 
   def create

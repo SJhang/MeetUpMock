@@ -15,8 +15,7 @@
 
 class Group < ApplicationRecord
   validates :name, :description, :city, :state, :organizer_id, presence: true
-  validates :name, :organizer_id, uniqueness: true
-  validates_associated :events, :memberships, :members, :organizer
+  validates :name, uniqueness: true
 
 
   attr_reader :location
@@ -29,5 +28,4 @@ class Group < ApplicationRecord
     primary_key: :id,
     foreign_key: :organizer_id,
     class_name: :User
-
 end

@@ -6,15 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(username: "hy", password: "asdfasdf")
+User.create!(username: "sonikjhang", password: "asdfasdf")
 User.create!(username: "sunday", password: "12342134")
+User.create!(username: "Max", password: "12342134")
 
 Group.create!(name: "app Academy", description: "Best coding boot camp",
   city: "Austin", state: "TX", organizer_id: 1)
 Group.create!(name: "Sonik House", description: "Ivette's basement",
-  city: "SF", state: "CA", organizer_id: 1)
-Group.create!(name: "Hy House", description: "West Campus", city: "Austin", state: "TX",
-  organizer_id: 2)
+  city: "SF", state: "CA", organizer_id: 2)
+Group.create!(name: "Hy House", description: "meow", city: "Austin", state: "TX",
+  organizer_id: 3)
+Group.create!(name: "House", description: "woof woof", city: "Austin", state: "TX",
+  organizer_id: 3)
 
 Event.create!(title: "Happy Hour", description: "Super Duper 15 dollar pitcher",
   date: '18-06-12 10:34:09 PM', lat: "37.7913765", lng: "-122.3936249", group_id: 1)
