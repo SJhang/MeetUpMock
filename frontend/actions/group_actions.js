@@ -9,8 +9,9 @@ export const REMOVE_GROUP = "REMOVE_GROUP";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
 
-export const receiveAllGroups = () => ({
-  type: RECEIVE_ALL_GROUPS
+export const receiveAllGroups = groups => ({
+  type: RECEIVE_ALL_GROUPS,
+  groups
 });
 
 export const receiveGroup = group => ({

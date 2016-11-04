@@ -7,6 +7,7 @@ import {
 } from '../actions/session_actions';
 import {login, logout, signup} from '../util/session_api_util';
 
+
 export default ({dispatch}) => next => action => {
   const successCallback = user => dispatch(receiveCurrentUser(user));
   const errorCallback = errors => dispatch(receiveErrors(errors.responseJSON));

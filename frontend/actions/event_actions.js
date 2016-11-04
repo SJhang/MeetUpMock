@@ -8,8 +8,9 @@ export const DELETE_EVENT = "DELETE_EVENT";
 export const REMOVE_EVENT = "REMOVE_EVENT";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
-export const receiveAllEvents = () => ({
-  type: RECEIVE_ALL_EVENTS
+export const receiveAllEvents = events => ({
+  type: RECEIVE_ALL_EVENTS,
+  events
 });
 
 export const receiveEvent = event => ({
