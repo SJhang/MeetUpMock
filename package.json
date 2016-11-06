@@ -25,6 +25,7 @@
     "babel-preset-react": "^6.16.0",
     "cloudinary": "^1.4.4",
     "lodash": "^4.16.4",
+    "owl.carousel": "^2.2.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-modal": "^1.5.2",

@@ -28,7 +28,9 @@ class Header extends React.Component {
     if (this.props.currentUser.username) {
       this.props.router.push('/home');
     } else {
-      this.props.router.push('/');
+      if (window.location.hash !== "#/") {
+        this.props.router.push('/');
+      }
     }
   }
 
@@ -53,14 +55,20 @@ class Header extends React.Component {
   render () {
 
     return (
-      <nav className="global-header">
-        <div className="header-logo" onClick={this.clickLogo.bind(this)}>logo</div>
-        <div className="header-clickables">
+      <header className="main-nav">
+        <nav className="left-nav">
+          <ul>
+            <li>
+                <i className="fa fa-meetup fa-3x" aria-hidden="true" onClick={this.clickLogo.bind(this)}></i>
+            </li>
+          </ul>
+        </nav>
+        <nav className="right-nav">
           {
             this.headerText()
           }
-        </div>
-      </nav>
+        </nav>
+      </header>
     );
   }
 }

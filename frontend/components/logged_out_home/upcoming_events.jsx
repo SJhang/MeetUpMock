@@ -1,18 +1,21 @@
 import React from 'react';
 import Carousel from './splash_carousel';
 
-class UpcomingEvents extends React.Component {
-  render () {
-    return(
-      <div className="events-body">
-        <div className="events-name">
-          <div><h2>Upcoming events</h2></div>
-          <div className="see-all"><a>See All</a></div>
-        </div>
-        <Carousel />
+const UpcomingEvents = ({events}) => {
+  return(
+    <div className="splash-events">
+      <div className="splash-events-options">
+        <div>Upcoming events</div>
+        <div><a>See All</a></div>
       </div>
-    );
-  }
-}
+      <ul>
+        {
+          events.map(event => <li>event.title</li>)
+        }
+      </ul>
+      <Carousel />
+    </div>
+  );
+};
 
 export default UpcomingEvents;

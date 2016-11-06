@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MeetUps</title>
+    <title><%= @title || "Meetups" %></title>
 
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
     <script type="text/javascript">
       <% if logged_in? %>
           window.currentUser = <%= render("api/user.json.jbuilder",
@@ -19,10 +18,13 @@
         upload_preset: "<%= ENV['UPLOAD_PRESET'] %>"
       };
     </script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
   </head>
 
   <body>
     <%= yield %>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
   </body>
 </html>
 <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> -->

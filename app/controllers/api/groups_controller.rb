@@ -13,6 +13,7 @@ class Api::GroupsController < ApplicationController
 
   def show
     @group = Group.includes(:members).find(params[:id])
+    @title = @group.name
   end
 
   def create

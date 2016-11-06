@@ -14,6 +14,7 @@ class Api::EventsController < ApplicationController
 
   def show
     @event = Event.includes(:attendees).find(params[:id])
+    @title = @event.title
   end
 
   def destroy
