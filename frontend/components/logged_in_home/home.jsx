@@ -5,6 +5,19 @@ import FindContainer from '../shared/find_container';
 
 
 class Home extends React.Component {
+  groupList() {
+    debugger;
+    this.props.groups.map(group => (
+      <li>{group.name}</li>
+    ));
+  }
+
+  eventList() {
+    debugger;
+    this.props.events.map(event => (
+      <li>{event.title}</li>
+    ));
+  }
 
   render () {
     return (
@@ -12,19 +25,16 @@ class Home extends React.Component {
         <FindContainer />
 
         <div className="home-main-body">
-          <div className="main-context">
-            <div className="simple-wrap">
-              <div className="dropdown-sorts"></div>
-              <div className="simple-view">
-                <div className="units">
-                  <div className="margin-top">&nbsp;</div>
-                  <ul>
-
-                  </ul>
-                </div>
+          <div className="simple-wrap">
+            <div className="dropdown-sorts"></div>
+            <div className="simple-view">
+              <div className="units">
+                <div className="margin-top">&nbsp;</div>
+                <ul>
+                  {this.groupList}
+                </ul>
               </div>
             </div>
-
           </div>
         </div>
 

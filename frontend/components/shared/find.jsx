@@ -1,6 +1,18 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
 
 class Find extends React.Component {
+  constructor (props) {
+    super(props);
+  }
+
+  redirectToEvents() {
+    hashHistory.push('/events');
+  }
+
+  redirectToGroups() {
+    hashHistory.push('/groups');
+  }
 
   render () {
     return (
@@ -20,7 +32,6 @@ class Find extends React.Component {
                 <div>
                   <input className="find-searchbar"
                     placeholder="All meetups"></input>
-                  <ul className="dropdown-menu"></ul>
                 </div>
                 <div>within</div>
                 <div></div>
@@ -29,7 +40,11 @@ class Find extends React.Component {
               </form>
             </div>
             <div className="options-inside">
-              <ul></ul>
+              <ul>
+                <li>
+                  <button className="view-selector" onClick={this.redirectToGroups.bind(this)}>Groups</button></li>
+                <li><button className="view-selector" onClick={this.redirectToEvents.bind(this)}>Events</button></li>
+              </ul>
             </div>
           </div>
         </div>

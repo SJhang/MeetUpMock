@@ -24,7 +24,7 @@ export default ({dispatch}) => next => action => {
   let receiveAllGroupsSuccess = groups => dispatch(receiveAllGroups(groups));
   let receiveGroupSuccess = group => dispatch(receiveGroup(group));
   let removeGroupSuccess = group => dispatch(removeGroup(group));
-  let failure = errors => dispatch(receiveErrors(errors));
+  let failure = errors => dispatch(receiveErrors(errors.responseJSON));
 
   switch (action.type) {
     case FETCH_ALL_GROUPS:

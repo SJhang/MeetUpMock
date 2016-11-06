@@ -28,9 +28,9 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path='/' component={App}>
           <IndexRoute component={SplashContainer} />
-          <Route path='/home' component={HomeContainer} onEnter={_ensureLoggedIn}/>
+          <Route path='/home' component={HomeContainer} onEnter={_ensureLoggedIn} />
           <Route path='/groups' component={GroupContainer} onEnter={_ensureLoggedIn} />
-          <Route path='/events' component={EventContainer} />
+          <Route path='/events' component={EventContainer} onEnter={_ensureLoggedIn} />
           <Route path='/users/:userId' component={UserContainer} onEnter={_ensureLoggedIn}/>
         </Route>
         <Route path='/signup'

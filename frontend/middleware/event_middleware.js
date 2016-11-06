@@ -24,7 +24,7 @@ export default ({dispatch}) => next => action => {
   let receiveAllEventsSuccess = events => dispatch(receiveAllEvents(events));
   let receiveEventSuccess = event => dispatch(receiveEvent(event));
   let removeEventSuccess = event => dispatch(removeEvent(event));
-  let failure = errors => dispatch(receiveErrors(errors));
+  let failure = errors => dispatch(receiveErrors(errors.responseJSON));
 
   switch (action.type) {
     case FETCH_ALL_EVENTS:

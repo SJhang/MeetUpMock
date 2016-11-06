@@ -4,7 +4,9 @@ import { logout } from '../../actions/session_actions.js';
 
 const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser,
-  loggedIn: Boolean(session.currentUser.username)
+  loggedIn: Boolean(session.currentUser.username),
+  groups: session.groups,
+  events: session.events
 });
 
 const mapDispatchToProps = dispatch => ({
