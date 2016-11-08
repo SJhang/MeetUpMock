@@ -1,0 +1,30 @@
+.event-lists {
+  margin: 20px;
+  display: flex;
+
+  ul {
+    height: 100px;
+    width: 200px;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 2px;
+    background: lightyellow;
+    text-align: center;
+    bottom: 0;
+
+    background:
+    linear-gradient(
+      rgba(255, 0, 0, 0.45),
+      rgba(255, 0, 0, 0.45)
+    )
+  }
+
+  ul:hover {
+    cursor: pointer;
+    background:
+    linear-gradient(
+      rgba(255, 0, 0, 0.45),
+      rgba(100, 200, 150, 0.45)
+    )
+  }
+}

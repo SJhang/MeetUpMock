@@ -1,0 +1,35 @@
+.group-lists {
+  display: flex;
+  min-height: 80vh;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  div {
+    height: 100px;
+    width: 200px;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-radius: 2px;
+    background: lightyellow;
+    text-align: center;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+
+    background:
+    linear-gradient(
+      rgba(255, 0, 0, 0.45),
+      rgba(255, 0, 0, 0.45)
+    )
+  }
+
+  div:hover {
+    cursor: pointer;
+    background:
+    linear-gradient(
+      rgba(255, 0, 0, 0.45),
+      rgba(100, 200, 150, 0.45)
+    )
+  }
+}

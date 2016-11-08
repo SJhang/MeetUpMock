@@ -6,8 +6,6 @@ import { fetchEvents } from '../../actions/event_actions';
 
 const mapStateToProps = ({ groups, events }) => ({
 });
-// groups: groupsAsArray(groups),
-// events: eventsAsArray(events)
 
 const mapDispatchToProps = dispatch => ({
   fetchGroups: () => dispatch(fetchGroups()),

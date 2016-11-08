@@ -1,28 +1,28 @@
 .main-nav {
-
   padding: 10px 0;
   border-bottom: 1px solid $light-gray;
   top: 0;
   left: 0;
   right: 0;
-
+  min-height: 75px;
   width: 100vw;
   background-color: $lightest-gray;
+  display: flex;
+  align-items: center;
 
   div {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     width: 80%;
+    min-height: 100%;
   }
 }
 
 .left-nav {
-  margin-left: 15px;
-}
 
-.left-nav {
   align-items: center;
+  margin-left: 15px;
 
   i {
     cursor: pointer;
@@ -37,18 +37,25 @@
 .right-nav {
   display: flex;
   align-items: center;
+  min-width: 30%;
+  min-height: 50%;
 }
 
 .right-nav > ul {
   display: flex;
+  width: 100%;
 
   li {
     margin-left: 5px;
     cursor: pointer;
+    width: 50%;
 
     button {
+      padding: 15px;
       font-size: 16px;
       margin: 0 5px 0 5px;
+      width: 70%;
+
     }
 
     button:hover {

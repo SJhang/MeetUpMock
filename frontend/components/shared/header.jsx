@@ -58,7 +58,7 @@ class Header extends React.Component {
         <div>
           <nav className="left-nav center">
             <div>
-                <i className="fa fa-meetup fa-3x" aria-hidden="true" onClick={this.clickLogo.bind(this)}></i>
+                <i className="fa fa-meetup fa-5x" aria-hidden="true" onClick={this.clickLogo.bind(this)}></i>
             </div>
           </nav>
           <nav className="right-nav">

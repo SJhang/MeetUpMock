@@ -28,3 +28,12 @@ export const signup = (user, success, error) => {
     error
   });
 };
+
+export const createImage = (image, success, userId) => {
+  $.ajax({
+    method: "PATCH",
+    url: `api/users/${userId}`,
+    data: {user: {profile_img: image}},
+    success
+  });
+};

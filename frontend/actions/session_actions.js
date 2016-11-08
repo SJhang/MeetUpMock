@@ -3,6 +3,12 @@ export const LOGOUT = 'LOGOUT';
 export const SIGNUP = 'SIGNUP';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+export const CREATE_IMAGE = "CREATE_IMAGE";
+
+export const createImage = image => ({
+  type: CREATE_IMAGE,
+  image
+});
 
 export const login = user => ({
   type: LOGIN,

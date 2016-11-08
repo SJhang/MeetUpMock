@@ -8,6 +8,10 @@ import HomeContainer from './logged_in_home/home_container';
 import GroupContainer from './group/group_container';
 import EventContainer from './event/event_container';
 import UserContainer from './user_profile/user_container';
+import GroupShowContainer from './group/group_show_container';
+import EventShowContainer from './event/event_show_container';
+import {fetchGroups} from '../actions/group_actions';
+import {fetchEvents} from '../actions/event_actions';
 
 
 const Root = ({ store }) => {
@@ -23,18 +27,23 @@ const Root = ({ store }) => {
     if (currentUser) replace('/home');
   };
 
+  const _populateStore = () => {
+    store.dispatch(fetchGroups());
+    store.dispatch(fetchEvents());
+  };
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path='/' component={App}>
+        <Route path='/' component={App} onEnter={_populateStore}>
           <IndexRoute component={SplashContainer} />
           <Route path='/home' component={HomeContainer} onEnter={_ensureLoggedIn}>
             <IndexRoute component={GroupContainer} onEnter={_ensureLoggedIn} />
             <Route path='/events' component={EventContainer} onEnter={_ensureLoggedIn} />
             <Route path='/groups' component={GroupContainer} onEnter={_ensureLoggedIn} />
           </Route>
-          <Route path='/groups/:groupId' component={GroupContainer} onEnter={_ensureLoggedIn}/>
-          <Route path='/events/:eventId' component={EventContainer} />
+          <Route path='/groups/:groupId' component={GroupShowContainer} onEnter={_ensureLoggedIn}/>
+          <Route path='/events/:eventId' component={EventShowContainer} />
           <Route path='/users/:userId' component={UserContainer} onEnter={_ensureLoggedIn}/>
         </Route>
         <Route path='/signup'

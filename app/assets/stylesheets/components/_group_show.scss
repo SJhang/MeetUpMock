@@ -1,0 +1,40 @@
+.group-content {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  .group-main-content {
+    width: 80%;
+    padding: 1.25em;
+
+    .head {
+      border-radius: 3px;
+      background-color: #fff;
+      margin-bottom: 16px;
+      border: 1px solid rgba(0,0,0,.12);
+      background-clip: padding-box;
+      height: 25%;
+
+      .banner {
+        border-bottom: 8px solid rgba(255,255,255,.25);
+        height: 80%;
+      }
+
+      .nav {
+        height: 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 3px;
+
+        .left {
+          margin-left: 10px;
+          min-width: 50%;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+}

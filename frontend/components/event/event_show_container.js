@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Event from './event';
-import { fetchEvents, fetchEvent } from '../../actions/event_actions';
+import { fetchEvent } from '../../actions/event_actions';
 
 const mapStateToProps = ({ events }) => ({
   currentEvent: events.currentEvent ? events.currentEvent : {},
@@ -8,7 +8,6 @@ const mapStateToProps = ({ events }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchEvents: () => dispatch(fetchEvents()),
   fetchEvent: id => dispatch(fetchEvent(id))
 });
 

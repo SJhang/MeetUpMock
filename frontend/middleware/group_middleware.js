@@ -21,7 +21,7 @@ import { hashHistory } from 'react-redux';
 export default ({dispatch}) => next => action => {
   let success;
   let receiveAllGroupsSuccess = groups => dispatch(receiveAllGroups(groups));
-  let receiveGroupSuccess = group => dispatch(receiveGroup(group));
+  let receiveGroupSuccess = currentGroup => dispatch(receiveGroup(currentGroup));
   let removeGroupSuccess = group => dispatch(removeGroup(group));
   let failure = errors => dispatch(receiveErrors(errors.responseJSON));
 
@@ -30,7 +30,7 @@ export default ({dispatch}) => next => action => {
       fetchGroups(receiveAllGroupsSuccess, failure);
       return next(action);
     case FETCH_GROUP:
-      fetchGroup(action.id, receiveGroupSuccess, failure);
+      fetchGroup(action.group, receiveGroupSuccess, failure);
       return next(action);
     case CREATE_GROUP:
       createGroup(action.group, receiveGroupSuccess, failure);

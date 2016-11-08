@@ -3,7 +3,6 @@ import {hashHistory} from 'react-router';
 
 const FindNav = (props) => {
 
-
   const redirectToEvents = () => {
     hashHistory.push('/events');
   };

@@ -106,7 +106,7 @@ class SessionForm extends React.Component {
 
           <div className="session-redirect">
             {this.navLink()}
-            <h5>Feeling lazy? &nbsp;
+            <h5>Log in as Guest &nbsp;
               <button
                 className="guest-button"
                 onClick={this.handleGuestLogin}>Guest Sign in</button>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {createImage} from '../../actions/session_actions';
 
 const UploadButton = (props) => {
   const upload = e => {
@@ -14,7 +15,7 @@ const UploadButton = (props) => {
   };
 
   return (
-    <button onClick={upload} className="upload-image-button">Upload</button>
+    <button onClick={upload} className="upload-image-button">Upload image</button>
   );
 };
 

@@ -13,20 +13,10 @@ class Splash extends React.Component {
   }
 
   componentWillMount() {
-    "";
     this.props.fetchEvents();
   }
 
-  componentDidUpdate(){
-    "";
-  }
-
-  componentWillReceiveProps(){
-      "";
-  }
-
   render () {
-    "";
     return (
         <div className="splash-view-body">
           <section className="video-wrap">

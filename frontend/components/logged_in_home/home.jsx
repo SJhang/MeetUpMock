@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, hashHistory, withRouter } from 'react-router';
-import FindContainer from '../shared/find_container';
+import Find from '../shared/find';
 import FindNav from '../shared/find_nav';
 
 class Home extends React.Component {
@@ -9,31 +9,13 @@ class Home extends React.Component {
     this.props.fetchGroups();
   }
 
-  groupListItems() {
-    this.props.groupList.map(group => (
-      <li>{group.name}</li>
-    ));
-  }
-
-  eventList() {
-    this.props.eventList.map(event => (
-      <li>{event.title}</li>
-    ));
-  }
-
   render () {
     return (
       <div className="authenticated-body">
-        <FindContainer />
+        <Find />
         <FindNav />
-        <div className="home-main-body">
-          <div className="simple-view">
-            <div className="units">
-              <ul>
-                {this.props.children}
-              </ul>
-            </div>
-          </div>
+        <div className="main-body">
+          {this.props.children}
         </div>
 
       </div>

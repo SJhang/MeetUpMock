@@ -1,7 +1,8 @@
 import {
   RECEIVE_CURRENT_USER,
   RECEIVE_ERRORS,
-  LOGOUT
+  LOGOUT,
+  CREATE_IMAGE
 } from '../actions/session_actions.js';
 
 import {merge} from 'lodash';
@@ -9,7 +10,8 @@ import {merge} from 'lodash';
 let _defaultState = {
     currentUser: {
       username: null,
-      id: null
+      id: null,
+      profile_img: null
     },
     errors: []
   };

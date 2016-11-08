@@ -14,14 +14,14 @@ export const receiveAllGroups = groups => ({
   groups
 });
 
-export const receiveCurrentGroup = currentGroup => ({
+export const receiveGroup = group => ({
   type: RECEIVE_GROUP,
-  currentGroup
+  group
 });
 
 export const fetchGroup = id => ({
   type: FETCH_GROUP,
-  id
+  id: id
 });
 
 export const fetchGroups = () => ({

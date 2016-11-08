@@ -9,7 +9,6 @@ import {merge} from 'lodash';
 
 let _defaultState = {
     groups: {},
-    currentGroup: {},
     errors: []
   };
 
@@ -18,12 +17,11 @@ export const GroupReducer = (state = _defaultState, action) => {
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_ALL_GROUPS:
-
       newState.groups = action.groups;
-      "";
       return newState;
     case RECEIVE_GROUP:
-      newState.currentGroup = action.currentGroup;
+      let newGroup = {[action.group.id]: action.group};
+      newState.groups = newGroup;
       return newState;
     case DELETE_GROUP:
       newState.groups = _defaultState;

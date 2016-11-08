@@ -8,6 +8,7 @@ export const fetchGroups = (success, errors) => {
 
 export const fetchGroup = (id, success, errors) => {
   $.ajax({
+    method: "GET",
     url: `api/groups/${id}`,
     success,
     errors
@@ -37,7 +38,7 @@ export const updateGroup = (group, success, errors) => {
 export const deleteGroup = (id, success, errors) => {
   $.ajax({
     method: 'DELETE',
-    url: `/api/groups/${id}`,
+    url: `api/groups/${id}`,
     success,
     errors
   });

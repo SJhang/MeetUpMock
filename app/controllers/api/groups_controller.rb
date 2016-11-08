@@ -12,12 +12,17 @@ class Api::GroupsController < ApplicationController
   end
 
   def show
-    @group = Group.includes(:members).find(params[:id])
+    @group = Group.includes(:members).find_by(id: params[:id])
     @title = @group.name
   end
 
   def create
-    @group = Group.new
+    @group = Group.new(group_params)
+    if @group.save
+      render :show
+    else
+      render @group.errors.full_message, status: 402
+    end
   end
 
   def update
@@ -39,11 +44,13 @@ class Api::GroupsController < ApplicationController
     render :show
   end
 
+  private
+
   def search_params
     params.permit(:name, :description)
   end
 
   def group_params
-    params.require(:group).permit(:name, :description, :city, :state)
+    params.require(:group).permit(:name, :description, :city, :state, :organizer_id)
   end
 end
