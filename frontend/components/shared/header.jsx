@@ -4,7 +4,6 @@ import { Link, hashHistory, withRouter } from 'react-router';
 class Header extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
   logout() {
@@ -21,7 +20,7 @@ class Header extends React.Component {
   }
 
   redirectToProfile() {
-    this.props.router.push(`/users/${this.props.currentUser.id}`);
+    hashHistory.push(`/users/${this.props.currentUser.id}`);
   }
 
   clickLogo() {
@@ -56,18 +55,18 @@ class Header extends React.Component {
 
     return (
       <header className="main-nav">
-        <nav className="left-nav">
-          <ul>
-            <li>
+        <div>
+          <nav className="left-nav center">
+            <div>
                 <i className="fa fa-meetup fa-3x" aria-hidden="true" onClick={this.clickLogo.bind(this)}></i>
-            </li>
-          </ul>
-        </nav>
-        <nav className="right-nav">
-          {
-            this.headerText()
-          }
-        </nav>
+            </div>
+          </nav>
+          <nav className="right-nav">
+            {
+              this.headerText()
+            }
+          </nav>
+        </div>
       </header>
     );
   }

@@ -3,36 +3,35 @@ import {
   RECEIVE_GROUP,
   DELETE_GROUP,
   RECEIVE_ERRORS,
-} from '../actions/session_actions.js';
+} from '../actions/group_actions.js';
 
 import {merge} from 'lodash';
 
 let _defaultState = {
-    group: {
-      name: null,
-      description: null,
-      city: null,
-      state: null,
-      date: null,
-      image: null,
-      members: {}
-    },
+    groups: {},
+    currentGroup: {},
     errors: []
   };
 
 export const GroupReducer = (state = _defaultState, action) => {
   Object.freeze(state);
+  let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_ALL_GROUPS:
-      return merge({}, action.groups);
+
+      newState.groups = action.groups;
+      "";
+      return newState;
     case RECEIVE_GROUP:
-      let currentGroup = action.currentGroup;
-      return merge({}, state, { currentGroup });
+      newState.currentGroup = action.currentGroup;
+      return newState;
     case DELETE_GROUP:
-      return merge({}, _defaultState);
+      newState.groups = _defaultState;
+      return newState;
     case RECEIVE_ERRORS:
       let errors = action.errors;
-      return merge({}, state, { errors });
+      newState.errors = errors;
+      return newState;
     default:
       return state;
   }

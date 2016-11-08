@@ -2,11 +2,11 @@ import { connect } from 'react-redux';
 import Home from './home';
 import { logout } from '../../actions/session_actions.js';
 
-const mapStateToProps = ({ session }) => ({
+const mapStateToProps = ({ session, groups, events }) => ({
   currentUser: session.currentUser,
   loggedIn: Boolean(session.currentUser.username),
-  groups: session.groups,
-  events: session.events
+  groupList: Object.keys(groups).map(id => groups[id]),
+  eventList: Object.keys(events).map(id => events[id])
 });
 
 const mapDispatchToProps = dispatch => ({

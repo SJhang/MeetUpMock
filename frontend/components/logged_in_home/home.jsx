@@ -1,20 +1,22 @@
 import React from 'react';
 import { Link, hashHistory, withRouter } from 'react-router';
-import Header from '../shared/header';
 import FindContainer from '../shared/find_container';
-
+import FindNav from '../shared/find_nav';
 
 class Home extends React.Component {
-  groupList() {
-    debugger;
-    this.props.groups.map(group => (
+
+  componentDidMount() {
+    this.props.fetchGroups();
+  }
+
+  groupListItems() {
+    this.props.groupList.map(group => (
       <li>{group.name}</li>
     ));
   }
 
   eventList() {
-    debugger;
-    this.props.events.map(event => (
+    this.props.eventList.map(event => (
       <li>{event.title}</li>
     ));
   }
@@ -23,17 +25,13 @@ class Home extends React.Component {
     return (
       <div className="authenticated-body">
         <FindContainer />
-
+        <FindNav />
         <div className="home-main-body">
-          <div className="simple-wrap">
-            <div className="dropdown-sorts"></div>
-            <div className="simple-view">
-              <div className="units">
-                <div className="margin-top">&nbsp;</div>
-                <ul>
-                  {this.groupList}
-                </ul>
-              </div>
+          <div className="simple-view">
+            <div className="units">
+              <ul>
+                {this.props.children}
+              </ul>
             </div>
           </div>
         </div>

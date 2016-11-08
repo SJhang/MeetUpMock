@@ -1,0 +1,54 @@
+.find-nav-bar {
+  width: 80%;
+  margin: 0 auto;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  background: black;
+  color: white;
+  border-radius: 4px;
+
+  .find-inside {
+    margin: 5px;
+    width: 60%;
+
+    .find-form {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 7px;
+      padding-left: 5px;
+
+      input {
+        background: white;
+        border-radius: 2px;
+        font-size: 15px;
+        padding: 3px;
+        color: black;
+      }
+    }
+  }
+
+  .options-inside {
+    margin: 5px;
+    width: 40%;
+
+    div {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-right: 10px;
+      padding-left: 10px;
+      border: 1px solid black;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        width: 50%
+      }
+    }
+  }
+}

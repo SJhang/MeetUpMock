@@ -26,11 +26,15 @@ const Root = ({ store }) => {
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path='/' component={App} onEnter={_redirectIfLoggedIn}>
+        <Route path='/' component={App}>
           <IndexRoute component={SplashContainer} />
-          <Route path='/home' component={HomeContainer} onEnter={_ensureLoggedIn} />
-          <Route path='/groups' component={GroupContainer} onEnter={_ensureLoggedIn} />
-          <Route path='/events' component={EventContainer} onEnter={_ensureLoggedIn} />
+          <Route path='/home' component={HomeContainer} onEnter={_ensureLoggedIn}>
+            <IndexRoute component={GroupContainer} onEnter={_ensureLoggedIn} />
+            <Route path='/events' component={EventContainer} onEnter={_ensureLoggedIn} />
+            <Route path='/groups' component={GroupContainer} onEnter={_ensureLoggedIn} />
+          </Route>
+          <Route path='/groups/:groupId' component={GroupContainer} onEnter={_ensureLoggedIn}/>
+          <Route path='/events/:eventId' component={EventContainer} />
           <Route path='/users/:userId' component={UserContainer} onEnter={_ensureLoggedIn}/>
         </Route>
         <Route path='/signup'

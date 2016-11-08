@@ -20,7 +20,6 @@ import { hashHistory } from 'react-redux';
 
 export default ({dispatch}) => next => action => {
   let success;
-  let fail;
   let receiveAllGroupsSuccess = groups => dispatch(receiveAllGroups(groups));
   let receiveGroupSuccess = group => dispatch(receiveGroup(group));
   let removeGroupSuccess = group => dispatch(removeGroup(group));

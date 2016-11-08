@@ -1,6 +1,7 @@
 import { value } from 'lodash';
-
-// export const groupsAsArray = ({ groups }) => value.groups;
+// 
+// export const groupsAsArray = ({ groups }) => value(groups);
+// "";
 // export const eventsAsArray = ({ events }) => value.events;
 
 // export const selectGroup = ({ groups }, id) => groups[id] || {};

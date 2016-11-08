@@ -12,10 +12,15 @@
 // Components
 @import "components/*";
 
+// Modules
+@import "modules/*";
+
 //font-awesome
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
-.app {
 
+.app {
+  position: relative;
+  height: 100%;
 }

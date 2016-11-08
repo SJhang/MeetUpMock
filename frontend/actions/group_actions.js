@@ -14,9 +14,9 @@ export const receiveAllGroups = groups => ({
   groups
 });
 
-export const receiveGroup = group => ({
+export const receiveCurrentGroup = currentGroup => ({
   type: RECEIVE_GROUP,
-  group
+  currentGroup
 });
 
 export const fetchGroup = id => ({

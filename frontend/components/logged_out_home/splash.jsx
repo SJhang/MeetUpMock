@@ -5,11 +5,28 @@ import MainVideo from './main_video';
 
 
 class Splash extends React.Component {
+  constructor(){
+    super();
+  }
   redirectToSignup() {
-    this.props.router.push('/signup')
+    this.props.router.push('/signup');
+  }
+
+  componentWillMount() {
+    "";
+    this.props.fetchEvents();
+  }
+
+  componentDidUpdate(){
+    "";
+  }
+
+  componentWillReceiveProps(){
+      "";
   }
 
   render () {
+    "";
     return (
         <div className="splash-view-body">
           <section className="video-wrap">
@@ -17,7 +34,7 @@ class Splash extends React.Component {
           </section>
 
           <section className="events-wrap">
-            <UpcomingEvents events={this.props.events}/>
+            <UpcomingEvents eventList={this.props.eventList}/>
           </section>
 
         </div>

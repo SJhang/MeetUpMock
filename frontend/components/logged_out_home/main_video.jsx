@@ -4,10 +4,9 @@ import ReactPlayer from 'react-player';
 const MainVideo = ({signup}) => {
 
   return (
-    <div className="splash-screen_video">
-      <div className="video-controller"></div>
-      <div className="content-bound">
-        <div className="content-chunk"></div>
+    <div className="content-chunk">
+      <h2>Hello Stranger</h2>
+      <div>
         <button onClick={signup}>Sign Up</button>
       </div>
     </div>

@@ -6,14 +6,6 @@ class Find extends React.Component {
     super(props);
   }
 
-  redirectToEvents() {
-    hashHistory.push('/events');
-  }
-
-  redirectToGroups() {
-    hashHistory.push('/groups');
-  }
-
   render () {
     return (
       <div className="home-pre-body">
@@ -21,33 +13,10 @@ class Find extends React.Component {
           <div className="find-header">
             <ul>
               <li>Find a Meetup</li>
-              <li>Meetups nearby</li>
+              <li><h3>Meetups nearby</h3></li>
             </ul>
           </div>
         </section>
-        <div className="find-nav-bar">
-          <div className="find-nav">
-            <div className="find-inside">
-              <form className="find-form">
-                <div>
-                  <input className="find-searchbar"
-                    placeholder="All meetups"></input>
-                </div>
-                <div>within</div>
-                <div></div>
-                <div>of</div>
-                <div>{this.props.location}</div>
-              </form>
-            </div>
-            <div className="options-inside">
-              <ul>
-                <li>
-                  <button className="view-selector" onClick={this.redirectToGroups.bind(this)}>Groups</button></li>
-                <li><button className="view-selector" onClick={this.redirectToEvents.bind(this)}>Events</button></li>
-              </ul>
-            </div>
-          </div>
-        </div>
       </div>
     );
   }

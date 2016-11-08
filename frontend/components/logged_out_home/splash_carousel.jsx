@@ -1,29 +1,37 @@
 import React from 'react';
 import Slider from 'react-slick';
-import $ from 'jquery';
 
 class Carousel extends React.Component {
 
-  settings() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
+  eventsList() {
+    let eventList = this.props.eventList;
+    if (eventList.length === 0) {
+      return [<div><h3>loading</h3></div>];
+    }
+    // let eventList = ["hi", "bye", "hello"];
+    return eventList.map(event =>
+      <div><h3>{event.title}</h3></div>);
   }
 
   render () {
+    const settings = {
+      dots: true,
+      infinite: true,
+      autoplaySpeed: 2000,
+      autoplay: true,
+      slidesToShow: 3,
+      slidesToScroll: 1
+    };
+
     return (
       <div className="upcoming-carousel">
         <div className="viewport">
-          <Slider className="slideviews">
-            <div className="many-carousels"></div>
+          <Slider {...settings}>
+            {
+              this.eventsList()
+            }
           </Slider>
         </div>
-        <button className="previous-button"><svg></svg></button>
-        <button className="next-button"><svg></svg></button>
       </div>
     );
   }
