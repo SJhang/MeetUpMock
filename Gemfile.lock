@@ -215,7 +215,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   figaro
-  font-awesome-sass
+  font-awesome-sass (~> 4.7.0)
   guard (>= 2.2.2)
   guard-livereload
   jbuilder (~> 2.5)

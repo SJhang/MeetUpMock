@@ -68,7 +68,6 @@ class SessionForm extends React.Component {
   }
 
   render(){
-    debugger
     return (
       <div className="session-container">
         <i className="fa fa-meetup fa-5x" aria-hidden="true" onClick={()=>this.props.router.push('/')}></i>
