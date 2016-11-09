@@ -10,33 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104190443) do
+ActiveRecord::Schema.define(version: 20161109163420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
-    t.string   "title",       null: false
-    t.text     "description", null: false
-    t.datetime "date",        null: false
-    t.float    "lat",         null: false
-    t.float    "lng",         null: false
-    t.integer  "group_id",    null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "title",             null: false
+    t.text     "description",       null: false
+    t.datetime "date",              null: false
+    t.float    "lat",               null: false
+    t.float    "lng",               null: false
+    t.integer  "group_id",          null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "thumbnail_img_url"
     t.index ["date"], name: "index_events_on_date", using: :btree
     t.index ["group_id"], name: "index_events_on_group_id", using: :btree
   end
 
   create_table "groups", force: :cascade do |t|
-    t.string   "name",         null: false
-    t.text     "description",  null: false
-    t.string   "city",         null: false
-    t.string   "state",        null: false
-    t.integer  "organizer_id", null: false
-    t.string   "image"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "name",               null: false
+    t.text     "description",        null: false
+    t.string   "city",               null: false
+    t.string   "state",              null: false
+    t.integer  "organizer_id",       null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "banner_img_url"
+    t.string   "background_img_url"
+    t.string   "thumbnail_img_url"
     t.index ["name"], name: "index_groups_on_name", unique: true, using: :btree
     t.index ["organizer_id"], name: "index_groups_on_organizer_id", using: :btree
   end
@@ -65,6 +68,7 @@ ActiveRecord::Schema.define(version: 20161104190443) do
     t.string   "profile_img"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.text     "description"
     t.index ["session_token"], name: "index_users_on_session_token", unique: true, using: :btree
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end

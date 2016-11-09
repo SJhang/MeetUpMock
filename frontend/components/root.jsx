@@ -12,7 +12,8 @@ import GroupShowContainer from './group/group_show_container';
 import EventShowContainer from './event/event_show_container';
 import {fetchGroups} from '../actions/group_actions';
 import {fetchEvents} from '../actions/event_actions';
-
+import Members from './group/members';
+import Photos from './group/photos';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -45,6 +46,9 @@ const Root = ({ store }) => {
           <Route path='groups/:groupId' component={GroupShowContainer} >
             <IndexRoute component = {EventContainer}/>
             <Route path='events/:eventId' component={EventShowContainer} />
+            <Route path='events' component={EventContainer} />
+            <Route path='members' component={Members} />
+            <Route path='photos' component={Photos} />
           </Route>
           <Route path='users/:userId' component={UserContainer} onEnter={_ensureLoggedIn}/>
         </Route>

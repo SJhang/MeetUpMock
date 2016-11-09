@@ -38,7 +38,10 @@ class Header extends React.Component {
       return (
         <ul>
           <li><button onClick={this.redirectToProfile.bind(this)}>{this.props.currentUser.username}</button></li>
-          <li><button onClick={this.logout.bind(this)}>Log Out</button></li>
+          <ul className="dropdown">
+            <li><h5>profile</h5></li>
+            <li><Link onClick={this.logout.bind(this)}>Log Out</Link></li>
+          </ul>
         </ul>
       );
     } else {

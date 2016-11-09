@@ -36,5 +36,43 @@
         }
       }
     }
+
+    .body {
+      min-height: 80vh;
+      display: flex;
+
+      .sidebar {
+        height: 500px;
+        width: 30%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 5px;
+        border: 1px solid black;
+
+        div {
+          margin: 10px 5px;
+        }
+      }
+
+      .main {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        
+        .description {
+          height: 30%;
+          margin: 10px;
+        }
+
+        .upcoming-events{
+          margin: 10px;
+          height: 70%;
+        }
+      }
+    }
+
   }
 }

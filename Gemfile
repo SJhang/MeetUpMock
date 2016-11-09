@@ -26,7 +26,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'font-awesome-sass', '~> 4.4.0'
 gem 'bootstrap-sass'
 
 # Use Capistrano for deployment
@@ -56,6 +55,7 @@ group :development do
   gem "guard-livereload",  :require => false
   gem "rack-livereload"
   gem "rb-fsevent",        :require => false
+  gem 'font-awesome-sass', '~> 4.7.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
