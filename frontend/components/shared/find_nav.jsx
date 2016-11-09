@@ -1,14 +1,10 @@
 import React from 'react';
-import {hashHistory} from 'react-router';
+import {Link, hashHistory} from 'react-router';
 
 const FindNav = (props) => {
 
   const redirectToEvents = () => {
     hashHistory.push('/events');
-  };
-
-  const redirectToGroups = () => {
-    hashHistory.push('/groups');
   };
 
   return (
@@ -27,10 +23,10 @@ const FindNav = (props) => {
         <div>
         <ul>
           <li>
-            <button className="view-selector" onClick={redirectToGroups}>Groups</button>
+            <Link className="view-selector" to={`/home/groups`}>Groups</Link>
           </li>
           <li>
-            <button className="view-selector" onClick={redirectToEvents}>Events</button>
+            <Link className="view-selector" to={"home/events"}>Events</Link>
           </li>
         </ul>
       </div>

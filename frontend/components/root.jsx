@@ -37,18 +37,20 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path='/' component={App} onEnter={_populateStore}>
           <IndexRoute component={SplashContainer} />
-          <Route path='/home' component={HomeContainer} onEnter={_ensureLoggedIn}>
+          <Route path='home' component={HomeContainer} onEnter={_ensureLoggedIn}>
             <IndexRoute component={GroupContainer} onEnter={_ensureLoggedIn} />
-            <Route path='/events' component={EventContainer} onEnter={_ensureLoggedIn} />
-            <Route path='/groups' component={GroupContainer} onEnter={_ensureLoggedIn} />
+            <Route path='groups' component={GroupContainer} onEnter={_ensureLoggedIn} />
+            <Route path='events' component={EventContainer} onEnter={_ensureLoggedIn} />
           </Route>
-          <Route path='/groups/:groupId' component={GroupShowContainer} onEnter={_ensureLoggedIn}/>
-          <Route path='/events/:eventId' component={EventShowContainer} />
-          <Route path='/users/:userId' component={UserContainer} onEnter={_ensureLoggedIn}/>
+          <Route path='groups/:groupId' component={GroupShowContainer} >
+            <IndexRoute component = {EventContainer}/>
+            <Route path='events/:eventId' component={EventShowContainer} />
+          </Route>
+          <Route path='users/:userId' component={UserContainer} onEnter={_ensureLoggedIn}/>
         </Route>
-        <Route path='/signup'
+        <Route path='signup'
           component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-        <Route path='/login'
+        <Route path='login'
           component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
       </Router>
     </Provider>

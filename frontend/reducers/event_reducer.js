@@ -9,20 +9,27 @@ import {merge} from 'lodash';
 
 let _defaultState = {
     events: {},
-    currentEvent: {},
     errors: []
   };
 
 export const EventReducer = (state = _defaultState, action) => {
   Object.freeze(state);
+  let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_ALL_EVENTS:
-      return merge({}, state, {events: action.events});
+      newState.events = action.events;
+      return newState;
     case RECEIVE_EVENT:
-      let currentEvent = action.event;
-      return merge({}, state, { currentEvent });
+      let newEvent = {[action.event.id]: action.event};
+      newState.events = newEvent;
+      return newState;
     case DELETE_EVENT:
-      return merge({}, _defaultState);
+      newState.events = _defaultState;
+      return newState;
+    case RECEIVE_ERRORS:
+      let errors = action.errors;
+      newState.errors = errors;
+      return newState;
     default:
       return state;
   }

@@ -68,6 +68,7 @@ class SessionForm extends React.Component {
   }
 
   render(){
+    debugger
     return (
       <div className="session-container">
         <i className="fa fa-meetup fa-5x" aria-hidden="true" onClick={()=>this.props.router.push('/')}></i>
@@ -86,7 +87,7 @@ class SessionForm extends React.Component {
                     onChange={this.update("username")}
                     placeholder="Enter your Username">
                   </input>
-                  <h6>{this.props.errors}</h6>
+                  <h6>{this.displayErrorMessages("username")}</h6>
 
                   <label htmlFor="password-field">Password</label>
                   <input
@@ -97,7 +98,8 @@ class SessionForm extends React.Component {
                     onChange={this.update("password")}
                     placeholder="Enter your Password">
                   </input>
-                  <h6>{this.props.errors}</h6>
+                  <h6>{this.displayErrorMessages("password")}</h6>
+
 
                   <button>Submit</button>
                 </div>

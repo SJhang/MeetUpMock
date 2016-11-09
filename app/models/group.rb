@@ -27,4 +27,5 @@ class Group < ApplicationRecord
     primary_key: :id,
     foreign_key: :organizer_id,
     class_name: :User
+
 end

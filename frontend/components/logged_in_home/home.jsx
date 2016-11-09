@@ -4,11 +4,6 @@ import Find from '../shared/find';
 import FindNav from '../shared/find_nav';
 
 class Home extends React.Component {
-
-  componentDidMount() {
-    this.props.fetchGroups();
-  }
-
   render () {
     return (
       <div className="authenticated-body">

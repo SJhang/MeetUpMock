@@ -1,11 +1,17 @@
 import { connect } from 'react-redux';
-import Event from './event';
+import EventShow from './event_show';
 import { fetchEvent } from '../../actions/event_actions';
+import { selectEvent } from '../../reducers/selectors';
 
-const mapStateToProps = ({ events }) => ({
-  currentEvent: events.currentEvent ? events.currentEvent : {},
-  eventList: Object.keys(events.events).map(id=>events.events[id])
-});
+const mapStateToProps = (state, { params }) => {
+  let eventId = parseInt(params.eventId);
+  let event = selectEvent(state, eventId);
+
+  return {
+    eventId,
+    event
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   fetchEvent: id => dispatch(fetchEvent(id))
@@ -14,4 +20,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Event);
+)(EventShow);

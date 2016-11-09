@@ -9,8 +9,7 @@ const mapStateToProps = ({ session, groups, events }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout()),
-  fetchGroups: () => dispatch(fetchGroups())
+  logout: () => dispatch(logout())
 });
 
 export default connect(

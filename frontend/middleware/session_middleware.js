@@ -11,7 +11,8 @@ import { login, logout, signup, createImage } from '../util/session_api_util';
 
 export default ({getState, dispatch}) => next => action => {
   const successCallback = user => dispatch(receiveCurrentUser(user));
-  const errorCallback = errors => dispatch(receiveErrors(errors.responseJSON));
+  const errorCallback = errors => {
+    dispatch(receiveErrors(errors.responseJSON))};
 
   switch (action.type) {
     case LOGIN:
