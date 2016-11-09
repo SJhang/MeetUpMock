@@ -55,7 +55,7 @@ group :development do
   gem "guard-livereload",  :require => false
   gem "rack-livereload"
   gem "rb-fsevent",        :require => false
-  gem 'font-awesome-sass', '~> 4.7.0'
+  gem 'font-awesome-sass', '~> 4.4.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

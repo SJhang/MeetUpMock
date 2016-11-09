@@ -1,7 +1,3 @@
-//font-awesome
-@import "font-awesome-sprockets";
-@import "font-awesome";
-
 // CSS Reset
 @import "base/reset.scss";
 
@@ -19,6 +15,11 @@
 // Modules
 @import "modules/*";
 
+//font-awesome
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 
 .app {
