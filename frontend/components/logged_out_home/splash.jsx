@@ -22,7 +22,7 @@ class Splash extends React.Component {
   componentDidMount() {
     $(document).scrollTop(0);
   }
-  
+
   componentWillMount() {
     this.props.fetchEvents();
   }
@@ -39,13 +39,15 @@ class Splash extends React.Component {
   render () {
     return (
         <div className="splash-view-body">
-          <section className="video-wrap">
+          <main>
+            <section className="video-wrap">
               <MainVideo guestLogin={this.handleGuestLogin}/>
-          </section>
+            </section>
 
-          <section className="events-wrap">
-            <UpcomingEvents eventList={this.props.eventList}/>
-          </section>
+            <section className="events-wrap">
+              <UpcomingEvents eventList={this.props.eventList}/>
+            </section>
+          </main>
 
         </div>
     );

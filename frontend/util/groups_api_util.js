@@ -1,6 +1,7 @@
-export const fetchGroups = (success, errors) => {
+export const fetchGroups = (params={}, success, errors) => {
   $.ajax({
     url: 'api/groups',
+    data: params,
     success,
     errors
   });

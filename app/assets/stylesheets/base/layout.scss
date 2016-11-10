@@ -1,13 +1,14 @@
 html {
 	position: relative;
-	min-height: 100vh;
+	min-height: 80vh;
 }
 
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 12px;
 	display: block;
-	min-height: 100vh;
+	min-height: 80vh;
+	-webkit-font-smoothing: subpixel-antialiased;
 }
 
 main {

@@ -25,7 +25,7 @@ export const fetchGroup = id => ({
   id: id
 });
 
-export const fetchGroups = () => ({
+export const getGroups = () => ({
   type: FETCH_ALL_GROUPS
 });
 

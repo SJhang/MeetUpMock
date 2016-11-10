@@ -2,9 +2,6 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 
 class Footer extends React.Component{
-  constructor(props) {
-    super(props);
-  }
 
   footerLink() {
     if (window.location.hash === "#/") {
@@ -12,9 +9,8 @@ class Footer extends React.Component{
         <Link to='/login'>Log in</Link>
       );
     } else {
-      this.props.logout();
       return (
-        <Link to='/'>Log out</Link>
+        <Link>Log out</Link>
       );
     }
   }
@@ -37,7 +33,7 @@ class Footer extends React.Component{
         <div className="footer-top">
           <div><Link to={'/create'}>Start a Meet Up</Link></div>
           <div>
-            {this.footerLink.bind(this)}
+            {this.footerLink()}
           </div>
         </div>
         <div className="footer-mid">

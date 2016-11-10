@@ -8,11 +8,11 @@ class Home extends React.Component {
     return (
       <div className="authenticated-body">
         <Find />
-        <FindNav />
+        <FindNav searchParams={this.props.searchParams}
+        updateGroupSearchParam={this.props.updateGroupSearchParam}/>
         <div className="main-body">
           {this.props.children}
         </div>
-
       </div>
     );
   }

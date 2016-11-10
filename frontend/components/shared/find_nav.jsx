@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, hashHistory} from 'react-router';
+import GroupSearchBox from '../group/group_search_box';
 
 const FindNav = (props) => {
 
@@ -19,15 +20,20 @@ const FindNav = (props) => {
   }
   return (
     <div className="find-nav-bar">
-      <div className="find-inside">
-        <form className="find-form">
-          <input className="find-searchbar"
-            placeholder="search for Meet ups"></input>
-        </form>
-      </div>
       <div className={klass}>
-        <div onClick={()=>hashHistory.push(`/home/groups`)}>Groups</div>
-        <div onClick={()=>hashHistory.push("/home/events")}>Events</div>
+        <section>
+          <GroupSearchBox
+            searchParams={props.searchParams}
+            updateGroupSearchParam={props.updateGroupSearchParam} />
+        </section>
+        <div
+          onClick={()=>hashHistory.push(`/home/groups`)}>
+          Groups
+        </div>
+        <div
+          onClick={()=>hashHistory.push("/home/events")}>
+          Events
+        </div>
       </div>
     </div>
   );

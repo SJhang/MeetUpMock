@@ -1,14 +1,14 @@
 class Api::GroupsController < ApplicationController
   def index
     @groups = Group.includes(:members).all
-    # if params[:search] && !params[:search].empty?
-    #   @groups = @groups.where(
-    #     [
-    #       'name LIKE :query OR description LIKE :query',
-    #       {searchQuery: "%#{params[:search]}%" }
-    #     ]
-    #   )
-    # end
+    if params[:search] && !params[:search].empty?
+      @groups = @groups.where(
+        [
+          'name ILIKE :searchQuery OR description ILIKE :searchQuery',
+          { searchQuery: "%#{params[:search]}%" }
+        ]
+      )
+    end
   end
 
   def show

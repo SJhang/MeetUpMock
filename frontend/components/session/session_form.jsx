@@ -74,46 +74,42 @@ class SessionForm extends React.Component {
         <h1>{this.props.formType}</h1>
         <div className="session-form">
             <form onSubmit={this.handleSubmit}>
-              <div className="grad-line"></div>
               <div className="auth-form">
                 <div>
-                  <label htmlFor="login-field">Username</label>
                   <input
-                    id="login-field"
                     className="input-block"
                     type="text"
                     value={this.state.username}
                     onChange={this.update("username")}
-                    placeholder="Enter your Username">
+                    placeholder="Username">
                   </input>
-                  <h6>{this.displayErrorMessages("username")}</h6>
+                  <p>{this.displayErrorMessages("username")}</p>
 
-                  <label htmlFor="password-field">Password</label>
                   <input
                     id="password-field"
                     className="input-block"
                     type="password"
                     value={this.state.password}
                     onChange={this.update("password")}
-                    placeholder="Enter your Password">
+                    placeholder="Password">
                   </input>
-                  <h6>{this.displayErrorMessages("password")}</h6>
-
-
+                  <p>{this.displayErrorMessages("password")}</p>
                   <button>Submit</button>
                 </div>
               </div>
             </form>
+            <div className="margin">&nbsp;</div>
+            <div className="session-redirect">
+              {this.navLink()}
+              <h5>Log in as Guest &nbsp;
+                <button
+                  className="guest-button"
+                  onClick={this.handleGuestLogin}>Guest Sign in</button>
+              </h5>
+            </div>
 
-          <div className="session-redirect">
-            {this.navLink()}
-            <h5>Log in as Guest &nbsp;
-              <button
-                className="guest-button"
-                onClick={this.handleGuestLogin}>Guest Sign in</button>
-            </h5>
-          </div>
         </div>
+        <div className="margin-bot">&nbsp;</div>
       </div>
     );
   }

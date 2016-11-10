@@ -1,16 +1,21 @@
 import { connect } from 'react-redux';
 import Group from './group';
-import { fetchGroups, fetchGroup } from '../../actions/group_actions';
+import { getGroups, fetchGroup } from '../../actions/group_actions';
 import { selectGroup } from '../../reducers/selectors';
+import { updateGroupSearchParam } from '../../actions/group_search_actions';
 
-const mapStateToProps = (state) => ({
-  groupList: Object.keys(state.groups.groups).map(id=>state.groups.groups[id])
-});
+const mapStateToProps = ({ groups, searchParams }) => ({
+  groupList: Object.keys(groups.groups).map(id=>groups.groups[id]),
+  searchParams
+  });
 
-const mapDispatchToProps = dispatch => ({
-  fetchGroups: () => dispatch(fetchGroups()),
-  fetchGroup: id => dispatch(fetchGroup(id))
-});
+const mapDispatchToProps = dispatch => {
+  return{
+  getGroups: () => dispatch(getGroups()),
+  fetchGroup: id => dispatch(fetchGroup(id)),
+  updateGroupSearchParam: (searchParam, value) =>
+    dispatch(updateGroupSearchParam(searchParam, value))
+};};
 
 export default connect(
   mapStateToProps,

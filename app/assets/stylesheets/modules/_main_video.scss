@@ -1,43 +1,46 @@
 
 .video-wrap {
-  background-image: url("https://res.cloudinary.com/dsetpdsls/image/upload/v1478634760/we71o75yh9rs02ufodf9.jpg");
-  background-size: cover;
-  background-position: center;
-  width: auto;
-  height: 700px;
+  background-image: url("https://res.cloudinary.com/dsetpdsls/image/upload/v1478776349/photo-1474314005122-3c07c4df1224_rngxnu.jpg");
   display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 75vh;
+  min-width: 320px;
+  max-height: 480px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: 50%;
+  margin-top: 61px;
 
   .content-chunk {
-    position: relative;
-    margin: 0 auto;
+    right: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
+    text-indent: 40px;
+    margin-top: 20px;
 
     h1 {
       font-weight: 200;
-      font-size: 45px;
-      color: white;
+      font-size: 28px;
+      margin: 10px 0;
     }
 
-    h2 {
-      font-weight: 100;
-      font-size: 20px;
-      color: black;
+    p {
+      margin-top: 5px;
+      text-align: left;
+      font-weight: 200;
+      font-size: 12px;
+
     }
 
     div {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       width: 100%;
-      margin-top: 5px;
+      margin-top: 20px;
+      margin-left: 40px;
 
       button {
         font-size: 20px;
-        width: 100%;
+        width: 40%;
       }
     }
   }

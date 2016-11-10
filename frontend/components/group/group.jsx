@@ -1,27 +1,20 @@
 import React from 'react';
 import { Link, withRouter, hashHistory } from 'react-router';
+import GroupSearchBox from './group_search_box';
+import GroupsIndex from './group_index';
 
 class Group extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  groups() {
-    return this.props.groupList.map(group =>
-      (<div key={group.id}>
-        <button onClick={()=>this.props.router.push(`/groups/${group.id}`)}>
-          {group.name}
-          {group.members.length}&nbsp; members
-        </button>
-      </div>)
-    );
-  }
-
-
   render () {
     return (
       <div className="group-lists">
-        {this.groups()}
+        <GroupSearchBox
+          searchParams={this.props.searchParams}
+          updateGroupSearchParam={this.props.updateGroupSearchParam} />
+        <GroupsIndex groups={this.props.groupList} />
       </div>
     );
   }

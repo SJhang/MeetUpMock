@@ -17,7 +17,7 @@ class GroupCreate extends React.Component {
   }
 
   nextStep() {
-    let top = $(".asdfasdf-body").offset().top;
+    let top = $(".next-body").offset().top;
     $(document).scrollTop(top);
   }
 
@@ -44,17 +44,20 @@ class GroupCreate extends React.Component {
             </form>
             <button onClick={this.nextStep.bind(this)}>next</button>
           </div>
-          <div className="asdfasdf-body">
-            <div className="name">
-              <ul>
-                <li>SECOND STEP</li>
-                <li>Name for your Meetup?</li>
-                <input type="text" placeholder="group name"></input>
-              </ul>
-            </div>
-            <div className="descriptions">
+          <div className="next-body">
+            <div><i className="fa fa-globe fa-5x" aria-hidden="true"></i></div>
+            <div>
+              <div className="name">
+                <ul>
+                  <li>SECOND STEP</li>
+                  <li>Name for your Meetup?</li>
+                  <input type="text" placeholder="group name"></input>
+                </ul>
+              </div>
+              <div className="descriptions">
               <div>Descriptions</div>
               <textarea />
+            </div>
             </div>
           </div>
           <div className="create-button">

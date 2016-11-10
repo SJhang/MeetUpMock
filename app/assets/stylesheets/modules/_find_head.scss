@@ -2,8 +2,9 @@
 
   section {
     border-bottom: 1px solid $dark-gray;
-    background-color: #212121;
+    background-color: #4d4f50;
     color: white;
+    margin-top: 61px;
 
     .find-header {
       width: 80%;
@@ -13,6 +14,7 @@
       text-align: center;
       padding-top: 15px;
       padding-bottom: 15px;
+      min-height: 200px;
 
       h3 {
         font-size: 20px;

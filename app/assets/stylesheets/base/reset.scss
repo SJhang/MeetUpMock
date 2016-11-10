@@ -46,6 +46,12 @@ input[type="submit"] {
 
 .group:after {
   content: "";
-  display: block;
+  display: table;
+  clear: both;
+}
+
+.group:before {
+  content: "";
+  display: table;
   clear: both;
 }

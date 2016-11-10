@@ -35,12 +35,16 @@ const ProfileButton = (props) => {
     <div className="profile">
       <button onClick={toggleDropDown}><h6>{props.currentUser.username}</h6></button>
       <div className="dropdown-content hidden">
-        <Link
-          className="profile-link"
-          to={`/users/${props.currentUser.id}`}>Profile</Link>
-        <Link
-          className="logout"
-          onClick={logout}>Log Out</Link>
+        <div className="options">
+          <Link
+            className="profile-link"
+            to={`/users/${props.currentUser.id}`}>Profile</Link>
+        </div>
+        <div>
+          <Link
+            className="logout"
+            onClick={logout}>Log Out</Link>
+        </div>
       </div>
     </div>
   );

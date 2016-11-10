@@ -70,8 +70,19 @@ class Header extends React.Component {
     } else {
       return (
         <div className="session-buttons">
-          <button onClick={this.login.bind(this)}>Sign in</button>
-          <button onClick={this.signup.bind(this)}>Sign up</button>
+          <div>
+            <Link
+            to={'/login'}
+            className="sign-in">Log in</Link>
+          </div>
+          <div>
+            <h2>|</h2>
+          </div>
+          <div>
+            <button
+            onClick={this.signup.bind(this)}
+            className="sign-up">Sign up</button>
+          </div>
         </div>
       );
     }
@@ -81,17 +92,24 @@ class Header extends React.Component {
 
     return (
       <header className="main-nav">
-        <div>
-          <nav className="left-nav">
-            <div>
-              <i className="fa fa-meetup fa-5x" onClick={this.clickLogo.bind(this)}></i>
-            </div>
-          </nav>
-          <nav className="right-nav">
+        <div className="content">
+          <section>
+            <nav className="left-nav">
+              <div>
+                <i className="fa fa-meetup fa-5x" onClick={this.clickLogo.bind(this)}></i>
+              </div>
+            </nav>
+            <nav className="middle-nav">
+              <div>
+                <Link to={'/create'}>Start a Meet Up</Link>
+              </div>
+            </nav>
+          </section>
+          <section className="right-nav">
             {
               this.headerText()
             }
-          </nav>
+          </section>
         </div>
       </header>
     );

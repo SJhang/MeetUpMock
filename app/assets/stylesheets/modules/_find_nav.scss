@@ -14,28 +14,6 @@
   border-radius: 4px;
   height: 58px;
 
-
-  .find-inside {
-    width: 70%;
-
-    .find-form {
-      display: flex;
-      justify-content: space-between;
-      margin-left: 8px;
-      align-items: center;
-
-      input {
-        background: white;
-        border-radius: 2px;
-        font-size: 15px;
-        padding: 4px;
-        padding-left: 8px;
-        color: black;
-        width: 50%
-      }
-    }
-  }
-
   .group {
     width: 30%;
     display: flex;

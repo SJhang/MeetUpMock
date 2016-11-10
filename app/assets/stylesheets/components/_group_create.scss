@@ -6,8 +6,9 @@
 }
 
 .create-header {
+  margin-top: 61px;
   border: 1px solid black;
-  height: 300px;
+  min-height: 300px;
   color: white;
   background-image: url("https://res.cloudinary.com/dsetpdsls/image/upload/v1478721054/photo-1470753323753-3f8091bb0232_prkyyz.jpg");
   background-size: cover;
@@ -42,9 +43,9 @@
   .location {
     height: 1000px;
     padding: 10px;
-    border: 1px solid black;
 
     form {
+      border: 1px solid black;
 
       h6 {
         color: $gray;
@@ -63,13 +64,14 @@
     }
   }
 
-  .asdfasdf-body {
-    height: 1000px;
+  .next-body {
     padding: 10px;
     border: 1px solid black;
 
     display: flex;
-    flex-direction: column;
+
+    .name {
+    }
 
     input {
       border: 1px solid black;

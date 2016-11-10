@@ -1,0 +1,10 @@
+//footer
+footer login,logout
+
+//splash page
+splash page made header fixed and now the content is on stacked
+carousel not working
+
+//session form
+session form page phone version flawed
+session form error handling :(

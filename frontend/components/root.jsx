@@ -10,7 +10,7 @@ import EventContainer from './event/event_container';
 import UserContainer from './user_profile/user_container';
 import GroupShowContainer from './group/group_show_container';
 import EventShowContainer from './event/event_show_container';
-import {fetchGroups} from '../actions/group_actions';
+import {getGroups} from '../actions/group_actions';
 import {fetchEvents} from '../actions/event_actions';
 import MembersContainer from './group/members_container';
 import Photos from './group/photos';
@@ -35,7 +35,6 @@ const Root = ({ store }) => {
   };
 
   const _populateStore = () => {
-    store.dispatch(fetchGroups());
     store.dispatch(fetchEvents());
   };
 
