@@ -42,8 +42,6 @@ GEM
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 12.0)
     arel (7.1.4)
-    autoprefixer-rails (6.5.2)
-      execjs
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -51,9 +49,6 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.6)
     coderay (1.1.1)
@@ -217,11 +212,10 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
-  bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
   figaro
-  font-awesome-sass (~> 4.7.0)
+  font-awesome-sass
   guard (>= 2.2.2)
   guard-livereload
   jbuilder (~> 2.5)

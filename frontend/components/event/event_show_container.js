@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import EventShow from './event_show';
-import { fetchEvent } from '../../actions/event_actions';
+import { fetchEvent, updateEvent } from '../../actions/event_actions';
 import { selectEvent } from '../../reducers/selectors';
 
 const mapStateToProps = (state, { params }) => {
@@ -14,7 +14,8 @@ const mapStateToProps = (state, { params }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchEvent: id => dispatch(fetchEvent(id))
+  fetchEvent: id => dispatch(fetchEvent(id)),
+  updateEvent: event => dispatch(updateEvent(event))
 });
 
 export default connect(

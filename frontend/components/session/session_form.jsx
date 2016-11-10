@@ -70,7 +70,7 @@ class SessionForm extends React.Component {
   render(){
     return (
       <div className="session-container">
-        <i className="fa fa-meetup fa-5x" aria-hidden="true" onClick={()=>this.props.router.push('/')}></i>
+        <i className="fa fa-meetup fa-5x" aria-hidden="true" onClick={()=>this.props.router.push('/')}>LOGO</i>
         <h1>{this.props.formType}</h1>
         <div className="session-form">
             <form onSubmit={this.handleSubmit}>

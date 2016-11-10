@@ -4,51 +4,92 @@
   border-left: 1px solid black;
   border-bottom: 1px solid black;
   border-right: 1px solid black;
+
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
   background: black;
   color: white;
   border-radius: 4px;
+  height: 58px;
+
 
   .find-inside {
-    margin: 5px;
-    width: 60%;
+    width: 70%;
 
     .find-form {
       display: flex;
       justify-content: space-between;
-      padding-top: 7px;
-      padding-left: 5px;
+      margin-left: 8px;
+      align-items: center;
 
       input {
         background: white;
         border-radius: 2px;
         font-size: 15px;
-        padding: 3px;
+        padding: 4px;
+        padding-left: 8px;
         color: black;
+        width: 50%
       }
     }
   }
 
-  .options-inside {
-    margin: 5px;
-    width: 40%;
+  .group {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    height: 70%;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 100;
 
     div {
-      padding-top: 5px;
-      padding-bottom: 5px;
-      padding-right: 10px;
-      padding-left: 10px;
-      border: 1px solid black;
+      border-radius: 2px;
+      align-items: center;
+      width: 50%;
+      border: 1px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      a:hover {
+        text-decoration: none !important;
+      }
     }
 
-    ul {
-      display: flex;
-      justify-content: space-between;
+    div:hover {
+      transform: scale(0.98);
+      background-color: $dark-gray;
+    }
+  }
 
-      li {
-        width: 50%
-      }
+  .event {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    height: 70%;
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 100;
+
+    div {
+      border-radius: 2px;
+      align-items: center;
+      width: 50%;
+      border: 1px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+    }
+
+    div:hover {
+      transform: scale(0.98);
+      background-color: $dark-gray;
     }
   }
 }

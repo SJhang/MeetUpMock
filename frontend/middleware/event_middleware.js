@@ -38,7 +38,6 @@ export default ({dispatch}) => next => action => {
     case UPDATE_EVENT:
       success = event => {
         dispatch(receiveEvent(event));
-        hashHistory.push('/events/:eventId');
       };
       updateEvent(action.event, success);
       return next(action);

@@ -1,27 +1,11 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import GroupHeader from '../shared/group_header';
+import GroupSidebar from '../shared/group_sidebar';
 
 class GroupShow extends React.Component {
   constructor(props) {
     super(props);
-  }
-
-  displayGroupDetail() {
-    return (
-    <div>
-      <div>{this.props.group.name}</div>
-      <div>{this.props.group.created_at}</div>
-      <div>{this.props.group.image}</div>
-      <div>{this.props.group.city}</div>
-      <div>{this.props.group.state}</div>
-    </div>
-  );
-  }
-
-  displayOrganizerDetail() {
-    return (
-      <div>{this.props.group.organizer}</div>
-    );
   }
 
   displayChildrean() {
@@ -54,39 +38,29 @@ class GroupShow extends React.Component {
     }
   }
 
+//conditional statement for other info using either ownProps in container or window.location.router
   render () {
+    let klass;
+
+    if (window.location.hash === `#/groups/${this.props.groupId}`) {
+      klass = "group-show-page";
+    } else {
+      klass = "show-children";
+    }
+
     return (
       <div className="group-content">
         <div className="group-main-content">
-          <div className="head">
-            <div className="banner">
-              <h1>{this.props.group.name}</h1>
-            </div>
-            <div className="nav">
-              <ul className="left">
-                <li><Link to={`/groups/${this.props.groupId}`}>Home</Link></li>
-                <li><Link to={`/groups/${this.props.groupId}/members`}>Members</Link></li>
-                <li><Link to={`/groups/${this.props.groupId}/photos`}>Photos</Link></li>
-                <li><Link to={`/groups/${this.props.groupId}/events`}>Events</Link>
-                </li>
-                <li><button>Reviews</button></li>
-              </ul>
-              <button>Join us!</button>
-            </div>
-          </div>
+          <GroupHeader group={this.props.group} groupId={this.props.groupId}/>
           <div className="body group">
-            <section className="sidebar">
-              {this.displayGroupDetail()}
-              {this.displayOrganizerDetail()}
-            </section>
-            <div className="main">
+            <GroupSidebar group={this.props.group}/>
+            <div className={klass}>
               <section className="description">
                 <div>{this.props.group.description}</div>
                 {this.displayMembers()}
               </section>
-              <section className="upcoming-events">
-                {this.displayEvents()}
-                <div>{this.props.children}</div>
+              <section className="children">
+                {this.props.children}
               </section>
             </div>
           </div>

@@ -7,24 +7,27 @@ import {
   CREATE_GROUP,
   UPDATE_GROUP,
   DELETE_GROUP,
-  receiveErrors
+  receiveErrors,
+  ADD_MEMBER,
+  DELETE_MEMBER
 } from '../actions/group_actions';
 import {
   createGroup,
   deleteGroup,
   updateGroup,
   fetchGroups,
-  fetchGroup
+  fetchGroup,
+  addMember,
+  deleteMember
 } from '../util/groups_api_util';
 import { hashHistory } from 'react-redux';
 
 export default ({dispatch}) => next => action => {
   let success;
   let receiveAllGroupsSuccess = groups => dispatch(receiveAllGroups(groups));
-  let receiveGroupSuccess = currentGroup => dispatch(receiveGroup(currentGroup));
+  let receiveGroupSuccess = group => dispatch(receiveGroup(group));
   let removeGroupSuccess = group => dispatch(removeGroup(group));
   let failure = errors => dispatch(receiveErrors(errors.responseJSON));
-
   switch (action.type) {
     case FETCH_ALL_GROUPS:
       fetchGroups(receiveAllGroupsSuccess, failure);
@@ -44,6 +47,12 @@ export default ({dispatch}) => next => action => {
       return next(action);
     case DELETE_GROUP:
       deleteGroup(action.id, removeGroupSuccess, failure);
+      return next(action);
+    case ADD_MEMBER:
+      addMember(action.member, receiveGroupSuccess, action.id);
+      return next(action);
+    case DELETE_MEMBER:
+      deleteMember(action.member, receiveGroupSuccess, action.groupId);
       return next(action);
     default:
       return next(action);

@@ -6,6 +6,30 @@ class Header extends React.Component {
     super(props);
   }
 
+  closeDropDown() {
+    $(document).click(e => {
+      e.stopPropagation();
+      let dropdown = $(".dropdown-content");
+
+      if (dropdown.has(e.target).length === 0) {
+        dropdown.hide();
+      }
+    });
+  }
+
+  toggleDropDown() {
+    let dropdown = $(".dropdown-content");
+    dropdown.removeClass("hidden");
+    dropdown.mouseout(() => dropdown.addClass("hidden"));
+      $(document).click(e=> {
+        if ($(e.target).attr("class") === "dropdown-content") {
+          e.stopPropagation();
+        } else {
+          dropdown.addClass("hidden");
+        }
+      });
+  }
+
   logout() {
     this.props.logout();
     this.props.router.push('/');
@@ -23,6 +47,7 @@ class Header extends React.Component {
     hashHistory.push(`/users/${this.props.currentUser.id}`);
   }
 
+
   clickLogo() {
     if (this.props.currentUser.username) {
       this.props.router.push('/home');
@@ -35,21 +60,26 @@ class Header extends React.Component {
 
   headerText() {
     if (this.props.currentUser.username) {
+
       return (
-        <ul>
-          <li><button onClick={this.redirectToProfile.bind(this)}>{this.props.currentUser.username}</button></li>
-          <ul className="dropdown">
-            <li><h5>profile</h5></li>
-            <li><Link onClick={this.logout.bind(this)}>Log Out</Link></li>
-          </ul>
-        </ul>
+        <div className="profile">
+          <button onClick={this.toggleDropDown.bind(this)}><h6>{this.props.currentUser.username}</h6></button>
+          <div className="dropdown-content hidden">
+            <Link
+              className="profile-link"
+              to={`/users/${this.props.currentUser.id}`}>Profile</Link>
+            <Link
+              className="logout"
+              onClick={this.logout.bind(this)}>Log Out</Link>
+          </div>
+        </div>
       );
     } else {
       return (
-        <ul>
-          <li><button onClick={this.login.bind(this)}>Sign in</button></li>
-          <li><button onClick={this.signup.bind(this)}>Sign up</button></li>
-        </ul>
+        <div className="session-buttons">
+          <button onClick={this.login.bind(this)}>Sign in</button>
+          <button onClick={this.signup.bind(this)}>Sign up</button>
+        </div>
       );
     }
   }
@@ -59,9 +89,9 @@ class Header extends React.Component {
     return (
       <header className="main-nav">
         <div>
-          <nav className="left-nav center">
+          <nav className="left-nav">
             <div>
-                <i className="fa fa-meetup fa-5x" aria-hidden="true" onClick={this.clickLogo.bind(this)}></i>
+              <i className="fa fa-meetup big" onClick={this.clickLogo.bind(this)}>LOGO</i>
             </div>
           </nav>
           <nav className="right-nav">

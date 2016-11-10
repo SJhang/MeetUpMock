@@ -1,0 +1,88 @@
+.create {
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+  font-size: 30px;
+}
+
+.create-header {
+  border: 1px solid black;
+  height: 300px;
+  color: white;
+  background-image: url("https://res.cloudinary.com/dsetpdsls/image/upload/v1478721054/photo-1470753323753-3f8091bb0232_prkyyz.jpg");
+  background-size: cover;
+  background-position: center;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .body {
+    align-items: center;
+    font-weight: 200;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  h4 {
+    text-align: center;
+    margin: 0;
+    font-size: 23px;
+  }
+}
+
+.create-body {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .location {
+    height: 1000px;
+    padding: 10px;
+    border: 1px solid black;
+
+    form {
+
+      h6 {
+        color: $gray;
+        font-size: 400;
+        margin: 0;
+      }
+
+      input {
+        border: 1px solid black;
+        border-radius: 1px;
+        width: auto;
+      }
+    }
+
+    button {
+    }
+  }
+
+  .asdfasdf-body {
+    height: 1000px;
+    padding: 10px;
+    border: 1px solid black;
+
+    display: flex;
+    flex-direction: column;
+
+    input {
+      border: 1px solid black;
+      border-radius: 1px;
+      width: auto;
+    }
+
+    textarea {
+      border: 1px solid black;
+      border-radius: 1px;
+
+    }
+  }
+}
+
+//when the location is selected display next button

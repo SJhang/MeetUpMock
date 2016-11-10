@@ -43,3 +43,21 @@ export const deleteGroup = (id, success, errors) => {
     errors
   });
 };
+
+export const addMember = (member, success, groupId) => {
+  $.ajax({
+    method: "PATCH",
+    url: `api/groups/${groupId}`,
+    data: {group: {members: {member}}},
+    success
+  });
+};
+
+export const deleteMember = (member, success, groupId) => {
+  $.ajax({
+    method: "PATCH",
+    url: `api/groups/${groupId}`,
+    data: {group: {members: {member}}},
+    success
+  });
+};

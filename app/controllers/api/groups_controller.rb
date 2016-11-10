@@ -27,6 +27,13 @@ class Api::GroupsController < ApplicationController
 
   def update
     @group = Group.find(params[:id])
+    member = User.find(params[:group][:members][:member][:id])
+    if @group.members.include?(member)
+      @group.members.delete(member)
+    else
+      @group.members << member
+    end
+
     if @group.update_attributes(group_params)
       render :show
     else
@@ -51,6 +58,6 @@ class Api::GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name, :description, :city, :state, :organizer_id)
+    params.require(:group).permit(:name, :description, :city, :state, :organizer_id, :members)
   end
 end

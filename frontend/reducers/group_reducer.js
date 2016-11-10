@@ -2,7 +2,7 @@ import {
   RECEIVE_ALL_GROUPS,
   RECEIVE_GROUP,
   DELETE_GROUP,
-  RECEIVE_ERRORS,
+  RECEIVE_ERRORS
 } from '../actions/group_actions.js';
 
 import {merge} from 'lodash';

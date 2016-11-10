@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Splash from './splash';
-import { signup } from '../../actions/session_actions';
+import { login } from '../../actions/session_actions';
 import { fetchEvents } from '../../actions/event_actions';
 
 const mapStateToProps = (state) => {
@@ -12,7 +12,8 @@ const mapStateToProps = (state) => {
 
 
 const mapDispatchToProps = dispatch => ({
-  fetchEvents: () => dispatch(fetchEvents())
+  fetchEvents: () => dispatch(fetchEvents()),
+  login: user => dispatch(login(user))
 });
 
 export default connect(

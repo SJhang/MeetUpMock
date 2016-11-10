@@ -12,8 +12,9 @@ import GroupShowContainer from './group/group_show_container';
 import EventShowContainer from './event/event_show_container';
 import {fetchGroups} from '../actions/group_actions';
 import {fetchEvents} from '../actions/event_actions';
-import Members from './group/members';
+import MembersContainer from './group/members_container';
 import Photos from './group/photos';
+import GroupCreateContainer from './group/group_create_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
@@ -28,6 +29,11 @@ const Root = ({ store }) => {
     if (currentUser) replace('/home');
   };
 
+  const _createAccount = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser.username;
+    if (!currentUser) replace('/signup');
+  };
+
   const _populateStore = () => {
     store.dispatch(fetchGroups());
     store.dispatch(fetchEvents());
@@ -38,6 +44,7 @@ const Root = ({ store }) => {
       <Router history={hashHistory}>
         <Route path='/' component={App} onEnter={_populateStore}>
           <IndexRoute component={SplashContainer} />
+          <Route path='create' component={GroupCreateContainer}/>
           <Route path='home' component={HomeContainer} onEnter={_ensureLoggedIn}>
             <IndexRoute component={GroupContainer} onEnter={_ensureLoggedIn} />
             <Route path='groups' component={GroupContainer} onEnter={_ensureLoggedIn} />
@@ -47,7 +54,7 @@ const Root = ({ store }) => {
             <IndexRoute component = {EventContainer}/>
             <Route path='events/:eventId' component={EventShowContainer} />
             <Route path='events' component={EventContainer} />
-            <Route path='members' component={Members} />
+            <Route path='members' component={MembersContainer} />
             <Route path='photos' component={Photos} />
           </Route>
           <Route path='users/:userId' component={UserContainer} onEnter={_ensureLoggedIn}/>

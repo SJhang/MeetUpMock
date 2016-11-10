@@ -16,10 +16,10 @@
 @import "modules/*";
 
 //font-awesome
-
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
+@import "base/slick";
+@import "base/slick-carousel";
 
 .app {
   position: relative;

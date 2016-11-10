@@ -7,7 +7,8 @@ export const UPDATE_GROUP = "UPDATE_GROUP";
 export const DELETE_GROUP = "DELETE_GROUP";
 export const REMOVE_GROUP = "REMOVE_GROUP";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
-
+export const ADD_MEMBER = "ADD_MEMBER";
+export const DELETE_MEMBER = "DELETE_MEMBER";
 
 export const receiveAllGroups = groups => ({
   type: RECEIVE_ALL_GROUPS,
@@ -52,3 +53,15 @@ export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
 });
+
+export const addMember = (member, id) => ({
+  type: ADD_MEMBER,
+  member,
+  id
+});
+
+export const deleteMember = (member, groupId) => ({
+  type: DELETE_MEMBER,
+  member,
+  groupId
+})

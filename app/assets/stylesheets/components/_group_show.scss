@@ -43,7 +43,7 @@
 
       .sidebar {
         height: 500px;
-        width: 30%;
+        width: 20%;
 
         display: flex;
         flex-direction: column;
@@ -56,18 +56,35 @@
         }
       }
 
-      .main {
-        width: 70%;
+      .group-show-page {
+        width: 80%;
         display: flex;
         flex-direction: column;
         padding: 10px;
-        
+
         .description {
           height: 30%;
           margin: 10px;
         }
 
-        .upcoming-events{
+        .children{
+          margin: 10px;
+          height: 70%;
+        }
+      }
+
+      .show-children {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+
+        .description {
+          display: none;
+          height: 30%;
+          margin: 10px;
+        }
+
+        .children{
           margin: 10px;
           height: 70%;
         }

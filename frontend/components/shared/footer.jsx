@@ -35,7 +35,7 @@ class Footer extends React.Component{
     return (
       <footer className="main-footer">
         <div className="footer-top">
-          <div><a>Start a Meet Up</a></div>
+          <div><Link to={'/create'}>Start a Meet Up</Link></div>
           <div>
             {this.footerLink.bind(this)}
           </div>
