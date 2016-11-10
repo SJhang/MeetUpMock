@@ -7,14 +7,18 @@ import {
   CREATE_EVENT,
   UPDATE_EVENT,
   DELETE_EVENT,
-  receiveErrors
+  receiveErrors,
+  ADD_ATTENDEE,
+  DELETE_ATTENDEE
 } from '../actions/event_actions';
 import {
   createEvent,
   deleteEvent,
   updateEvent,
   fetchEvents,
-  fetchEvent
+  fetchEvent,
+  addAttendee,
+  deleteAttendee
 } from '../util/events_api_util';
 import { hashHistory } from 'react-redux';
 
@@ -43,6 +47,12 @@ export default ({dispatch}) => next => action => {
       return next(action);
     case DELETE_EVENT:
       deleteEvent(action.id, removeEventSuccess);
+      return next(action);
+    case ADD_ATTENDEE:
+      addAttendee(action.user, receiveEventSuccess, action.eventId);
+      return next(action);
+    case DELETE_ATTENDEE:
+      deleteAttendee(action.user, receiveEventSuccess, action.eventId);
       return next(action);
     default:
       return next(action);

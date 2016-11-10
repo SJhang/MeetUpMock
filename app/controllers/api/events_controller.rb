@@ -25,6 +25,13 @@ class Api::EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
+    attendee = User.find(params[:event][:attendees][:user][:id])
+    if @event.attendees.include?(attendee)
+      @event.attendees.delete(attendee)
+    else
+      @event.attendees << attendee
+    end
+
     if @event.update_attributes(event_params)
       render :show
     else
@@ -37,6 +44,6 @@ class Api::EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :description, :date, :lat, :lng)
+    params.require(:event).permit(:title, :description, :date, :lat, :lng, :attendees)
   end
 end

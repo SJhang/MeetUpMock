@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, hashHistory, withRouter } from 'react-router';
+import ProfileButton from './profile_button';
 
 class Header extends React.Component {
   constructor(props) {
@@ -62,17 +63,9 @@ class Header extends React.Component {
     if (this.props.currentUser.username) {
 
       return (
-        <div className="profile">
-          <button onClick={this.toggleDropDown.bind(this)}><h6>{this.props.currentUser.username}</h6></button>
-          <div className="dropdown-content hidden">
-            <Link
-              className="profile-link"
-              to={`/users/${this.props.currentUser.id}`}>Profile</Link>
-            <Link
-              className="logout"
-              onClick={this.logout.bind(this)}>Log Out</Link>
-          </div>
-        </div>
+        <ProfileButton
+          currentUser={this.props.currentUser}
+          logout={this.props.logout}/>
       );
     } else {
       return (
@@ -91,7 +84,7 @@ class Header extends React.Component {
         <div>
           <nav className="left-nav">
             <div>
-              <i className="fa fa-meetup big" onClick={this.clickLogo.bind(this)}>LOGO</i>
+              <i className="fa fa-meetup fa-5x" onClick={this.clickLogo.bind(this)}></i>
             </div>
           </nav>
           <nav className="right-nav">

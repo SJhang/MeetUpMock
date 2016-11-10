@@ -6,6 +6,8 @@ export const CREATE_EVENT = "CREATE_EVENT";
 export const UPDATE_EVENT = "UPDATE_EVENT";
 export const DELETE_EVENT = "DELETE_EVENT";
 export const REMOVE_EVENT = "REMOVE_EVENT";
+export const ADD_ATTENDEE = "ADD_ATTENDEE";
+export const DELETE_ATTENDEE = "DELETE_ATTENDEE";
 
 export const receiveAllEvents = events => ({
   type: RECEIVE_ALL_EVENTS,
@@ -45,3 +47,15 @@ export const removeEvent = post => ({
   type: REMOVE_EVENT,
   post
 });
+
+export const addAttendee = (user, eventId) => ({
+  type: ADD_ATTENDEE,
+  user,
+  eventId
+});
+
+export const deleteAttendee = (user, eventId) => ({
+  type: DELETE_ATTENDEE,
+  user,
+  eventId
+})

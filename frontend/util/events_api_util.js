@@ -41,3 +41,21 @@ export const deleteEvent = (id, success, errors) => {
     errors
   });
 };
+
+export const addAttendee = (user, success, eventId) => {
+  $.ajax({
+    method: "PATCH",
+    url: `api/events/${eventId}`,
+    data: {event: {attendees: {user}}},
+    success
+  });
+};
+
+export const deleteAttendee = (user, success, eventId) => {
+  $.ajax({
+    method: "PATCH",
+    url: `api/events/${eventId}`,
+    data: {event: {attendees: {user}}},
+    success
+  });
+};

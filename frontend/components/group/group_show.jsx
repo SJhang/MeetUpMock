@@ -51,7 +51,13 @@ class GroupShow extends React.Component {
     return (
       <div className="group-content">
         <div className="group-main-content">
-          <GroupHeader group={this.props.group} groupId={this.props.groupId}/>
+          <GroupHeader
+            group={this.props.group}
+            groupId={this.props.groupId}
+            logout={this.props.logout}
+            addMember={this.props.addMember}
+            deleteMember={this.props.deleteMember}
+            members={this.props.members}/>
           <div className="body group">
             <GroupSidebar group={this.props.group}/>
             <div className={klass}>

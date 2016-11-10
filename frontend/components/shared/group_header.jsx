@@ -1,7 +1,21 @@
 import React from 'react';
 import {Link} from 'react-router';
+import ProfileButton from './profile_button';
 
 const GroupHeader = (props) => {
+
+  const switchButton = function(){
+    let filteredMember;
+    if (props.members.length >= 1) {
+      filteredMember = props.members.filter(member => member.username === window.currentUser.username);
+      if (filteredMember.length !== 0) {
+        return (<button onClick={props.deleteMember( window.currentUser, props.groupId)}>Leave group</button>);
+      } else {
+        return (<button onClick={props.addMember(window.currentUser, props.groupId)}>Join us!</button>);
+      }
+    }
+  };
+
   return (
     <div className="head">
       <div className="banner">
@@ -16,7 +30,7 @@ const GroupHeader = (props) => {
           </li>
           <li><button>Reviews</button></li>
         </ul>
-        <button>Join us!</button>
+        {switchButton}
       </div>
     </div>
   );

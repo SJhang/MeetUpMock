@@ -3,6 +3,13 @@ import React from 'react';
 class GroupCreate extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      title: "",
+      description: "",
+      city: "",
+      state: "",
+      organizer_id: null
+    };
   }
 
   componentDidMount() {
@@ -12,6 +19,11 @@ class GroupCreate extends React.Component {
   nextStep() {
     let top = $(".asdfasdf-body").offset().top;
     $(document).scrollTop(top);
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.createGroup(this.state);
   }
 
   render () {
@@ -46,7 +58,7 @@ class GroupCreate extends React.Component {
             </div>
           </div>
           <div className="create-button">
-            <button>Submit</button>
+            <button onClick={this.handleSubmit.bind(this)}>Submit</button>
           </div>
         </section>
       </div>

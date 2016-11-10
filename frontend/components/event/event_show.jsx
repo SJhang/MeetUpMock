@@ -1,16 +1,36 @@
 import React from 'react';
 
 class EventShow extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
 
   joinClickHandler() {
     this.props.updateEvent();
   }
 
   attendees() {
+
     if (this.props.event.attendees) {
-      return this.props.event.attendees.map(user =>
-        <div key={user.id}>{user.username}</div>
-      );
+      if (this.props.event.attendees.length !== 0) {
+        return this.props.event.attendees.map(user =>
+          <div key={user.id}>{user.username}</div>
+        );
+      } else {
+        return <h6>RSVP empty!</h6>;
+      }
+    }
+  }
+
+  switchButton() {
+    if (this.props.attendees.length >= 1) {
+      let filteredAttendees = this.props.attendees.filter(attendee => attendee.username === this.props.currentUser.username);
+      if (filteredAttendees.length != 0 || filteredAttendees === undefined) {
+        return (<button onClick={this.props.deleteAttendee.bind(this, this.props.currentUser, this.props.eventId)}>Leave RSVP</button>);
+      } else {
+        return (<button onClick={this.props.addAttendee.bind(this, this.props.currentUser, this.props.eventId)}>Join RSVP</button>);
+      }
     }
   }
 
@@ -27,8 +47,8 @@ class EventShow extends React.Component {
           </section>
           <section className="event-side">
             <div className="rsvp">
-              <div>Want to go?</div>
-              <button>JOIN US!</button>
+              <div>Join now!</div>
+              {this.switchButton()}
             </div>
           </section>
         </div>
