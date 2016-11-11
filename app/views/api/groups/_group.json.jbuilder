@@ -7,3 +7,5 @@ end
 json.events do
   json.partial! "api/events/event", collection: group.events, as: :event
 end
+
+# json.created_at @group.created_at.strftime("%A %B %e %Y")

@@ -10,11 +10,15 @@
 #  profile_img     :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  description     :text
+#  location        :string
+#  name            :string
 #
 
 class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
+  validates :username, length: { minimum: 2, allow_nil: true }
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_many :organized_groups,
@@ -52,7 +56,7 @@ class User < ApplicationRecord
 
   def ensure_session_token
     self.session_token ||= User.generate_session_token
-    self.save!
+    self.save
     self.session_token
   end
 
@@ -67,7 +71,7 @@ class User < ApplicationRecord
 
   def reset_session_token!
     self.session_token = SecureRandom.urlsafe_base64(16)
-    self.save!
+    self.save
     self.session_token
   end
 end

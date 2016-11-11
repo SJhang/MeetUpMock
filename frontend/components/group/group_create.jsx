@@ -40,7 +40,10 @@ class GroupCreate extends React.Component {
             <form>
               <h6>FIRST STEP</h6>
               <li>What's your new groups hometown?</li>
-              <input type="text" placeholder="type in city"></input>
+              <input
+                type="text"
+                placeholder="type in city"
+                className="location-input"></input>
             </form>
             <button onClick={this.nextStep.bind(this)}>next</button>
           </div>

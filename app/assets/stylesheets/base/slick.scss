@@ -1,5 +1,5 @@
-/* Slider */
-
+// /* Slider */
+//
 .slick-slider {
     position: relative !important;
     display: block !important;
@@ -29,13 +29,13 @@
         cursor: hand !important;
     }
 }
-.slick-slider .slick-track,
-.slick-slider .slick-list {
-    -webkit-transform: translate3d(0, 0, 0) !important;
-    -moz-transform: translate3d(0, 0, 0) !important;
-    -ms-transform: translate3d(0, 0, 0) !important;
-    transform: translate3d(0, 0, 0) !important;
-}
+// .slick-slider .slick-track,
+// .slick-slider .slick-list {
+//     -webkit-transform: translate3d(0, 0, 0) !important;
+//     -moz-transform: translate3d(0, 0, 0) !important;
+//     -ms-transform: translate3d(0, 0, 0) !important;
+//     transform: translate3d(0, 0, 0) !important;
+// }
 
 .slick-track {
     position: relative !important;

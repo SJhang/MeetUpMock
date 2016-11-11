@@ -10,6 +10,9 @@
 #  profile_img     :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  description     :text
+#  location        :string
+#  name            :string
 #
 
 require 'test_helper'

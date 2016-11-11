@@ -9,6 +9,17 @@ export const REMOVE_GROUP = "REMOVE_GROUP";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const ADD_MEMBER = "ADD_MEMBER";
 export const DELETE_MEMBER = "DELETE_MEMBER";
+export const POPULATE_GROUPS = "POPULATE_GROUPS";
+export const RECEIVE_POPULATED_GROUPS = "RECEIVE_POPULATED_GROUPS";
+
+export const populateGroups = () => ({
+  type: POPULATE_GROUPS
+});
+
+export const receivePopulatedGroups = groups => ({
+  type: RECEIVE_POPULATED_GROUPS,
+  groups
+});
 
 export const receiveAllGroups = groups => ({
   type: RECEIVE_ALL_GROUPS,

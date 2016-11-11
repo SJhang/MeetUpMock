@@ -23,6 +23,7 @@ export const SessionReducer = (state = _defaultState, action) => {
       let currentUser = action.currentUser;
       return merge({}, state, { currentUser });
     case RECEIVE_ERRORS:
+
       let errors = action.errors;
       return merge({}, state, { errors });
     case LOGOUT:

@@ -7,6 +7,13 @@ export const fetchGroups = (params={}, success, errors) => {
   });
 };
 
+export const populateGroups = (success) => {
+  $.ajax({
+    url: 'api/groups',
+    success
+  });
+};
+
 export const fetchGroup = (id, success, errors) => {
   $.ajax({
     method: "GET",

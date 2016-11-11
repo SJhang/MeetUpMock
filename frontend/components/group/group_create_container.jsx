@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import GroupCreate from './group_create';
 import { createGroup } from '../../actions/group_actions';
 
-const mapStateToProps = (state) => ({
-
+const mapStateToProps = ({ groupIndex }) => ({
+  
 });
 
 const mapDispatchToProps = dispatch => ({

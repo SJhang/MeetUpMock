@@ -6,16 +6,15 @@ const Carousel = (props) => {
 
   const eventsList = () => {
     let eventList = props.eventList;
-    if (eventList.length === 0) {
-      return  <div><h3>loading</h3></div>;
-    }
-    // let eventList = ["hi", "bye", "hello"];
     return eventList.map(event =>
       <div key={event.id}>
-        <Link to={`/groups/${event.group_id}/events/${event.id}`}>
+        <Link
+          to={`/groups/${event.group_id}/events/${event.id}`}
+          className="carousel-item">
           {event.title}
         </Link>
-      </div>);
+      </div>
+    );
   };
 
   const settings = {
@@ -26,16 +25,19 @@ const Carousel = (props) => {
     slidesToShow: 3,
     slidesToScroll: 1
   };
-
-  return (
-    <div className="viewport">
-      <Slider {...settings}>
-        {
-          eventsList()
-        }
-      </Slider>
-    </div>
-  );
+  if (props.eventList.length === 0) {
+    return <div className="viewport"><h1>spinner</h1></div>;
+  } else {
+    return (
+      <div className="viewport">
+        <Slider {...settings}>
+          {
+            eventsList()
+          }
+        </Slider>
+      </div>
+    );
+  }
 };
 
 export default Carousel;

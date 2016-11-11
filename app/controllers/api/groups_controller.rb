@@ -8,6 +8,8 @@ class Api::GroupsController < ApplicationController
           { searchQuery: "%#{params[:search]}%" }
         ]
       )
+    else
+      @groups = Group.includes(:members).all
     end
   end
 

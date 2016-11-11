@@ -2,15 +2,18 @@
 #
 # Table name: events
 #
-#  id          :integer          not null, primary key
-#  title       :string           not null
-#  description :text             not null
-#  date        :datetime         not null
-#  lat         :float            not null
-#  lng         :float            not null
-#  group_id    :integer          not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id                :integer          not null, primary key
+#  title             :string           not null
+#  description       :text             not null
+#  date              :datetime         not null
+#  lat               :float            not null
+#  lng               :float            not null
+#  group_id          :integer          not null
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  thumbnail_img_url :string
+#  start_time        :datetime
+#  end_time          :datetime
 #
 
 class Event < ApplicationRecord
@@ -24,10 +27,10 @@ class Event < ApplicationRecord
 
   belongs_to :group
 
-  # def self.in_bounds(bounds)
-  #   self.where("lat < ?", bounds[:northEast][:lat])
-  #       .where("lat > ?", bounds[:southWest][:lat])
-  #       .where("lng > ?", bounds[:southWest][:lng])
-  #       .where("lng < ?", bounds[:northEast][:lng])
-  # end
+  def self.in_bounds(bounds)
+    self.where("lat < ?", bounds[:northEast][:lat])
+        .where("lat > ?", bounds[:southWest][:lat])
+        .where("lng > ?", bounds[:southWest][:lng])
+        .where("lng < ?", bounds[:northEast][:lng])
+  end
 end

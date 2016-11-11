@@ -11,9 +11,6 @@ class Group extends React.Component {
   render () {
     return (
       <div className="group-lists">
-        <GroupSearchBox
-          searchParams={this.props.searchParams}
-          updateGroupSearchParam={this.props.updateGroupSearchParam} />
         <GroupsIndex groups={this.props.groupList} />
       </div>
     );

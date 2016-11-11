@@ -10,7 +10,7 @@ import EventContainer from './event/event_container';
 import UserContainer from './user_profile/user_container';
 import GroupShowContainer from './group/group_show_container';
 import EventShowContainer from './event/event_show_container';
-import {getGroups} from '../actions/group_actions';
+import {getGroups, populateGroups} from '../actions/group_actions';
 import {fetchEvents} from '../actions/event_actions';
 import MembersContainer from './group/members_container';
 import Photos from './group/photos';
@@ -34,8 +34,16 @@ const Root = ({ store }) => {
     if (!currentUser) replace('/signup');
   };
 
+  const _updateUser = (nextState, replace) => {
+    const currentUser = store.getState().session.currentUser;
+    if (currentUser) {
+      store.getState().user.userDetail = currentUser;
+    }
+  };
+
   const _populateStore = () => {
     store.dispatch(fetchEvents());
+    store.dispatch(populateGroups());
   };
 
   return (
@@ -56,7 +64,7 @@ const Root = ({ store }) => {
             <Route path='members' component={MembersContainer} />
             <Route path='photos' component={Photos} />
           </Route>
-          <Route path='users/:userId' component={UserContainer} onEnter={_ensureLoggedIn}/>
+          <Route path='users/:userId' component={UserContainer} onEnter={_ensureLoggedIn, _updateUser}/>
         </Route>
         <Route path='signup'
           component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />

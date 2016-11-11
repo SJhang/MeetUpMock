@@ -16,9 +16,9 @@ class SessionForm extends React.Component {
 		this.redirectIfLoggedIn();
 	}
 
-  displayErrorMessages(errorType) {
-    if (this.props.errors[errorType]) {
-      this.props.errors[errorType].map(errors => (
+  displayErrorMessages() {
+    if (this.props.errors) {
+      this.props.errors.map(errors => (
         <h6>{errors}</h6>
       ));
     }
@@ -31,6 +31,7 @@ class SessionForm extends React.Component {
 	}
 
   handleSubmit(e) {
+
     e.preventDefault();
     const user = this.state;
     this.props.processForm(user);
@@ -70,46 +71,48 @@ class SessionForm extends React.Component {
   render(){
     return (
       <div className="session-container">
-        <i className="fa fa-meetup fa-5x" aria-hidden="true" onClick={()=>this.props.router.push('/')}></i>
-        <h1>{this.props.formType}</h1>
-        <div className="session-form">
-            <form onSubmit={this.handleSubmit}>
-              <div className="auth-form">
-                <div>
-                  <input
-                    className="input-block"
-                    type="text"
-                    value={this.state.username}
-                    onChange={this.update("username")}
-                    placeholder="Username">
-                  </input>
-                  <p>{this.displayErrorMessages("username")}</p>
+        <div className="body">
+          <i className="fa fa-meetup fa-5x" aria-hidden="true" onClick={()=>this.props.router.push('/')}></i>
+          <h1>{this.props.formType}</h1>
+          <div className="session-form">
+              <form onSubmit={this.handleSubmit}>
+                <div className="auth-form">
+                  <div>
+                    <input
+                      className="input-block"
+                      type="text"
+                      value={this.state.username}
+                      onChange={this.update("username")}
+                      placeholder="Username">
+                    </input>
+                    <p>{this.displayErrorMessages.bind(this)}</p>
 
-                  <input
-                    id="password-field"
-                    className="input-block"
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.update("password")}
-                    placeholder="Password">
-                  </input>
-                  <p>{this.displayErrorMessages("password")}</p>
-                  <button>Submit</button>
+                    <input
+                      id="password-field"
+                      className="input-block"
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.update("password")}
+                      placeholder="Password">
+                    </input>
+                    <p>{this.displayErrorMessages.bind(this)}</p>
+                    <button>Submit</button>
+                  </div>
                 </div>
+              </form>
+              <div className="margin">&nbsp;</div>
+              <div className="session-redirect">
+                {this.navLink()}
+                <h5>Log in as Guest &nbsp;
+                  <button
+                    className="guest-button"
+                    onClick={this.handleGuestLogin}>Guest Sign in</button>
+                </h5>
               </div>
-            </form>
-            <div className="margin">&nbsp;</div>
-            <div className="session-redirect">
-              {this.navLink()}
-              <h5>Log in as Guest &nbsp;
-                <button
-                  className="guest-button"
-                  onClick={this.handleGuestLogin}>Guest Sign in</button>
-              </h5>
-            </div>
 
+          </div>
+          <div className="margin-bot">&nbsp;</div>
         </div>
-        <div className="margin-bot">&nbsp;</div>
       </div>
     );
   }

@@ -16,7 +16,7 @@ const ProfileButton = (props) => {
   const toggleDropDown = () => {
     let dropdown = $(".dropdown-content");
     dropdown.removeClass("hidden");
-    dropdown.mouseout(() => dropdown.addClass("hidden"));
+    dropdown.mouseleave(() => dropdown.addClass("hidden"));
     $(document).click(e=> {
       if ($(e.target).attr("class") === "dropdown-content") {
         e.stopPropagation();
@@ -35,16 +35,12 @@ const ProfileButton = (props) => {
     <div className="profile">
       <button onClick={toggleDropDown}><h6>{props.currentUser.username}</h6></button>
       <div className="dropdown-content hidden">
-        <div className="options">
-          <Link
-            className="profile-link"
-            to={`/users/${props.currentUser.id}`}>Profile</Link>
-        </div>
-        <div>
-          <Link
-            className="logout"
-            onClick={logout}>Log Out</Link>
-        </div>
+        <Link
+          className="profile-link"
+          to={`/users/${props.currentUser.id}`}>Profile</Link>
+        <Link
+          className="logout"
+          onClick={logout}>Log Out</Link>
       </div>
     </div>
   );

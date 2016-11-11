@@ -13,7 +13,7 @@ const FindNav = (props) => {
   };
 
   let klass;
-  if (window.location.hash === "#/home/groups") {
+  if (window.location.hash === "#/home/groups" || window.location.hash === "#/home") {
     klass = "group";
   } else if (window.location.hash === "#/home/events"){
     klass = "event";
