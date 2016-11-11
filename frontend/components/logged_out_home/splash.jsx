@@ -41,6 +41,7 @@ class Splash extends React.Component {
         <div className="splash-view-body">
           <main>
             <section className="video-wrap">
+            <div className="header-overlay"></div>
               <MainVideo guestLogin={this.handleGuestLogin}/>
             </section>
 

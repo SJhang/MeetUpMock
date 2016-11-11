@@ -6,7 +6,7 @@ const UpcomingEvents = ({eventList}) => {
   return(
     <div className="splash-events">
       <span className="splash-events-options">
-        <div>Upcoming events</div>
+        <h3>Upcoming events</h3>
         <Link to={`/home`}>See All</Link>
       </span>
       <Carousel eventList={eventList}/>

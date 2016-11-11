@@ -14,25 +14,27 @@ const FindNav = (props) => {
 
   let klass;
   if (window.location.hash === "#/home/groups" || window.location.hash === "#/home") {
-    klass = "group";
+    klass = "groups";
   } else if (window.location.hash === "#/home/events"){
-    klass = "event";
+    klass = "events";
   }
   return (
     <div className="find-nav-bar">
       <div className={klass}>
-        <section>
+        <section className="group-search-box">
           <GroupSearchBox
             searchParams={props.searchParams}
             updateGroupSearchParam={props.updateGroupSearchParam} />
         </section>
-        <div
-          onClick={()=>hashHistory.push(`/home/groups`)}>
-          Groups
-        </div>
-        <div
-          onClick={()=>hashHistory.push("/home/events")}>
-          Events
+        <div className="buttons">
+          <div
+            onClick={()=>hashHistory.push(`/home/groups`)}>
+            Groups
+          </div>
+          <div
+            onClick={()=>hashHistory.push("/home/events")}>
+            Events
+          </div>
         </div>
       </div>
     </div>

@@ -1,9 +1,10 @@
-import { value } from 'lodash';
-export const groupsAsArray = ({ groups }) => Object.keys(groups.groups).map(key => groups.groups[key]);
+import { values } from 'lodash';
+
+export const groupsAsArray = (groups) => values(groups.groupIndex);
 
 export const selectGroup = ({ groups }, id) => {
- return  groups.groups[id] || {}
- }
+ return  groups.groups[id] || {};
+ };
 
 
 

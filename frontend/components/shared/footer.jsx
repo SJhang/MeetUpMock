@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
+import {logout} from '../../actions/session_actions';
 
 class Footer extends React.Component{
 
@@ -10,9 +11,13 @@ class Footer extends React.Component{
       );
     } else {
       return (
-        <Link>Log out</Link>
+        <button onClick={this.props.logout.bind(this)}>Log out</button>
       );
     }
+  }
+
+  componentWillReceiveProps(newProps) {
+
   }
 
   facebookLink() {
@@ -58,4 +63,4 @@ class Footer extends React.Component{
   }
 }
 
-export default Footer;
+export default withRouter(Footer);

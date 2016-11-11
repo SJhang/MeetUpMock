@@ -7,7 +7,7 @@ const Carousel = (props) => {
   const eventsList = () => {
     let eventList = props.eventList;
     return eventList.map(event =>
-      <div key={event.id}>
+      <div key={event.id} className="carousel-item-div">
         <Link
           to={`/groups/${event.group_id}/events/${event.id}`}
           className="carousel-item">

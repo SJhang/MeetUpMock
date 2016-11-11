@@ -44,12 +44,21 @@
   }
 
   i:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
 
 .middle-nav {
+  a {
+    font-weight: 400;
 
+  }
+
+  a:hover {
+    color: #0099ff;
+    text-decoration: none;
+    text-transform: none;
+  }
 }
 
 .right-nav {
@@ -73,6 +82,8 @@
     button {
       display: flex;
       justify-content: center;
+
+
     }
 
     .sign-in {
@@ -80,6 +91,11 @@
       font-size: 17px;
       color: #5c5c5c;
       font-weight: 300;
+    }
+    
+    .sign-in:hover {
+      color: #0099ff;
+      text-decoration: none;
     }
 
     .sign-up {
@@ -94,6 +110,7 @@
       font-size: 16px;
       margin: 8px 0;
       font-weight: 200;
+      border-radius: 5px;
     }
 
     .sign-up:hover {
@@ -110,6 +127,7 @@
       height: 30px;
       background-color: $green;
       color: white;
+      border-radius: 5px;
 
       h6 {
         font-weight: 200;
@@ -131,12 +149,11 @@
     .dropdown-content {
       position: absolute;
       background-color: #f9f9f9;
-      width: 100%;
+      width: 150px;
       display: flex;
       flex-direction: column;
       font-size: 14px;
-      font-weight: 300;
-      align-items: flex-end;
+      font-weight: 200;
 
       .profile-link {
         color: black;

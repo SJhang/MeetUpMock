@@ -10,64 +10,79 @@
   align-items: center;
 
   background: black;
-  color: white;
+  color: black;
   border-radius: 4px;
-  height: 58px;
+  height: 65px;
 
-  .group {
-    width: 30%;
+  .groups {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
     height: 70%;
     margin: 10px;
     font-size: 18px;
     font-weight: 100;
 
-    div {
+    .buttons {
+      color: white;
       border-radius: 2px;
       align-items: center;
-      width: 50%;
-      border: 1px solid white;
+      width: 20%;
+      height: 80%;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-around;
       cursor: pointer;
 
-      a:hover {
-        text-decoration: none !important;
+      div {
+        border: 1px solid white;
+        width: 100%;
+        text-align: center;
       }
     }
-
-    div:hover {
-      transform: scale(0.98);
-      background-color: $dark-gray;
+    .group-search-box {
+      background: white;
+      width: 30%;
+      border-radius: 5px;
+      font-size: 20px;
+      padding: 5px 10px;
     }
   }
 
-  .event {
-    width: 30%;
+  .events {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: space-around;
     height: 70%;
     margin: 10px;
     font-size: 18px;
     font-weight: 100;
 
-    div {
+    .buttons {
+      color: white;
       border-radius: 2px;
       align-items: center;
-      width: 50%;
-      border: 1px solid white;
+      width: 20%;
+      height: 80%;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-around;
       cursor: pointer;
 
+      div {
+        border: 1px solid white;
+        width: 100%;
+        text-align: center;
+      }
     }
-
-    div:hover {
-      transform: scale(0.98);
-      background-color: $dark-gray;
+    .group-search-box {
+      background: white;
+      width: 30%;
+      border-radius: 5px;
+      font-size: 20px;
+      padding: 5px 10px;
     }
   }
 }

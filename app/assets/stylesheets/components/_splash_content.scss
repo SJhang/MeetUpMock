@@ -1,23 +1,23 @@
 .splash-view-body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
 
   main {
-
     height: auto;
     position: relative;
 
     .video-wrap {
+      position: relative;
       margin-bottom: 20px;
     }
 
     .events-wrap {
-      margin: 10px 4px 4px 0;
       margin: 0 auto;
       width: 80%;
 
       .splash-events {
+        margin: 40px 5px;
         display: flex;
         flex-direction: column;
       }
@@ -28,14 +28,25 @@
 .splash-events-options {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 8px;
-  font-family: $sans-serif;
-  font-weight: 500;
+  margin-bottom: 40px;
+  font-weight: 200;
   font-size: 20px;
+  align-items: center;
+
+  h3 {
+    margin: 0;
+    font-size: 35px;
+  }
 
   a {
-    align-items: center;
-    font-size: 15px;
-    color: blue;
+    font-size: 20px;
+    margin-right: 20px;
+    color: #5c5c5c;
+  }
+
+  a:hover {
+    color: #0099ff;
+    text-decoration: none;
+    text-transform: none;
   }
 }

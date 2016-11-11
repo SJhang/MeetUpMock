@@ -36,9 +36,8 @@ class UserProfile extends React.Component {
     let address = data.results[0].formatted_address;
     let city = address.split(', ')[1];
     let state = address.split(', ')[2].split(" ")[0];
-    if (this.isMounted()) {
-      this.setState({city: city, state: state});
-    }
+
+    this.setState({city: city, state: state});
   }
 
   componentDidMount() {

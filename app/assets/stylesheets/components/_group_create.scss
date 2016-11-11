@@ -8,19 +8,35 @@
 .create-header {
   margin-top: 61px;
   border: 1px solid black;
-  min-height: 300px;
+  min-height: 500px;
   color: white;
   background-image: url("https://res.cloudinary.com/dsetpdsls/image/upload/v1478721054/photo-1470753323753-3f8091bb0232_prkyyz.jpg");
   background-size: cover;
   background-position: center;
   width: auto;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 
   .body {
     align-items: center;
-    font-weight: 200;
+    font-weight: 100;
+    position: relative;
+    z-index: 5000;
+    margin-top: -198px;
+    color: $white;
+    font-size: 70px;
+    text-shadow: -1px -1px 0px rgba(150, 150, 150, 1);
+  }
+
+  .header-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
   }
 
   h2 {
@@ -39,24 +55,31 @@
   margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 
   .location {
-    height: 1000px;
     padding: 10px;
 
-    form {
-      border: 1px solid black;
+    h6 {
+      color: #ff3333;
+    }
+
+    .content {
+      border-bottom: 1px solid black;
+      padding-bottom: 10px;
 
       h6 {
         color: $gray;
-        font-size: 400;
+        font-size: 12px;
         margin: 0;
       }
 
-      input {
-        border: 1px solid black;
-        border-radius: 1px;
-        width: auto;
+      h2 {
+        text-align: left;
+        font-weight: 100;
       }
     }
 
@@ -66,23 +89,66 @@
 
   .next-body {
     padding: 10px;
-    border: 1px solid black;
-
-    display: flex;
 
     .name {
+      margin-bottom: 5px;
+
+      h6 {
+        color: $gray;
+        font-size: 12px;
+        margin: 0;
+      }
+
+      h2 {
+        text-align: left;
+        font-weight: 100;
+      }
+
+      input {
+        border-bottom: 1px solid black;
+        border-radius: 1px;
+        width: 80vw;
+        padding: 5px 0;
+        font-size: 24px;
+        font-weight: 100;
+      }
     }
 
-    input {
-      border: 1px solid black;
-      border-radius: 1px;
-      width: auto;
+    .descriptions {
+      margin-top: 30px;
+
+      h2 {
+        text-align: left;
+        font-weight: 100;
+      }
+
+      textarea {
+        border: 1px solid black;
+        font-size: 15px;
+        width: 450px;
+        height: 150px;
+        padding: 10px 10px;
+      }
     }
+  }
+  .errors {
+    background: $green;
+    padding: 15px 10px;
 
-    textarea {
-      border: 1px solid black;
-      border-radius: 1px;
+    h6 {
+      margin: 10px 10px;
+      font-size: 20px;
+      color: red;
+    }
+  }
 
+  .create-button {
+
+    button {
+      width: 140px;
+      height: 40px;
+      font-size: 20px;
+      font-weight: 200;
     }
   }
 }

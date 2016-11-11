@@ -12,7 +12,8 @@ const GroupsIndex = ({groups}) => {
   };
 
   let masonryOptions = {
-    transitionDuration: 0
+    transitionDuration: 0.8,
+    fitWidth: true
   };
   // border: 1px solid black;
   // border-radius: 3px;

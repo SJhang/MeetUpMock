@@ -1,13 +1,18 @@
 .group-lists {
-  display: flex;
   margin: 0 auto;
   margin: 0 5px;
   margin-top: 20px;
   min-height: 60vh;
 
   .groups-index {
-    display: flex;
-    justify-content: space-between;
-    max-width: 100%;
+    width: 100%;
+
+    .group-index-masonry {
+      min-width: 100%;
+
+      li {
+        margin: 10px;
+      }
+    }
   }
 }
