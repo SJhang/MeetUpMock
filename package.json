@@ -16,7 +16,7 @@
   "license": "ISC",
   "engines": {
     "node": "4.1.1",
-    "npm": "2.1.x"
+    "npm": "*"
   },
   "dependencies": {
     "babel-core": "^6.18.0",
@@ -27,9 +27,9 @@
     "lodash": "^4.16.4",
     "owl.carousel": "^2.2.0",
     "react": "^15.3.2",
-    "react-addons": "^0.9.1-deprecated",
+    "react-addons": "*",
     "react-dom": "^15.3.2",
-    "react-font-awesome": "^1.0.3",
+    "react-font-awesome": "*",
     "react-google-autocomplete": "^1.0.7",
     "react-masonry-component": "^4.3.1",
     "react-modal": "^1.5.2",
