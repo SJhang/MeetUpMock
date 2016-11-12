@@ -25,12 +25,13 @@ class EventShow extends React.Component {
 
   switchButton() {
     if (this.props.attendees.length >= 1) {
-      let filteredAttendees = this.props.attendees.filter(attendee => attendee.username === this.props.currentUser.username);
-      if (filteredAttendees.length != 0 || filteredAttendees === undefined) {
+      if (this.props.attendees.some(attendee => attendee.username === this.props.currentUser.username)) {
         return (<button onClick={this.props.deleteAttendee.bind(this, this.props.currentUser, this.props.eventId)}>Leave RSVP</button>);
       } else {
         return (<button onClick={this.props.addAttendee.bind(this, this.props.currentUser, this.props.eventId)}>Join RSVP</button>);
       }
+    } else {
+      return (<button onClick={this.props.deleteAttendee.bind(this, this.props.currentUser, this.props.eventId)}>Leave RSVP</button>);
     }
   }
 

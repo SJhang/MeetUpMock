@@ -11,6 +11,10 @@ class GroupShow extends React.Component {
   displayChildrean() {
   }
 
+  componentDidMount() {
+    $(document).scrollTop(0);
+  }
+
   displayMembers() {
     if (this.props.group.members) {
       return this.props.group.members.map(member=> (
@@ -41,7 +45,6 @@ class GroupShow extends React.Component {
 //conditional statement for other info using either ownProps in container or window.location.router
   render () {
     let klass;
-
     if (window.location.hash === `#/groups/${this.props.groupId}`) {
       klass = "group-show-page";
     } else {

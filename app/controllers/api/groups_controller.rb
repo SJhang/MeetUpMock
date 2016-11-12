@@ -4,7 +4,7 @@ class Api::GroupsController < ApplicationController
     if params[:search] && !params[:search].empty?
       @groups = @groups.where(
         [
-          'name ILIKE :searchQuery OR description ILIKE :searchQuery',
+          'name ILIKE :searchQuery OR description ILIKE :searchQuery OR city ILIKE :searchQuery OR state ILIKE :searchQuery',
           { searchQuery: "%#{params[:search]}%" }
         ]
       )
@@ -56,7 +56,7 @@ class Api::GroupsController < ApplicationController
   private
 
   def search_params
-    params.permit(:name, :description)
+    params.permit(:name, :description, :city, :location)
   end
 
   def group_params

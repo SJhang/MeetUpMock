@@ -8,6 +8,7 @@ const GroupSearchBox = ({searchParams: {search}, updateGroupSearchParam}) => {
         className="find-searchbar"
         value={search}
         onInput={ e => updateGroupSearchParam('search', e.target.value)}/>
+      <i className="fa fa-search fa-lg" aria-hidden="true"></i>
     </nav>
   );
 };

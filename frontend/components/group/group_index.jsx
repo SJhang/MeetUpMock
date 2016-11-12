@@ -15,20 +15,7 @@ const GroupsIndex = ({groups}) => {
     transitionDuration: 0.8,
     fitWidth: true
   };
-  // border: 1px solid black;
-  // border-radius: 3px;
-  // background-image: url("https://res.cloudinary.com/dsetpdsls/image/upload/v1478820322/download_kb6qnf.jpg");
-  // background-position: center;
-  // background-size: cover;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: flex-end;
-  // color: white;
-  // font-size: 13px;
-  // font-weight: 100;
-  // width: 300px;
-  // height: 150px;
-  // cursor: pointer;
+  
   let style = {
     backgroundImage: `url("https://res.cloudinary.com/dsetpdsls/image/upload/v1478820322/download_kb6qnf.jpg")`
   };

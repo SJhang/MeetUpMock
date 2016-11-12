@@ -3,30 +3,39 @@ import React from 'react';
 class Members extends React.Component {
 
   eachMember() {
-    if (this.props.members.length >= 1) {
-      return this.props.members.map(member => (
+    if (this.props.group.members) {
+      return this.props.group.members.map(member=> (
         <div key={member.id} className="profile">{member.username}</div>
       ));
+    } else {
+      return (<h4>Members mia</h4>);
     }
+  }
+
+  componentWillReceiveProps(newProps){
+
   }
 
   switchButton() {
     if (this.props.members.length >= 1) {
-      let filteredMember = this.props.members.filter(member => member.username === window.currentUser.username);
-      if (filteredMember.length !== 0) {
-        return (<button onClick={this.props.deleteMember.bind(this, window.currentUser, this.props.groupId)}>Leave group</button>);
+      if (this.props.members.some(member => member.username === this.props.currentUser.username)) {
+        return (<button onClick={this.props.deleteMember.bind(this, this.props.currentUser, this.props.groupId)}>Leave group</button>);
       } else {
-        return (<button onClick={this.props.addMember.bind(this, window.currentUser, this.props.groupId)}>Join us!</button>);
+        return (<button onClick={this.props.addMember.bind(this, this.props.currentUser, this.props.groupId)}>Join us!</button>);
       }
+    } else {
+      return (<button onClick={this.props.addMember.bind(this, this.props.currentUser, this.props.groupId)}>Join us!</button>);
     }
   }
 
   render () {
     return (
-      <div>
-        <div>
+      <div className="member-content">
+        <div className="member-body">
           <h1>We're &nbsp; {this.props.members.length}&nbsp; Members</h1>
-          <div>{this.eachMember()}</div>
+          <div>
+            {this.eachMember()}
+          </div>
         </div>
         {this.switchButton()}
       </div>

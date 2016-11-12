@@ -1,25 +1,58 @@
 .home-pre-body {
 
   section {
-    border-bottom: 1px solid $dark-gray;
-    background-color: #4d4f50;
+    border-bottom: 1px solid black;
+    background-image: url("https://res.cloudinary.com/dsetpdsls/image/upload/v1478720906/photo-1461595520627-42e3c83019bc_l3fhut.jpg");
     color: white;
     margin-top: 61px;
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+
+    .header-overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.4);
+    }
 
     .find-header {
-      width: 80%;
-      margin: 0 auto;
-      font-size: 40px;
-      font-weight: 800;
+      align-items: center;
+      font-weight: 100;
+      position: relative;
+      z-index: 50;
+      margin-top: -198px;
+      color: $white;
+      font-size: 70px;
+      text-shadow: -1px -1px 0px rgba(150, 150, 150, 1);
       text-align: center;
-      padding-top: 15px;
-      padding-bottom: 15px;
-      min-height: 200px;
 
-      h3 {
-        font-size: 20px;
-        font-weight: 200;
+      h2 {
+        margin: 0;
+      }
+
+      h4 {
+        text-align: center;
+        margin: 0;
+        font-size: 23px;
       }
     }
   }
 }
+//
+// }
+// width: 80%;
+// margin: 0 auto;
+// font-size: 40px;
+// font-weight: 800;
+// text-align: center;
+// padding-top: 15px;
+// padding-bottom: 15px;
+// min-height: 200px;

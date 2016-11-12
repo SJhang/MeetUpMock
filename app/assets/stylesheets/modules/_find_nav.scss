@@ -41,13 +41,7 @@
         text-align: center;
       }
     }
-    .group-search-box {
-      background: white;
-      width: 30%;
-      border-radius: 5px;
-      font-size: 20px;
-      padding: 5px 10px;
-    }
+
   }
 
   .events {
@@ -77,12 +71,29 @@
         text-align: center;
       }
     }
-    .group-search-box {
-      background: white;
-      width: 30%;
-      border-radius: 5px;
-      font-size: 20px;
-      padding: 5px 10px;
+  }
+}
+
+.group-search-box {
+  background: white;
+  width: 30%;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px 10px;
+
+  .find-form {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    position: relative;
+
+    .find-searchbar {
+      width: 100%;
+
+      i {
+        color: gray;
+      }
     }
   }
+
 }

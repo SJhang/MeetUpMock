@@ -10,11 +10,10 @@ class Find extends React.Component {
     return (
       <div className="home-pre-body">
         <section>
+          <div className='header-overlay'></div>
           <div className="find-header">
-            <ul>
-              <li>Find a Meetup</li>
-              <li><h3>Meetups nearby</h3></li>
-            </ul>
+            <h2>Find a Meetup</h2>
+            <h4>Meetups nearby</h4>
           </div>
         </section>
       </div>

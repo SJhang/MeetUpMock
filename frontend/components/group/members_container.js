@@ -1,18 +1,24 @@
 import { connect } from 'react-redux';
 import Members from './members';
 import {addMember, deleteMember} from '../../actions/group_actions';
+import values from 'lodash/values';
 
-const mapStateToProps = ({ groups, events }, ownProps) => {
+const mapStateToProps = ({ groups, events, session }, ownProps) => {
   let groupId = parseInt(ownProps.params.groupId);
+  let groupIndex = values(groups.groupIndex);
+  let group = groupIndex[groupId] || {};
   let members;
   if (groups.groups[groupId]) {
     members = groups.groups[groupId].members;
   } else {
     members = [];
   }
+  console.log(members);
   return {
     groupId,
-    members
+    group,
+    members,
+    currentUser: session.currentUser
   };
 };
 

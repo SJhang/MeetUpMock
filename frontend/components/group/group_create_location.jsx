@@ -63,7 +63,6 @@ class GroupCreateLocation extends React.Component {
                 console.log(place.formatted_address);
               }}
               types={['(regions)']}/>
-
         </div>
         <button onClick={this.props.nextStep}>next</button>
         {this.displayErrors()}
