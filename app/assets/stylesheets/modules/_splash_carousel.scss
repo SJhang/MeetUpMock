@@ -1,5 +1,4 @@
 .viewport {
-  margin: 40px 10px;
   width: 100%;
   color: #333;
   height: 100%;
@@ -7,7 +6,23 @@
   .carousel-item-div {
 
     a {
-      background: $green;
+      height: 50px;
+      width: 100px;
     }
   }
+}
+
+.slick-list {
+
+  .slick-track {
+    height: 100px;
+    width: 150px;
+    margin-right: 10px;
+  }
+}
+
+.slick-slide {
+  display: flex;
+  align-items: center;
+  padding: 10px;
 }

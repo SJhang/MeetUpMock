@@ -44,7 +44,10 @@ class Splash extends React.Component {
             <div className="header-overlay"></div>
               <MainVideo guestLogin={this.handleGuestLogin}/>
             </section>
-
+            <div className="seperator">
+              <div className="top"></div>
+              <div className="bot"></div>
+            </div>
             <section className="events-wrap">
               <UpcomingEvents eventList={this.props.eventList}/>
             </section>

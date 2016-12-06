@@ -10,46 +10,52 @@
   background-position: 50%;
   margin-top: 61px;
   position: relative;
+  align-items: center;
 
   .content-chunk {
-    right: 0;
     display: flex;
     flex-direction: column;
-    text-indent: 40px;
-    margin-top: 20px;
     position: relative;
+    align-items: center;
+    margin: 0 auto;
 
     .header-contents {
       color: white;
 
       h1 {
-        font-weight: 200;
-        font-size: 28px;
-        margin: 10px 0;
+        font-family: $roboto-slab;
+        font-weight: 100 !important;
+        font-size: 40px;
+        font-style: none;
+        margin-bottom: 45px;
       }
 
       p {
-        margin-top: 5px;
-        text-align: left;
-        font-weight: 200;
-        font-size: 12px;
-
+        font-family: $roboto;
+        margin: 10px;
+        text-align: center;
+        font-weight: 100;
+        font-size: 20px;
       }
 
       div {
         display: flex;
         justify-content: flex-start;
         width: 100%;
-        margin-top: 20px;
-        margin-left: 40px;
+        padding-top: 15px;
 
         button {
+          width: 300px;
           font-size: 20px;
-          width: 40%;
-          background-color: $green;
           color: white;
           font-weight: 200;
+          margin: 0 auto;
+          padding-top: 15px;
+          border: none;
+          background: $green;
+          opacity: 0.9;
         }
+
         button:hover {
           background-color: $lgreen;
         }

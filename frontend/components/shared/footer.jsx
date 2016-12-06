@@ -20,8 +20,8 @@ class Footer extends React.Component{
 
   }
 
-  facebookLink() {
-    window.open("https://www.facebook.com/sonik.jhang");
+  angelLink() {
+    window.open("https://www.angel.co/sonik-jhang");
   }
 
   githubLink() {
@@ -35,6 +35,10 @@ class Footer extends React.Component{
   render() {
     return (
       <footer className="main-footer">
+        <div className="seperator">
+          <div className="bot"></div>
+          <div className="top"></div>
+        </div>
         <div className="footer-top">
           <div><Link to={'/create'}>Start a Meet Up</Link></div>
           <div>
@@ -43,20 +47,14 @@ class Footer extends React.Component{
         </div>
         <div className="footer-mid">
           <ul>
-            <li><i className="fa fa-facebook-square fa-2x" aria-hidden="true"
-              onClick={this.facebookLink.bind(this)}>&nbsp;</i></li>
+            <li><i className="fa fa-angellist fa-2x" aria-hidden="true"
+              onClick={this.angelLink.bind(this)}>&nbsp;</i></li>
             <li><i className="fa fa-github fa-2x" aria-hidden="true"
               onClick={this.githubLink.bind(this)}></i></li>
             <li><i className="fa fa-linkedin-square fa-2x" aria-hidden="true"
               onClick={this.linkedinLink.bind(this)}></i></li>
           </ul>
-        </div>
-        <div className="footer-bot">
-          <ul>
-            <li></li>
-            <li>Built by Sonik Jhang</li>
-            <li></li>
-          </ul>
+          <div>Built by Sonik Jhang</div>
         </div>
       </footer>
     );
