@@ -4,7 +4,7 @@ html {
 }
 
 body {
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: $roboto-slab;
 	font-size: 12px;
 	display: block;
 	min-height: 80vh;
@@ -17,13 +17,16 @@ main {
 	width: 100vw;
 }
 
+h1, h2, h3, h4, h5, h6 {
+	font-family: $roboto-slab;
+}
+
 button {
 	background-color: $light-gray;
 	border-color: $dark-gray;
 	color: black;
 	font-weight: bold;
 	padding: 7px 9px;
-	border-radius: 3px;
 	transition: background-color 0.3s;
 	font-family: $sans-serif;
 	text-transform: uppercase;
@@ -34,7 +37,6 @@ button {
 button:hover {
 	background-color: $gray;
 	border-color: $dark-gray;
-	transform: scale(1.1);
 	cursor: pointer;
 }
 
