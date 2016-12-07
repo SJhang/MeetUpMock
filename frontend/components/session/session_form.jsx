@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleGuestLogin = this.handleGuestLogin.bind(this);
+    this.displayErrorMessages = this.displayErrorMessages.bind(this);
   }
 
   componentDidUpdate() {
@@ -17,10 +18,11 @@ class SessionForm extends React.Component {
 	}
 
   displayErrorMessages() {
-    if (this.props.errors) {
-      this.props.errors.map(errors => (
-        <h6>{errors}</h6>
-      ));
+    debugger;
+    if (this.props.errors.password !== []) {
+      // return this.props.errors.map(errors => (
+      //   <h6>{errors}</h6>
+      // ));
     }
   }
 
@@ -31,7 +33,6 @@ class SessionForm extends React.Component {
 	}
 
   handleSubmit(e) {
-
     e.preventDefault();
     const user = this.state;
     this.props.processForm(user);
@@ -85,8 +86,7 @@ class SessionForm extends React.Component {
                       onChange={this.update("username")}
                       placeholder="Username">
                     </input>
-                    <p>{this.displayErrorMessages.bind(this)}</p>
-
+                    <p>{this.displayErrorMessages()}</p>
                     <input
                       id="password-field"
                       className="input-block"
@@ -95,7 +95,7 @@ class SessionForm extends React.Component {
                       onChange={this.update("password")}
                       placeholder="Password">
                     </input>
-                    <p>{this.displayErrorMessages.bind(this)}</p>
+                    <p>{this.displayErrorMessages()}</p>
                     <button>Submit</button>
                   </div>
                 </div>

@@ -24,5 +24,14 @@
 .slick-slide {
   display: flex;
   align-items: center;
-  padding: 10px;
+  text-align: center;
+  justify-content: center;
+  margin: 10px;
+  background: #85dbc2;
+
+  .slick-item {
+    display: flex;
+    align-items: center;
+  }
+
 }

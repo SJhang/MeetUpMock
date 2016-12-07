@@ -70,9 +70,14 @@
             height: 38px;
 
           }
-          
+
           p {
+            opacity: 1;
             min-height: 25px;
+            color: red;
+            font-style: $roboto;
+            font-weight: 200;
+            font-size: 12px;
           }
         }
 
