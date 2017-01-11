@@ -67,6 +67,10 @@ class GroupCreate extends React.Component {
     this.setState({city, state});
   }
 
+  displayErrors() {
+
+  }
+
   render () {
     return(
       <div className="create">
@@ -96,11 +100,8 @@ class GroupCreate extends React.Component {
               <textarea
                 placeholder="Being descriptive will help"
                 onChange={e => this.update('description', e)}/>
+              <button onClick={this.handleSubmit.bind(this)}>Submit</button>
             </div>
-          </div>
-
-          <div className="create-button">
-            <button onClick={this.handleSubmit.bind(this)}>Submit</button>
           </div>
         </section>
 

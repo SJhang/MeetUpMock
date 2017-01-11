@@ -4,7 +4,8 @@ import {
   LOGIN,
   LOGOUT,
   SIGNUP,
-  CREATE_IMAGE
+  CREATE_IMAGE,
+  RECEIVE_ERRORS
 } from '../actions/session_actions';
 import { login, logout, signup, createImage } from '../util/session_api_util';
 import {hashHistory} from 'react-router';

@@ -71,7 +71,7 @@
 
           }
 
-          p {
+          div {
             opacity: 1;
             min-height: 25px;
             color: red;
@@ -155,5 +155,9 @@
   button:hover {
     // background-color: #3c7186;
     transform: none;
+    background: $dark-gray;
+    color: white;
+    transition: background 0.5s ease;
+    transition: color 0.5s ease;
   }
 }

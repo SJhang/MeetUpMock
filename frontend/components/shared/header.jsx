@@ -61,7 +61,6 @@ class Header extends React.Component {
 
   headerText() {
     if (this.props.currentUser.username) {
-
       return (
         <ProfileButton
           currentUser={this.props.currentUser}

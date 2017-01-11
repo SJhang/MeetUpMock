@@ -3,10 +3,12 @@ import GroupCreate from './group_create';
 import { createGroup } from '../../actions/group_actions';
 import { groupsAsArray } from '../../reducers/selectors';
 
-const mapStateToProps = ({groups, session}) => ({
+const mapStateToProps = ({groups, session}) => {
+  return {
   groupArray: groupsAsArray(groups),
-  currentUser: session.currentUser
-});
+  currentUser: session.currentUser,
+  titleError: groups
+};};
 
 const mapDispatchToProps = dispatch => ({
   createGroup: group => dispatch(createGroup(group))

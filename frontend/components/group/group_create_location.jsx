@@ -38,7 +38,7 @@ class GroupCreateLocation extends React.Component {
 
   displayErrors() {
     if (this.state.errors) {
-      return <h6>{this.state.errors}</h6>;
+      return <h6 className="error">{this.state.errors}</h6>;
     } else {
       return <h6></h6>;
     }
@@ -60,12 +60,11 @@ class GroupCreateLocation extends React.Component {
               onClick={()=>this.clearField()}
               onPlaceSelected={(place) => {
                 this.process(place);
-                console.log(place.formatted_address);
               }}
               types={['(regions)']}/>
+          {this.displayErrors()}
+          <button onClick={this.props.nextStep}>next</button>
         </div>
-        <button onClick={this.props.nextStep}>next</button>
-        {this.displayErrors()}
       </div>
     );
   }

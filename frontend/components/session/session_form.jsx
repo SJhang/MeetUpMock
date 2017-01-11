@@ -15,14 +15,34 @@ class SessionForm extends React.Component {
 
   componentDidUpdate() {
 		this.redirectIfLoggedIn();
+    this.resetErrorMessages();
 	}
 
-  displayErrorMessages() {
-    debugger;
-    if (this.props.errors.password !== []) {
-      // return this.props.errors.map(errors => (
-      //   <h6>{errors}</h6>
-      // ));
+  resetErrorMessages() {
+    if (this.props.errors.password !== undefined ||
+        this.props.errors.username !== undefined) {
+      this.props.errors.password = undefined;
+      this.props.errors.username = undefined;
+    }
+  }
+
+  displayErrorMessages(property) {
+    if (property === "username") {
+      if (this.props.errors.username !== undefined) {
+        return this.props.errors.username.map ((error, idx) => {
+          return (
+            <h6 key={idx}>{error}</h6>
+          );
+        });
+      }
+    } else if (property === "password") {
+      if (this.props.errors.password !== undefined) {
+        return this.props.errors.password.map ((error, idx) => {
+          return (
+            <h6 key={idx}>{error}</h6>
+          );
+        });
+      }
     }
   }
 
@@ -86,7 +106,7 @@ class SessionForm extends React.Component {
                       onChange={this.update("username")}
                       placeholder="Username">
                     </input>
-                    <p>{this.displayErrorMessages()}</p>
+                    <div>{this.displayErrorMessages("username")}</div>
                     <input
                       id="password-field"
                       className="input-block"
@@ -95,7 +115,7 @@ class SessionForm extends React.Component {
                       onChange={this.update("password")}
                       placeholder="Password">
                     </input>
-                    <p>{this.displayErrorMessages()}</p>
+                    <div>{this.displayErrorMessages("password")}</div>
                     <button>Submit</button>
                   </div>
                 </div>

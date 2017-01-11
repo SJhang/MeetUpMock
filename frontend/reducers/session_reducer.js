@@ -18,19 +18,18 @@ let _defaultState = {
 
 export const SessionReducer = (state = _defaultState, action) => {
   Object.freeze(state);
-  let errors = { password: [], username: [] };
-
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
       let currentUser = action.currentUser;
       return merge({}, state, { currentUser });
     case RECEIVE_ERRORS:
-    debugger;
-      if (action.errors.responseJSON.constructor === []) {
-        errors.password.concat(action.errors.responseJSON);
+      let errors = { password: [], username: [] };
+      debugger;
+      if (action.errors.responseJSON.constructor === Array) {
+        errors.password = errors.password.concat(action.errors.responseJSON);
       } else {
-        errors.password.concat(action.errors.responseJSON.password);
-        errors.username.concat(action.errors.responseJSON.username);
+        errors.password = errors.password.concat(action.errors.responseJSON.password);
+        errors.username = errors.username.concat(action.errors.responseJSON.username);
       }
       return merge({}, state, {errors});
     case LOGOUT:
