@@ -7,57 +7,78 @@
   .profile-div {
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
+  }
 
-    .profile-detail {
+  .profile-picture {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+
+    .image {
+      width: 300px;
+      height: 300px;
       border: 1px solid black;
-      margin: 10px;
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      width: 60%;
+      background-size: cover;
+      background-position: center;
+      margin: 5px;
 
-      div {
-        border: 1px solid black;
-      }
-
-      .detail {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        div {
-          width: 100%;
-          display: flex;
-          justify-content: space-around;
-        }
-      }
     }
 
-    .profile-picture {
-      display: flex;
-      flex-direction: column;
-      margin: 10px;
+    div {
+      margin: 0 auto;
+    }
 
-
-      .image {
-        width: 300px;
-        height: 300px;
-        border: 1px solid black;
-        background-size: cover;
-        background-position: center;
-        margin: 5px;
-
-      }
-
-      div {
-        margin: 0 auto;
-      }
-
-      .image-options {
-        margin-top: 10px;
-        margin-bottom: 15px;
-      }
+    .image-options {
+      margin-top: 10px;
+      margin-bottom: 15px;
     }
   }
- }
+}
+
+
+.profile-detail {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 60%;
+
+  .username {
+    height: 15%;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+
+  .detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 5px;
+    font-size: 12px;
+
+    h2 {
+      padding: 5px;
+      text-align: left;
+
+      h4 {
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+    }
+
+  }
+
+  a {
+    padding: 10px;
+  }
+
+  .groups {
+    margin: 10px;
+  }
+}

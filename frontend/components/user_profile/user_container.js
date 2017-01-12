@@ -3,10 +3,11 @@ import UserProfile from './user_profile';
 import {createImage} from '../../actions/session_actions';
 import { updateUser } from '../../actions/user_actions';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => {
+  return {
   currentUser: state.session.currentUser,
   user_image: state.session.currentUser.profile_img
-});
+};};
 
 const mapDispatchToProps = dispatch => ({
   createImage: image => dispatch(createImage(image)),

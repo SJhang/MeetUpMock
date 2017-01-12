@@ -12,6 +12,7 @@ class UserProfile extends React.Component {
     };
     this.currentLocation = this.currentLocation.bind(this);
     this.setLocation = this.setLocation.bind(this);
+    // this.memberSince = this.memberSince.bind(this);
   }
 
   currentLocation(pos) {
@@ -44,6 +45,33 @@ class UserProfile extends React.Component {
     navigator.geolocation.getCurrentPosition(this.currentLocation);
   }
 
+  // member account created at
+  memberSince() {
+    let month, day, year;
+    const registered_at = Date.apply(this.props.currentUser.created_at).split(" ");
+
+    month = registered_at[1];
+    day = registered_at[2];
+    year = registered_at[3];
+    return <h4>{month} {day}, {year}</h4>;
+  }
+
+  email() {
+    if (this.props.currentUser.email) {
+      return <h4>this.props.currentUser.email</h4>;
+    } else {
+      return <h4>n/a</h4>;
+    }
+  }
+
+  selfBlurb() {
+    if (this.props.currentUser.description) {
+      return <h4>this.props.currentUser.description</h4>;
+    } else {
+      return <h4>fill in your blurb</h4>;
+    }
+  }
+
   followingGroup() {
     return (
       <h5>You aren't in any groups yet.</h5>
@@ -61,24 +89,22 @@ class UserProfile extends React.Component {
 
     let location = <h4>Loading...</h4>;
     if (this.state.city) {
-      location = <h4>Location: {this.state.city}, {this.state.state}</h4>;
+      location = <h4>{this.state.city}, {this.state.state}</h4>;
     }
 
     return (
       <div className="profile-main-div">
         <div className="profile-div">
           <div className="profile-detail">
-            <div><h1>{this.props.currentUser.username}</h1></div>
+            <div className="username">{this.props.currentUser.username}</div>
             <div className="detail">
-              <div>
-                {location}
-                <h4>Member Since:</h4>
-              </div>
-              <div>
-                <a>Add bio</a>
-              </div>
+              <h2>Location: {location} </h2>
+              <h2>Member Since: {this.memberSince()}</h2>
+              <h2>Email: {this.email()}</h2>
+              <h2>Description {this.selfBlurb()}</h2>
             </div>
-            <div>
+            <a>Add bio</a>
+            <div className="groups">
               {this.followingGroup()}
             </div>
             <div></div>
