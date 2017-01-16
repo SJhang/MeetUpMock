@@ -2,7 +2,8 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import UpcomingEvents from './upcoming_events';
 import MainVideo from './main_video';
-
+import UserProfile from '../user_profile/user_profile';
+import {getLocation} from '../../util/user_api_util';
 
 class Splash extends React.Component {
   constructor(props){

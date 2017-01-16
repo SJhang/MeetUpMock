@@ -21,7 +21,7 @@ class UserProfile extends React.Component {
     let lng = coord.longitude;
     let params = `${lat},${lng}`;
 
-    const apiKey ="AIzaSyCbq38WBZIYrNol3TjlRGjL9T5dhqoefqI";
+    const apiKey = "AIzaSyCbq38WBZIYrNol3TjlRGjL9T5dhqoefqI";
     let url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=";
 
     if (lat) {

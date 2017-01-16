@@ -1,9 +1,11 @@
 .viewport {
   width: 100%;
-  color: #333;
   height: 100%;
 
   .carousel-item-div {
+    background-position: center;
+  	background-size: cover;
+  	background-repeat: repeat;
 
     a {
       height: 50px;
@@ -27,7 +29,6 @@
   text-align: center;
   justify-content: center;
   margin: 10px;
-  background: #85dbc2;
 
   .slick-item {
     display: flex;
