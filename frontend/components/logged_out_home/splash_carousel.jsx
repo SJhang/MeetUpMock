@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import {Link, hashHistory} from 'react-router';
 
+
 const Carousel = (props) => {
   const currentUserLocation = () => {
 
@@ -9,17 +10,19 @@ const Carousel = (props) => {
 
   const eventsList = () => {
     let eventList = props.eventList;
-    debugger;
+
     return eventList.map( event =>
       <div
         key={event.id}
-        className="carousel-item-div"
-        style= {{backgroundImage: `url("${event.thumbnail_img_url}")`}}>
+        className="carousel-item-div">
         <Link
           to={`/groups/${event.group_id}/events/${event.id}`}
           className="carousel-item">
           {event.title}
         </Link>
+        <div
+          className="carousel-image"
+          style= {{backgroundImage: `url("${event.thumbnail_img_url}")`}}/>
       </div>
     );
   };
@@ -32,6 +35,7 @@ const Carousel = (props) => {
     slidesToShow: 3,
     slidesToScroll: 1
   };
+
   if (props.eventList.length === 0) {
     return <div className="viewport"><h1>spinner</h1></div>;
   } else {

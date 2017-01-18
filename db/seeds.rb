@@ -87,9 +87,11 @@ Event.create!(title: "Happy Hour", description: "Super Duper 15 dollar pitcher",
   date: '18-06-12 10:34:09 PM', lat: "37.7913765", lng: "-122.3936249", group_id: 1,
   thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484567464/Happy-Hour_hc7dar.jpg')
 Event.create!(title: "League", description: "hit diamond again",
-  date: '20-05-10 08:21:59 PM', lat: "37.7913765", lng: "-122.3936249", group_id: 2)
-Event.create!(title: "Shower", description: "cleaniness matters",
-  date: '80-01-03 11:59:59 AM', lat: "37.7913765", lng: "-122.3936249", group_id: 2)
+  date: '20-05-10 08:21:59 PM', lat: "37.7913765", lng: "-122.3936249", group_id: 2,
+  thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484743370/Vayne-League-of-Legends-Wallpaper-full-HD-3_ggi1rp.jpg')
+Event.create!(title: "Movie night", description: "For this week, we will be showing the Godfather",
+  date: '80-01-03 11:59:59 AM', lat: "37.7913765", lng: "-122.3936249", group_id: 2,
+  thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484744409/korona-world-theater_10deaeb3_L___Selected_tyv6ss.jpg')
 Event.create!(title: "PingPong", description: "cleaniness matters",
   date: '80-01-03 11:59:59 AM', lat: "37.7913765", lng: "-122.3936249", group_id: 4,
   thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484567466/untitled_text_yybgsm.jpg')

@@ -1,23 +1,33 @@
 .viewport {
   width: 100%;
-  height: 100%;
+
 
   .carousel-item-div {
-    background-position: center;
-  	background-size: cover;
-  	background-repeat: repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    a {
+    .carousel-item {
       height: 50px;
-      width: 100px;
+      width: 150px;
+      font-size: 20px;
+      text-decoration: none;
+      font: $roboto;
+    }
+
+    .carousel-image {
+      height: 250px;
+      background-position: center;
+    	background-size: cover;
+    	background-repeat: repeat;
     }
   }
 }
 
 .slick-list {
-
+  height: 300px;
   .slick-track {
-    height: 100px;
+
     width: 150px;
     margin-right: 10px;
   }
@@ -27,8 +37,10 @@
   display: flex;
   align-items: center;
   text-align: center;
-  justify-content: center;
-  margin: 10px;
+  justify-content: space-between;
+  margin: 2px;
+  font-weight: 500;
+  font-family: $roboto;
 
   .slick-item {
     display: flex;
