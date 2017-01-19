@@ -12,6 +12,18 @@ const FindNav = (props) => {
     hashHistory.push('/groups');
   };
 
+  const toggleButtons = (location) => {
+    if (window.location.hash === `#/home/${location}`) {
+      return (
+        {background: "white", color: "black"}
+      );
+    } else {
+      return (
+        {background: "black", color: "white", border: "1px solid white"}
+      );
+    }
+  };
+
   let klass;
   if (window.location.hash === "#/home/groups" || window.location.hash === "#/home") {
     klass = "groups";
@@ -28,10 +40,14 @@ const FindNav = (props) => {
         </section>
         <div className="buttons">
           <div
+            className="group-button"
+            style={toggleButtons("groups")}
             onClick={()=>hashHistory.push(`/home/groups`)}>
             Groups
           </div>
           <div
+            className="event-button"
+            style={toggleButtons("events")}
             onClick={()=>hashHistory.push("/home/events")}>
             Events
           </div>

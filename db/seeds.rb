@@ -37,7 +37,7 @@ User.create!(username: "benq", password: "77889900", email: 'benq@projector.com'
 User.create!(username: "nikeshoes", password: "198237482", email: 'just@do.it', name: "Yeezy Boost")
 
 Group.create!(name: "app Academy", description: "Number one bootcamp",
-  city: "Austin", state: "TX", organizer_id: 1,
+  city: "San Francisco", state: "CA", organizer_id: 1,
   thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484797377/28983bbc0ac0a12cde1c0dc3fc818b4b_gk3udx.png',
   banner_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484797192/Screen_Shot_2017-01-18_at_9.39.15_PM_s1ikhl.png')
 Group.create!(name: "New Parents Meetup", description: "Please join us in our different adventures that offer the opportunity to meet other moms, gather information, form friendships and build a network of resources.
@@ -103,9 +103,9 @@ What activities should you expect?
 • Sharing session from well-known Rubyists in San Francisco.
 
 • Tips on learning iOS, RubyMotion, Javascript frameworks, Node.js from a Ruby background.",
-city: "San Francisco", state: "CA", organizer_id: 5)
+city: "San Francisco", state: "CA", organizer_id: 5, thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484830127/ruby-on-rails_ntaowg.jpg')
 Group.create!(name: "SnowBoard Dummies", description: "Starbucks meeting", city: "Austin", state: "TX",
-  organizer_id: 5)
+  organizer_id: 5, thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484830202/snowboarding_w01ecq.jpg')
 Group.create!(name: "Free Yoga Austin", description: "Find free yoga classes throughout Austin! I started this group because I'd like members to be aware of all the free yoga going on around town. It's an easy way to try out different styles of yoga, taught by different instructors, and see what you like!
 
 Notify me of other free community classes and I'll add them; also if you are a fellow yoga instructor who teaches a sponsored class (free for students) in Austin, join the group and I'll add it!", city: "Austin", state: "TX", organizer_id: 10, thumbnail_img_url: "https://res.cloudinary.com/dsetpdsls/image/upload/v1484571880/global_433283783_lspab4.jpg")

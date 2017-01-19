@@ -5,21 +5,11 @@ import {hashHistory} from 'react-router';
 
 const GroupsIndex = ({groups}) => {
   const eachGroup = () => {
-    return groups.map(group => {
-      let background;
-      debugger;
-      if (group.thumbnail_img_url === null) {
-        background = "https://res.cloudinary.com/dsetpdsls/image/upload/v1478820322/download_kb6qnf.jpg";
-      } else {
-        background = group.thumbnail_img_url;
-      }
-      return (
+    return groups.map(group => (
         <GroupsIndexItem
           key={group.id}
-          group={group}
-          style={{backgroundImage: `url(${background})`}}/>
-      );
-    });
+          group={group}/>
+      ));
 
   };
 
