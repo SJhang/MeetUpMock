@@ -39,12 +39,16 @@ class UserProfile extends React.Component {
     let state = address.split(', ')[2].split(" ")[0];
 
     this.setState({city: city, state: state});
+    // this.props.updateUser({location: `${city, state}`});
   }
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(this.currentLocation);
   }
 
+  displayName() {
+    return <h4>{this.props.currentUser.name}</h4>;
+  }
   // member account created at
   memberSince() {
     let month, day, year;
@@ -58,7 +62,7 @@ class UserProfile extends React.Component {
 
   email() {
     if (this.props.currentUser.email) {
-      return <h4>this.props.currentUser.email</h4>;
+      return <h4>{this.props.currentUser.email}</h4>;
     } else {
       return <h4>n/a</h4>;
     }
@@ -66,7 +70,7 @@ class UserProfile extends React.Component {
 
   selfBlurb() {
     if (this.props.currentUser.description) {
-      return <h4>this.props.currentUser.description</h4>;
+      return <text>{this.props.currentUser.description}</text>;
     } else {
       return <h4>fill in your blurb</h4>;
     }
@@ -98,6 +102,7 @@ class UserProfile extends React.Component {
           <div className="profile-detail">
             <div className="username">{this.props.currentUser.username}</div>
             <div className="detail">
+              <h2>Name: {this.displayName()}</h2>
               <h2>Location: {location} </h2>
               <h2>Member Since: {this.memberSince()}</h2>
               <h2>Email: {this.email()}</h2>
