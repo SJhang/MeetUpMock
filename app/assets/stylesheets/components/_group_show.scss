@@ -14,12 +14,17 @@
       background-color: #fff;
       margin-bottom: 16px;
       border: 1px solid rgba(0,0,0,.12);
+      border-bottom: 1px solid rgba(255,255,255,.25);
       background-clip: padding-box;
       height: 25%;
 
       .banner {
         border-bottom: 8px solid rgba(255,255,255,.25);
         height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
       }
 
       .nav {
@@ -28,29 +33,37 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 3px;
+        border: 4px solid black;
 
         .left {
           margin-left: 10px;
-          min-width: 50%;
+          min-width: 70%;
           display: flex;
           justify-content: space-between;
+          align-items: center;
+
+          a {
+            text-decoration: none;
+          }
         }
       }
     }
 
     .body {
-      min-height: 80vh;
       display: flex;
+      height: 400px;
 
       .sidebar {
-        height: 500px;
-        width: 20%;
+        width: 30%;
 
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 10px 5px;
+        margin: 20px 10px;
         border: 1px solid black;
+        -webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+        box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
 
         div {
           margin: 10px 5px;
@@ -75,9 +88,14 @@
       }
 
       .show-children {
-        width: 80%;
+        width: 60%;
         display: flex;
         flex-direction: column;
+        margin: 20px 10px;
+        border: 1px solid black;
+        -webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+        box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
 
         .description {
           display: none;
@@ -86,11 +104,35 @@
         }
 
         .children{
-          margin: 10px;
-          height: 70%;
         }
       }
     }
 
+  }
+}
+
+.left {
+  height: 100%;
+
+  .menu-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .menu-item:hover {
+    transform: scale(1.02);
+    transition: border-width 0.1s ease-in-out;
+    border-bottom: 5px solid #74a8c3;
+  }
+
+  .menu-item:active {
+    border-bottom: 5px solid #74a8c3;
+  }
+
+  .menu-item.active {
+    border-bottom: 5px solid #74a8c3;
   }
 }

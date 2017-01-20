@@ -1,4 +1,4 @@
-json.extract! group, :id, :name, :description, :city, :state, :organizer_id, :banner_img_url, :background_img_url, :thumbnail_img_url
+json.extract! group, :id, :name, :description, :city, :state, :organizer_id, :banner_img_url, :background_img_url, :thumbnail_img_url, :created_at
 
 json.members do
   json.partial! "api/user", collection: group.members, as: :user

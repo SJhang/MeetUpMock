@@ -62,7 +62,9 @@ class GroupShow extends React.Component {
             deleteMember={this.props.deleteMember}
             members={this.props.members}/>
           <div className="body group">
-            <GroupSidebar group={this.props.group}/>
+            <GroupSidebar
+              group={this.props.group}
+              />
             <div className={klass}>
               <section className="description">
                 <div>{this.props.group.description}</div>

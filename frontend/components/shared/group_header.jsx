@@ -3,8 +3,7 @@ import {Link} from 'react-router';
 import ProfileButton from './profile_button';
 
 const GroupHeader = (props) => {
-
-  const switchButton = function(){
+  const switchButton = () => {
     let filteredMember;
     if (props.members.length >= 1) {
       filteredMember = props.members.filter(member => member.username === window.currentUser.username);
@@ -16,19 +15,45 @@ const GroupHeader = (props) => {
     }
   };
 
+  const toggleMenu = () => {
+    $(document).click(e => {
+      e.stopPropagation();
+
+      if ($(e.target).hasClass("active") && $) {
+        $(e.target).removeClass("active");
+      } else {
+        $(e.target).addClass("active");
+      }
+    });
+  };
+
+  const backgroundColors = ["#dfad28", "#ed9825", "#29c99c", "#5c139a", "#00c1db", "#ff1e4b"];
+
   return (
     <div className="head">
-      <div className="banner">
-        <h1>{props.group.name}</h1>
+      <div
+        className="banner"
+        style={{background: "#00c1db"}}>
+        {props.group.name}
       </div>
       <div className="nav">
         <ul className="left">
-          <li><Link to={`/groups/${props.groupId}`}>Home</Link></li>
-          <li><Link to={`/groups/${props.groupId}/members`}>Members</Link></li>
-          <li><Link to={`/groups/${props.groupId}/photos`}>Photos</Link></li>
-          <li><Link to={`/groups/${props.groupId}/events`}>Events</Link>
-          </li>
-          <li><button>Reviews</button></li>
+          <Link
+            to={`/groups/${props.groupId}`}
+            onClick={toggleMenu}
+            className="menu-item.active">Home</Link>
+          <Link
+            to={`/groups/${props.groupId}/members`}
+            onClick={toggleMenu}
+            className="menu-item">Members</Link>
+          <Link
+            to={`/groups/${props.groupId}/photos`}
+            onClick={toggleMenu}
+            className="menu-item">Photos</Link>
+          <Link
+            to={`/groups/${props.groupId}/events`}
+            onClick={toggleMenu}
+            className="menu-item">Events</Link>
         </ul>
         {switchButton}
       </div>

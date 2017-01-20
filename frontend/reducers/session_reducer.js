@@ -24,7 +24,6 @@ export const SessionReducer = (state = _defaultState, action) => {
       return merge({}, state, { currentUser });
     case RECEIVE_ERRORS:
       let errors = { password: [], username: [] };
-      debugger;
       if (action.errors.responseJSON.constructor === Array) {
         errors.password = errors.password.concat(action.errors.responseJSON);
       } else {
