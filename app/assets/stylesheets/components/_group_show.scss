@@ -74,11 +74,21 @@
         width: 80%;
         display: flex;
         flex-direction: column;
-        padding: 10px;
+        margin: 20px 5px;
+        border: 1px solid black;
+        -webkit-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
+        box-shadow: 3px 3px 5px 0px rgba(50, 50, 50, 0.75);
 
         .description {
           height: 30%;
           margin: 10px;
+          display: flex;
+          flex-direction: column;
+
+          ul {
+            margin: 20px;
+          }
         }
 
         .children{

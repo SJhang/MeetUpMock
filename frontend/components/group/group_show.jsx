@@ -19,6 +19,7 @@ class GroupShow extends React.Component {
     if (this.props.group.members) {
       return this.props.group.members.map(member=> (
         <ul key={member.id}>
+          Members:
           <li>{member.username}</li>
           <li>{member.profile_img}</li>
         </ul>
