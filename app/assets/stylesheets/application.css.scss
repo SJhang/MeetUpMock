@@ -1,6 +1,8 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 // Core
 @import "base/colors.scss";
@@ -12,12 +14,6 @@
 
 // Modules
 @import "modules/*";
-
-//font-awesome
-@import "font-awesome-sprockets";
-@import "font-awesome";
-@import "base/slick";
-@import "base/slick-carousel";
 
 .app {
   min-height: 100vh;
