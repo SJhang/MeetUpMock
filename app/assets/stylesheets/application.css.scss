@@ -1,13 +1,11 @@
-// CSS Reset
-@import "base/reset.scss";
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 // Core
 @import "base/colors.scss";
 @import "base/fonts.scss";
 @import "base/layout.scss";
-
-// Grid
-@import "base/grid.scss";
 
 // Components
 @import "components/*";
