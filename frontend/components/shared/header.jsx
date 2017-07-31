@@ -32,19 +32,23 @@ class Header extends React.Component {
   }
 
   logout() {
+    debugger;
     this.props.logout();
     this.props.router.push('/');
   }
 
   login() {
+    debugger;
     this.props.router.push('/login');
   }
 
   signup() {
+    debugger;
     this.props.router.push('/signup');
   }
 
   redirectToProfile() {
+    debugger;
     hashHistory.push(`/users/${this.props.currentUser.id}`);
   }
 
@@ -69,12 +73,12 @@ class Header extends React.Component {
     } else {
       return (
         <div className="nav navbar-nav navbar-right">
-          <Link
-            to={'/login'}
-            className="btn btn-default navbar-btn">Log in</Link>
-          <Link
-            to={'/signup'}
-            className="btn btn-primary navbar-btn">Sign up</Link>
+          <Link to={'/login'} className="btn btn-default navbar-btn">
+            Log in
+          </Link>
+          <Link to={'/signup'} className="btn btn-primary navbar-btn">
+            Sign up
+          </Link>
         </div>
       );
     }
