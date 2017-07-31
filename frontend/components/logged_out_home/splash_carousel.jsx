@@ -1,6 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
-import {Link, hashHistory} from 'react-router';
+import { Link } from 'react-router-dom';
 
 
 const Carousel = (props) => {

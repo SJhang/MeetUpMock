@@ -1,6 +1,9 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { syncHistoryWithStore } from 'react-router-redux';
+import { createBrowserHistory } from 'history';
+
 import App from './app';
 import SessionFormContainer from './session/session_form_container';
 import SplashContainer from './logged_out_home/splash_container';
@@ -46,30 +49,32 @@ const Root = ({ store }) => {
     store.dispatch(populateGroups());
   };
 
+  const history = syncHistoryWithStore(createBrowserHistory(), store);
+
   return (
     <Provider store={store}>
-      <Router history={hashHistory}>
-        <Route path='/' component={App} onEnter={_populateStore}>
-          <IndexRoute component={SplashContainer} />
-          <Route path='create' component={GroupCreateContainer}/>
-          <Route path='home' component={HomeContainer} onEnter={_ensureLoggedIn}>
-            <IndexRoute component={GroupContainer} onEnter={_ensureLoggedIn} />
-            <Route path='groups' component={GroupContainer} onEnter={_ensureLoggedIn} />
-            <Route path='events' component={EventContainer} onEnter={_ensureLoggedIn} />
-          </Route>
-          <Route path='groups/:groupId' component={GroupShowContainer} >
-            <IndexRoute component = {EventContainer}/>
-            <Route path='events/:eventId' component={EventShowContainer} />
-            <Route path='events' component={EventContainer} />
-            <Route path='members' component={MembersContainer} />
-            <Route path='photos' component={Photos} />
-          </Route>
-          <Route path='users/:userId' component={UserContainer} onEnter={_ensureLoggedIn, _updateUser}/>
-        </Route>
-        <Route path='signup'
-          component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
-        <Route path='login'
-          component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+      <Router history={history}>
+        <App>
+          <Switch>
+            <Route exact path='/' component={SplashContainer} onEnter={_populateStore}/>
+            <Route path='/create' component={GroupCreateContainer}/>
+            <Route path='/home' component={HomeContainer} onEnter={_ensureLoggedIn}/>
+            <Route exact component={GroupContainer} onEnter={_ensureLoggedIn} />
+            <Route path='/groups' component={GroupContainer} onEnter={_ensureLoggedIn} />
+            <Route path='/events' component={EventContainer} onEnter={_ensureLoggedIn} />
+            <Route path='/groups/:groupId' component={GroupShowContainer} />
+            <Route exact path='/events' component = {EventContainer}/>
+            <Route path='/events/:eventId' component={EventShowContainer} />
+            <Route path='/events' component={EventContainer} />
+            <Route path='/members' component={MembersContainer} />
+            <Route path='/photos' component={Photos} />
+            <Route path='/users/:userId' component={UserContainer} onEnter={_ensureLoggedIn, _updateUser}/>
+            <Route path='/signup'
+              component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+            <Route path='/login'
+              component={SessionFormContainer} onEnter={_redirectIfLoggedIn} />
+          </Switch>
+        </App>
       </Router>
     </Provider>
   );

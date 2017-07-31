@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 import UpcomingEvents from './upcoming_events';
 import MainVideo from './main_video';
 import UserProfile from '../user_profile/user_profile';
@@ -39,7 +39,7 @@ class Splash extends React.Component {
 
   render () {
     return (
-        <div className="splash-view-body">
+        <div className="row col-xs-12">
           <main>
             <section className="video-wrap">
             <div className="header-overlay"></div>

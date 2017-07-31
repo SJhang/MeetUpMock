@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, hashHistory, withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 import ProfileButton from './profile_button';
 
 class Header extends React.Component {
@@ -68,20 +68,13 @@ class Header extends React.Component {
       );
     } else {
       return (
-        <div className="session-buttons">
-          <div>
-            <Link
+        <div className="nav navbar-nav navbar-right">
+          <Link
             to={'/login'}
-            className="sign-in">Log in</Link>
-          </div>
-          <div>
-            <h2>|</h2>
-          </div>
-          <div>
-            <button
-            onClick={this.signup.bind(this)}
-            className="sign-up">Sign up</button>
-          </div>
+            className="btn btn-default navbar-btn">Log in</Link>
+          <Link
+            to={'/signup'}
+            className="btn btn-primary navbar-btn">Sign up</Link>
         </div>
       );
     }
@@ -90,27 +83,36 @@ class Header extends React.Component {
   render () {
 
     return (
-      <header className="main-nav">
-        <div className="content">
-          <section>
-            <nav className="left-nav">
-              <div>
-                <i className="fa fa-meetup fa-3x" onClick={this.clickLogo.bind(this)}></i>
-              </div>
-            </nav>
-            <nav className="middle-nav">
-              <div>
-                <Link to={'/create'}>Start a Meet Up</Link>
-              </div>
-            </nav>
-          </section>
-          <section className="right-nav">
-            {
-              this.headerText()
-            }
-          </section>
+      <nav className="navbar navbar-toggleable-md fixed-top">
+        <div className="container">
+          <button
+            type="button"
+            className="navbar-toggler navbar-toggler-right collapsed"
+            data-toggle="collapse"
+            data-targer="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle Navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <a className="navbar-brand">
+            <i className="fa fa-meetup fa-3x" onClick={this.clickLogo.bind(this)}></i>
+          </a>
+          <div
+            className="navbar-collapse collapse"
+            id="navbarCollapse"
+            aria-expanded='false'>
+            <ul className="nav navbar-nav mr-auto">
+              <li className="navbar-item active">
+                <Link to={'/create'} className="nav-link">Start a Meet Up</Link>
+              </li>
+              <li className="navbar-item">
+                { this.headerText() }
+              </li>
+            </ul>
+          </div>
         </div>
-      </header>
+      </nav>
     );
   }
 }

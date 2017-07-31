@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from './splash_carousel';
-import {Link} from 'react-router';
+import { Link } from 'react-router-dom';
 
 const UpcomingEvents = ({eventList}) => {
   return(

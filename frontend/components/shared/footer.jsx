@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 import {logout} from '../../actions/session_actions';
 
 class Footer extends React.Component{
@@ -34,7 +34,7 @@ class Footer extends React.Component{
 
   render() {
     return (
-      <footer className="main-footer">
+      <footer className="row col-xs-12">
         <div className="seperator">
           <div className="bot"></div>
           <div className="top"></div>
