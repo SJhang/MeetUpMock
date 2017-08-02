@@ -1,5 +1,4 @@
 import React from 'react';
-import { hashHistory } from 'react-router';
 
 class Find extends React.Component {
   constructor (props) {

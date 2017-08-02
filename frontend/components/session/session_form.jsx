@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class SessionForm extends React.Component {
 
   redirectIfLoggedIn() {
 		if (this.props.loggedIn) {
-			this.props.router.push("/home");
+			this.props.history.push("/home");
 		}
 	}
 
@@ -93,7 +93,7 @@ class SessionForm extends React.Component {
     return (
       <div className="session-container">
         <div className="body">
-          <i className="fa fa-meetup fa-5x" aria-hidden="true" onClick={()=>this.props.router.push('/')}></i>
+          <i className="fa fa-meetup fa-5x" aria-hidden="true" onClick={()=>this.props.history.push('/')}></i>
           <h1>{this.props.formType}</h1>
           <div className="session-form">
               <form onSubmit={this.handleSubmit}>
@@ -125,7 +125,7 @@ class SessionForm extends React.Component {
                 {this.navLink()}
                 <h5>Log in as Guest &nbsp;
                   <button
-                    className="guest-button"
+                    className="btn btn-warning"
                     onClick={this.handleGuestLogin}>Guest Sign in</button>
                 </h5>
               </div>

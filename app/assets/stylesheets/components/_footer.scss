@@ -1,78 +1,41 @@
-.main-footer {
-  display: flex;
-  flex-direction: column;
-  background: $light-gray;
-  opacity: 0.8;
-  color: $gray;
-  font: $roboto;
-  font-weight: 300;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin-top: 20px;
-  width: 100%;
-  font-weight: 800;
-  height: 25vh;
+.footer {
+    padding: 50px 0 20px 0;
+    background-color: #35404f;
+    color: #878c94;
 }
 
-.main-footer:hover {
-}
-
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin: 0 auto;
-  width: 80%;
-  height: 50%;
-  font-style: $roboto;
-  font-weight: 100;
-  font-size: 15px;
-  color: black;
-
-  div {
-    margin-left: 11px;
-
-    a {
-      cursor: pointer;
-    }
-
-    button {
-      font-size: 10px;
-    }
+.footer .title{text-align: left;color:#fff;font-size:25px;}
+.footer .title .create {
+  &:hover {
+    text-decoration: none;
   }
 }
 
-.footer-mid {
-  margin: 0 auto;
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 50%;
-  bottom: 0;
-  font-style: $roboto;
-  font-weight: 100;
+.footer .social-icon{padding:0px;margin:0px;}
+.footer .social-icon a{display:inline-block;color:#fff;font-size:25px;padding:5px;}
+.footer .account-icon a{display:block;color:#fff;font-size:18px;padding:5px;text-decoration:none;}
+.footer .account-icon .fa{margin-right:25px;}
 
-  ul {
-    display: flex;
-  }
 
-  li {
-    margin: 5px;
-    margin-right: 15px;
+.footer .favorites a {
+    text-decoration: none;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 20px;
+    margin: 1px;
+    border-radius:4px;
+    margin-top: 6px;
+    background-color: black;
+    border: solid 1px #fff;
+}
 
-    i {
-      cursor: pointer;
-      margin-left: 5px;
-    }
-
-    i:hover {
-      transform: scale(1.5);
-    }
-  }
-
-  div {
-    margin-bottom: 13px;
-  }
+.footer .profiles{margin:0px;padding:0px;list-style-type:none}
+.footer .profiles li{list-style-type:none}
+.footer .profiles li a {
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    float: left;
+    font-size: 25px;
+    padding: 10px 10px;
 }

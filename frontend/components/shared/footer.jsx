@@ -3,21 +3,24 @@ import { Link, withRouter } from 'react-router-dom';
 import {logout} from '../../actions/session_actions';
 
 class Footer extends React.Component{
-
-  footerLink() {
-    if (window.location.hash === "#/") {
-      return (
-        <Link to='/login'>Log in</Link>
-      );
-    } else {
-      return (
-        <button onClick={this.props.logout.bind(this)}>Log out</button>
-      );
-    }
+  constructor(props){
+    super(props);
   }
 
-  componentWillReceiveProps(newProps) {
-
+  renderSessionButton() {
+    if (this.props.currentUser.username) {
+      return (
+        <a
+          className="btn btn-danger"
+          onClick={() => this.props.logout()}>Sign Out</a>
+      )
+    } else {
+      return (
+        <Link
+          className="btn btn-primary"
+          to='/signup'>Sign Up</Link>
+      )
+    }
   }
 
   angelLink() {
@@ -34,27 +37,72 @@ class Footer extends React.Component{
 
   render() {
     return (
-      <footer className="row col-xs-12">
-        <div className="seperator">
-          <div className="bot"></div>
-          <div className="top"></div>
-        </div>
-        <div className="footer-top">
-          <div><Link to={'/create'}>Start a Meet Up</Link></div>
-          <div>
-            {this.footerLink()}
+      <footer className="footer">
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-6">
+              <Link className="title create" to={'/create'}>Start Recruiting</Link>
+            </div>
+            <div className="col-sm-2 pull-right">
+              {this.renderSessionButton()}
+            </div>
           </div>
-        </div>
-        <div className="footer-mid">
-          <ul>
-            <li><i className="fa fa-angellist fa-2x" aria-hidden="true"
-              onClick={this.angelLink.bind(this)}>&nbsp;</i></li>
-            <li><i className="fa fa-github fa-2x" aria-hidden="true"
-              onClick={this.githubLink.bind(this)}></i></li>
-            <li><i className="fa fa-linkedin-square fa-2x" aria-hidden="true"
-              onClick={this.linkedinLink.bind(this)}></i></li>
-          </ul>
-          <div>Built by Sonik Jhang</div>
+          <br></br>
+          <div className="row">
+            <div className="col-sm-3">
+              <h4 className="title">Gear Up</h4>
+              <p>GearUp is a solution for gamers. Find your teammates and group up FTW.</p>
+              <span className="social-icon">
+                <a><i className="fa fa-facebook" aria-hidden="true"></i></a>
+                <a><i className="fa fa-twitter" aria-hidden="true"></i></a>
+                <a><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                <a><i className="fa fa-youtube-play" aria-hidden="true"></i></a>
+                <a><i className="fa fa-google" aria-hidden="true"></i></a>
+              </span>
+            </div>
+            <div className="col-sm-2">
+              <h4 className="title">My Account</h4>
+              <span className="account-icon">
+                <a><i className="fa fa-gamepad" aria-hidden="true"></i>Games</a>
+                <a><i className="fa fa-users" aria-hidden="true"></i>Groups</a>
+                <a><i className="fa fa-twitch" aria-hidden="true"></i>Streams</a>
+                <a><i className="fa fa-video-camera" aria-hidden="true"></i>Videos</a>
+                <a><i className="fa fa-id-badge" aria-hidden="true"></i>Setting</a>
+              </span>
+            </div>
+            <div className="col-sm-5">
+              <h4 className="title">Favorites</h4>
+              <span className="favorites">
+                <a>Overwatch</a>
+                <a>League Of Legends</a>
+                <a>Battle Ground</a>
+                <a>Diablo III</a>
+                <a>StarCraft II</a>
+                <a>World of Warcraft</a>
+                <a>Sudden Attack</a>
+                <a>Aion</a>
+                <a>Witcher III</a>
+              </span>
+            </div>
+            <div className="col-sm-2">
+              <h4 className="title">About Me</h4>
+              <ul className="nav nav-pills profiles">
+                <li><a onClick={this.githubLink.bind(this)}>
+                  <i className="fa fa-github" aria-hidden="true"></i></a>
+                </li>
+                <li><a onClick={this.linkedinLink.bind(this)}>
+                  <i className="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                </li>
+                <li><a onClick={this.angelLink.bind(this)}>
+                  <i className="fa fa-angellist" aria-hidden="true">&nbsp;</i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <hr></hr>
+          <div className="row">
+            <p className="text-center"> © 2017 Made by Sonik Jhang.</p>
+          </div>
         </div>
       </footer>
     );

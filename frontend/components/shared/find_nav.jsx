@@ -1,15 +1,15 @@
 import React from 'react';
-import {Link, hashHistory} from 'react-router';
+import {Link} from 'react-router';
 import GroupSearchBox from '../group/group_search_box';
 
 const FindNav = (props) => {
 
   const redirectToEvents = () => {
-    hashHistory.push('/events');
+    history.push('/events');
   };
 
   const redirectToGroups = () => {
-    hashHistory.push('/groups');
+    history.push('/groups');
   };
 
   const toggleButtons = (location) => {
@@ -42,13 +42,13 @@ const FindNav = (props) => {
           <div
             className="group-button"
             style={toggleButtons("groups")}
-            onClick={()=>hashHistory.push(`/home/groups`)}>
+            onClick={()=>history.push(`/home/groups`)}>
             Groups
           </div>
           <div
             className="event-button"
             style={toggleButtons("events")}
-            onClick={()=>hashHistory.push("/home/events")}>
+            onClick={()=>history.push("/home/events")}>
             Events
           </div>
         </div>

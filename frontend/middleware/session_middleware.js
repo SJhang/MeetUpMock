@@ -8,11 +8,12 @@ import {
   RECEIVE_ERRORS
 } from '../actions/session_actions';
 import { login, logout, signup, createImage } from '../util/session_api_util';
-import {hashHistory} from 'react-router';
+import { createBrowserHistory } from 'history';
 
 export default ({getState, dispatch}) => next => action => {
   const successCallback = user => dispatch(receiveCurrentUser(user));
   const errorCallback = errors => dispatch(receiveErrors(errors));
+  const history = createBrowserHistory();
 
   switch (action.type) {
     case LOGIN:
@@ -21,7 +22,7 @@ export default ({getState, dispatch}) => next => action => {
     case LOGOUT:
       logout(() => {
         next(action);
-        hashHistory.push('/');
+        history.push('/');
       });
       return next(action);
     case SIGNUP:

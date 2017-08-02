@@ -1,0 +1,40 @@
+.navbar-inverse {
+  background-color: #fff;
+  color: #878c94;
+}
+
+.navbar-brand {
+  height: 50px;
+  padding: 3px 15px;
+  font-size: 18px;
+  line-height: 20px;
+  position: absolute;
+  z-index: 11;
+  margin: 0 auto;
+  color: black;
+}
+
+.navbar {
+  position: relative;
+  min-height: 50px;
+  margin-bottom: 0px;
+  border: 0px solid #000;;
+  border-radius:0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #fff;
+}
+
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 15px 11px;
+}
+
+.form-control{
+  border-color:#fff;
+  border-radius:0px;
+  background-color:transparent;
+}

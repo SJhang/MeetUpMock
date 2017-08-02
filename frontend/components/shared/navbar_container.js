@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Header from './header';
+import Navbar from './navbar';
 import { logout, login, signup } from '../../actions/session_actions';
 
 const mapStateToProps = ({session}) => ({
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Header);
+)(Navbar);

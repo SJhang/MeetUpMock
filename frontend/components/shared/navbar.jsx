@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import ProfileButton from './profile_button';
 
-class Header extends React.Component {
+class Navbar extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -34,17 +34,17 @@ class Header extends React.Component {
   logout() {
     debugger;
     this.props.logout();
-    this.props.router.push('/');
+    this.props.history.push('/');
   }
 
   login() {
     debugger;
-    this.props.router.push('/login');
+    this.props.history.push('/login');
   }
 
   signup() {
     debugger;
-    this.props.router.push('/signup');
+    this.props.history.push('/signup');
   }
 
   redirectToProfile() {
@@ -55,10 +55,10 @@ class Header extends React.Component {
 
   clickLogo() {
     if (this.props.currentUser.username) {
-      this.props.router.push('/home');
+      this.props.history.push('/home');
     } else {
       if (window.location.hash !== "#/") {
-        this.props.router.push('/');
+        this.props.history.push('/');
       }
     }
   }
@@ -87,32 +87,19 @@ class Header extends React.Component {
   render () {
 
     return (
-      <nav className="navbar navbar-toggleable-md fixed-top">
+      <nav className="navbar navbar-inverse">
         <div className="container">
-          <button
-            type="button"
-            className="navbar-toggler navbar-toggler-right collapsed"
-            data-toggle="collapse"
-            data-targer="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle Navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <a className="navbar-brand">
-            <i className="fa fa-meetup fa-3x" onClick={this.clickLogo.bind(this)}></i>
-          </a>
-          <div
-            className="navbar-collapse collapse"
-            id="navbarCollapse"
-            aria-expanded='false'>
-            <ul className="nav navbar-nav mr-auto">
-              <li className="navbar-item active">
-                <Link to={'/create'} className="nav-link">Start a Meet Up</Link>
-              </li>
-              <li className="navbar-item">
-                { this.headerText() }
-              </li>
+          <div className="navbar-header">
+            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+              <span className="icon-bar"></span>
+            </button>
+            <a className="navbar-brand">GearUp</a>
+          </div>
+          <div className="collapse navbar-collapse" id="myNavbar">
+            <ul className="nav navbar-nav navbar-right">
+              {this.headerText()}
             </ul>
           </div>
         </div>
@@ -121,4 +108,4 @@ class Header extends React.Component {
   }
 }
 
-export default withRouter(Header);
+export default withRouter(Navbar);

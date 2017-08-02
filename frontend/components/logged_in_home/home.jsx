@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, hashHistory, withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 import Find from '../shared/find';
 import FindNav from '../shared/find_nav';
 
@@ -7,7 +7,7 @@ class Home extends React.Component {
   componentDidMount() {
     $(document).scrollTop(0);
   }
-  
+
   render () {
     return (
       <div className="authenticated-body">

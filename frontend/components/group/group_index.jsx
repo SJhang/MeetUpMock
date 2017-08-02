@@ -1,7 +1,6 @@
 import React from 'react';
 import GroupsIndexItem from './group_index_item.jsx';
 import Masonry from 'react-masonry-component';
-import {hashHistory} from 'react-router';
 
 const GroupsIndex = ({groups}) => {
   const eachGroup = () => {

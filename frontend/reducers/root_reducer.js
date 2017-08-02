@@ -1,16 +1,16 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
-import SessionReducer from './session_reducer';
-import GroupReducer from './group_reducer';
-import EventReducer from './event_reducer';
-import GroupSearchReducer from './group_search_reducer';
-import UserReducer from './user_reducer';
+import { routerReducer as routing } from 'react-router-redux';
+import session from './session_reducer';
+import groups from './group_reducer';
+import events from './event_reducer';
+import searchParams from './group_search_reducer';
+import user from './user_reducer';
 
 export default combineReducers ({
-  routing: routerReducer,
-  session: SessionReducer,
-  groups: GroupReducer,
-  events: EventReducer,
-  searchParams: GroupSearchReducer,
-  user: UserReducer
+  routing,
+  session,
+  groups,
+  events,
+  searchParams,
+  user
 });

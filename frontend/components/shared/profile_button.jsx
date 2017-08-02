@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
 const ProfileButton = (props) => {
+  const history = createBrowserHistory();
+
   const closeDropDown = () => {
     $(document).click(e => {
       e.stopPropagation();
@@ -28,7 +31,7 @@ const ProfileButton = (props) => {
 
   const logout = () => {
     props.logout();
-    props.router.push('/');
+    history.push('/');
   };
 
   return (
@@ -36,7 +39,7 @@ const ProfileButton = (props) => {
       <button onClick={toggleDropDown}>{props.currentUser.username}</button>
       <div className="dropdown-content hidden">
           <Link className="profile-link" to={`/users/${props.currentUser.id}`}>Profile</Link>
-          <Link className="logout" onClick={logout}>Log Out</Link>
+          <a className="logout" onClick={logout}>Log Out</a>
       </div>
     </div>
   );

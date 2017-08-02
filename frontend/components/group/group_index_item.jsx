@@ -17,7 +17,7 @@ const GroupsIndexItem = (props) => {
   return (
     <li
       className="groups-index-item"
-      onClick={()=>props.router.push(`groups/${group.id}`)}>
+      onClick={()=>props.history.push(`groups/${group.id}`)}>
       <div
         className="group-item-background"
         style={background}></div>

@@ -14,14 +14,14 @@ class Event extends React.Component {
       filteredEvents = this.props.eventList.filter(event => event.group_id === this.props.groupId);
       return filteredEvents.map(eventItem =>
           (<div key={eventItem.id}>
-            <button onClick={()=>this.props.router.push(`/groups/${this.props.groupId}/events/${eventItem.id}`)}>
+            <button onClick={()=>this.props.history.push(`/groups/${this.props.groupId}/events/${eventItem.id}`)}>
               {eventItem.title}
             </button>
           </div>));
     } else {
       return this.props.eventList.map(eventItem =>
       <div key={eventItem.id}>
-        <button onClick={()=>this.props.router.push(`/groups/${eventItem.group_id}/events/${eventItem.id}`)}>{eventItem.title}</button>
+        <button onClick={()=>this.props.history.push(`/groups/${eventItem.group_id}/events/${eventItem.id}`)}>{eventItem.title}</button>
       </div>);
     }
   }

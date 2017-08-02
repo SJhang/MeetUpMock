@@ -19,7 +19,7 @@ class GroupCreate extends React.Component {
   }
 
   navigateToGroupIndex() {
-    this.props.router.push('/home/groups');
+    this.props.history.push('/home/groups');
   }
   componentDidMount() {
     $(document).scrollTop(0);
@@ -49,7 +49,7 @@ class GroupCreate extends React.Component {
     if (currentUser.username) {
       organizer_id = currentUser.id;
     } else {
-      this.props.router.push('/signup');
+      this.props.history.push('/signup');
     }
     let group = {name: this.state.name,
       description: this.state.description,
