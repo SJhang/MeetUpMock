@@ -11,7 +11,9 @@
   position: absolute;
   z-index: 11;
   margin: 0 auto;
-  color: black;
+  color: black !important;
+  display: flex;
+  align-items: center;
 }
 
 .navbar {

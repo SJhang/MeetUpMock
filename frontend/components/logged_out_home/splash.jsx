@@ -49,8 +49,8 @@ class Splash extends React.Component {
             <div className="item active">
               <img src="http://diamondcreative.net/plus-v1.1/img/slider/slider_06.jpg"/>
               <div className="carousel-caption hidden-xs">
-                <h3>New Collection touch of Chania</h3>
-                <p>The atmosphere in Chania has a touch<br></br> of Florence and Venice.</p>
+                <h3>New Weapons in BattleGround</h3>
+                <p>Gather your squads to<br></br>win chicken.</p>
                   <button className="btn btn-danger">READ MORE</button>
               </div>
             </div>
@@ -58,8 +58,8 @@ class Splash extends React.Component {
             <div className="item">
               <img src="http://diamondcreative.net/plus-v1.1/img/slider/slider_03.jpg"/>
               <div className="carousel-caption hidden-xs">
-                <h3>New Collection touch of Chania</h3>
-                <p>The atmosphere in Chania has a touch<br></br> of Florence and Venice.</p>
+                <h3>New Heroes and Maps in Overwatch</h3>
+                <p>Dominate your game<br></br>with your teammates.</p>
                 <button className="btn btn-danger">READ MORE</button>
               </div>
             </div>
