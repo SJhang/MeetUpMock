@@ -1,9 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router';
 import GroupSearchBox from '../group/group_search_box';
+import {createBrowserHistory} from 'history';
 
 const FindNav = (props) => {
-
+  const history = createBrowserHistory();
+  
   const redirectToEvents = () => {
     history.push('/events');
   };
