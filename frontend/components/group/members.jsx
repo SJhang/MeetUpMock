@@ -18,7 +18,7 @@ class Members extends React.Component {
 
   switchButton() {
     if (this.props.members.length >= 1) {
-      if (this.props.members.some(member => member.username === this.props.currentUser.username)) {
+      if (this.props.members.some(member => member.username === this.props.currentUser)) {
         return (<button onClick={this.props.deleteMember.bind(this, this.props.currentUser, this.props.groupId)}>Leave group</button>);
       } else {
         return (<button onClick={this.props.addMember.bind(this, this.props.currentUser, this.props.groupId)}>Join us!</button>);

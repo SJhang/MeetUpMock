@@ -11,11 +11,19 @@ class Home extends React.Component {
   render () {
     return (
       <div className="authenticated-body">
-        <Find />
+        <div className="home-pre-body">
+          <section>
+            <div className='header-overlay'></div>
+            <div className="find-header">
+              <h2>Find a Meetup</h2>
+              <h4>Meetups nearby</h4>
+            </div>
+          </section>
+        </div>
         <FindNav searchParams={this.props.searchParams}
         updateGroupSearchParam={this.props.updateGroupSearchParam}/>
         <div className="main-body">
-          {this.props.children}
+          
         </div>
       </div>
     );

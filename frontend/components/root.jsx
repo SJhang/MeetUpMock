@@ -1,13 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { createBrowserHistory } from 'history';
 
 import App from './app';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SessionFormContainer from './session/session_form_container';
 // import SplashContainer from './logged_out_home/splash_container';
-// import HomeContainer from './logged_in_home/home_container';
+import HomeContainer from './logged_in_home/home_container';
 // import GroupContainer from './group/group_container';
 // import EventContainer from './event/event_container';
 // import UserContainer from './user_profile/user_container';
@@ -21,19 +22,19 @@ import SessionFormContainer from './session/session_form_container';
 
 const Root = ({ store }) => {
   const _ensureLoggedIn = (nextState, replace) => {
-    const currentUser = store.getState().session.currentUser.username;
+    const currentUser = store.getState().session.currentUser;
     console.log(currentUser, "logged in ensure");
     if (!currentUser) replace('/login');
   };
 
   const _redirectIfLoggedIn = (nextState, replace) => {
-    const currentUser = store.getState().session.currentUser.username;
+    const currentUser = store.getState().session.currentUser;
     console.log(currentUser, "logged in redirect");
     if (currentUser) replace('/home');
   };
 
   const _createAccount = (nextState, replace) => {
-    const currentUser = store.getState().session.currentUser.username;
+    const currentUser = store.getState().session.currentUser;
     if (!currentUser) replace('/signup');
   };
 
@@ -55,9 +56,9 @@ const Root = ({ store }) => {
     <Provider store={store}>
       <Router history={history}>
         <Switch>
-          <Route exact path='/' component={App} />
-          <Route path='/signup' component={SessionFormContainer}/>
-          <Route path='/login' component={SessionFormContainer}/>
+          <AuthRoute path='/login' component={SessionFormContainer} />
+          <AuthRoute path='/signup' component={SessionFormContainer} />
+          <App/>
         </Switch>
       </Router>
     </Provider>

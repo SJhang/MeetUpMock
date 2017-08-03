@@ -46,7 +46,7 @@ class GroupCreate extends React.Component {
     let currentUser = this.props.currentUser;
     let organizer_id;
 
-    if (currentUser.username) {
+    if (currentUser) {
       organizer_id = currentUser.id;
     } else {
       this.props.history.push('/signup');

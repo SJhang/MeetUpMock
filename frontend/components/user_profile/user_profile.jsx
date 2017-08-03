@@ -100,7 +100,7 @@ class UserProfile extends React.Component {
       <div className="profile-main-div">
         <div className="profile-div">
           <div className="profile-detail">
-            <div className="username">{this.props.currentUser.username}</div>
+            <div className="username">{this.props.currentUser}</div>
             <div className="detail">
               <h2>Name: {this.displayName()}</h2>
               <h2>Location: {location} </h2>

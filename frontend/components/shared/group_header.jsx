@@ -6,7 +6,7 @@ const GroupHeader = (props) => {
   const switchButton = () => {
     let filteredMember;
     if (props.members.length >= 1) {
-      filteredMember = props.members.filter(member => member.username === window.currentUser.username);
+      filteredMember = props.members.filter(member => member.username === window.currentUser);
       if (filteredMember.length !== 0) {
         return (<button onClick={props.deleteMember( window.currentUser, props.groupId)}>Leave group</button>);
       } else {

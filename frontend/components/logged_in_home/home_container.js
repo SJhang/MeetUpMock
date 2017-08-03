@@ -6,7 +6,7 @@ import { updateGroupSearchParam } from '../../actions/group_search_actions';
 
 const mapStateToProps = ({ session, groups, events, searchParams }) => ({
   currentUser: session.currentUser,
-  loggedIn: Boolean(session.currentUser.username),
+  loggedIn: Boolean(session.currentUser),
   groupList: Object.keys(groups.groups).map(id=>groups.groups[id]),
   searchParams
 });

@@ -7,14 +7,10 @@ import {
 
 import {merge} from 'lodash';
 
-let _defaultState = {
-    currentUser: {
-      username: null,
-      id: null,
-      profile_img: null
-    },
-    errors: {}
-  };
+let _defaultState = Object.freeze({
+    currentUser: null,
+    errors: []
+  });
 
 export const SessionReducer = (state = _defaultState, action) => {
   Object.freeze(state);

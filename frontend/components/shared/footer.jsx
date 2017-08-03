@@ -8,7 +8,7 @@ class Footer extends React.Component{
   }
 
   renderSessionButton() {
-    if (this.props.currentUser.username) {
+    if (this.props.currentUser) {
       return (
         <a
           className="btn btn-danger"
