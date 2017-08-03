@@ -10,19 +10,27 @@ class Home extends React.Component {
 
   render () {
     return (
-      <div className="authenticated-body">
-        <div className="home-pre-body">
-          <section>
-            <div className='header-overlay'></div>
-            <div className="find-header">
-              <h2>Find a Meetup</h2>
-              <h4>Meetups nearby</h4>
-            </div>
-          </section>
+      <div>
+        <div className="home-header">
+          <div className='header-overlay'></div>
+          <div className="find-header">
+            <h2>Find your Teammate</h2>
+            <p>Meetups nearby</p>
+          </div>
         </div>
-        <FindNav searchParams={this.props.searchParams}
-        updateGroupSearchParam={this.props.updateGroupSearchParam}/>
-        <div className="main-body">
+        <div className="container search-nav">
+          <form className="navbar-form navbar-left" role="search">
+            <div className="form-group">
+              <input type="text" className="form-control" placeholder="Search"></input>
+            </div>
+            <button type="submit" className="btn btn-default">Submit</button>
+          </form>
+          <div className="btn-group pull-right" role="group">
+            <button type="submit" className="btn btn-default">Groups</button>
+            <button type="submit" className="btn btn-default">Events</button>
+          </div>
+        </div>
+        <div className="container">
           
         </div>
       </div>

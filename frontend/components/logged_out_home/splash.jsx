@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import SplashCarousel from './splash_carousel';
-import MainVideo from './main_video';
 import UserProfile from '../user_profile/user_profile';
 import {getLocation} from '../../util/user_api_util';
 

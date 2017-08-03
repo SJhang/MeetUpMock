@@ -1,9 +1,8 @@
-// body {
-// 	font-family: $roboto-slab;
-// 	font-size: 12px;
-// 	-webkit-font-smoothing: subpixel-antialiased;
-// 	background-image: url("https://res.cloudinary.com/dsetpdsls/image/upload/dn_102,e_saturation:80,o_20/v1481041301/white-background-pattern-tumblr_lwowa5.png");
-// 	background-position: center;
-// 	background-size: cover;
-// 	background-repeat: repeat;
-// }
+.header-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
