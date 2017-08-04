@@ -1,34 +1,31 @@
 import React, { PropTypes } from 'react';
-import Masonry from 'react-masonry-component';
+import {Link} from 'react-router-dom';
 
 const MainOptions = ({lists}) => {
   const renderItems = (lists) => {
     return lists.map(item =>
-      <div key={item.id}>{item.name || item.title}</div>
+      <Link key={item.id} className="main-item" to={item.name ? `/groups/${parseTitle(item.name)}` : `/events/${parseTitle(item.title)}`}>
+        <img className="img-fluid" src={parseImgUrl(item.thumbnail_img_url)} width="140" height="195"></img>
+        <h5>{item.name || item.title}</h5>
+      </Link>
     )
   };
 
-  let masonryOptions = {
-    transitionDuration: 0.8,
-    fitWidth: true
-  };
+  const parseTitle = (title) => {
+    return title.split(" ").join("");
+  }
 
-  let style = {
-    backgroundImage: `url("https://res.cloudinary.com/dsetpdsls/image/upload/v1478820322/download_kb6qnf.jpg")`
-  };
+  const parseImgUrl = (url) => {
+    let urlList = url.split('upload/');
+    urlList.splice(1, 0, 'upload/c_thumb,w_140,h_195/');
+    return urlList.join('');
+  }
 
   return (
-    <span className="groups-index">
+    <div className="row main-list">
       {renderItems(lists)}
-    </span>
+    </div>
   )
 }
-// <Masonry
-//   className={"group-index-masonry"}
-//   elementType={'span'}
-//   options={masonryOptions}
-//   disableImagesLoaded={false}
-//   updateOnEachImageLoad={false}>
-// </Masonry>
 
 export default MainOptions;

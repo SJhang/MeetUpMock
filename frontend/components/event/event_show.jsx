@@ -1,5 +1,6 @@
 import React from 'react';
 import {getLocation} from '../../util/user_api_util';
+import { withRouter } from 'react-router-dom';
 
 class EventShow extends React.Component {
   constructor(props) {
@@ -98,27 +99,32 @@ class EventShow extends React.Component {
 
   render () {
     return (
-      <div className="event-show">
-        <div className="event-content group">
-          <section className="event-main">
-            <div className="event-title">{this.props.event.title}</div>
-            <div className="event-date">
-              <h4>Event time: </h4>
-              <h4>{this.parseTime()}</h4></div>
-            <div className="event-location">{this.state.city}, {this.state.state}</div>
-            <div className="event-description">{this.props.event.description}</div>
-            <div className="event-attendees">{this.attendees()}</div>
-          </section>
-          <section className="event-side">
-            <div className="rsvp">
-              <div>Join now!</div>
-              {this.switchButton()}
-            </div>
-          </section>
-        </div>
+      <div>
+        Event show page
       </div>
     );
   }
 }
 
-export default EventShow;
+export default withRouter(EventShow);
+
+
+// <div className="event-show">
+//   <div className="event-content group">
+//     <section className="event-main">
+//       <div className="event-title">{this.props.event.title}</div>
+//       <div className="event-date">
+//         <h4>Event time: </h4>
+//         <h4>{this.parseTime()}</h4></div>
+//         <div className="event-location">{this.state.city}, {this.state.state}</div>
+//         <div className="event-description">{this.props.event.description}</div>
+//         <div className="event-attendees">{this.attendees()}</div>
+//       </section>
+//       <section className="event-side">
+//         <div className="rsvp">
+//           <div>Join now!</div>
+//           {this.switchButton()}
+//         </div>
+//       </section>
+//     </div>
+//   </div>

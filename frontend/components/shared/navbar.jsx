@@ -19,7 +19,9 @@ class Navbar extends React.Component {
             <ul className="dropdown-menu">
               <br/>
               <li><Link to={`/profile/${this.props.currentUser.username}`} className="dropdown-item">Profile</Link></li>
-              <li><Link to={`/profile/${this.props.currentUser.username}/setting`} className="dropdown-item">Setting</Link></li>
+              <li><Link to={`/profile/${this.props.currentUser.username}/groups`} className="dropdown-item">Groups</Link></li>
+              <li><Link to={`/profile/${this.props.currentUser.username}/events`} className="dropdown-item">Events</Link></li>
+              <li><Link to={`/profile/${this.props.currentUser.username}/streams`} className="dropdown-item">Streams</Link></li>
               <hr/>
               <li><a className="dropdown-item dropdown-logout" onClick={() => this.props.logout()}>Log Out</a></li>
               <br/>

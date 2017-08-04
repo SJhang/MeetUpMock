@@ -9,6 +9,8 @@ import SplashContainer from './logged_out_home/splash_container';
 import HomeContainer from './logged_in_home/home_container';
 import GroupContainer from './group/group_show_container';
 import GroupFormContainer from './group/group_create';
+import EventContainer from './event/event_show_container';
+// import EventFormContainer from './event/event_create';
 import UserProfile from './user_profile/user_container';
 
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
@@ -18,13 +20,18 @@ const App = ({ children }) => (
     <Navbar />
     <Switch>
       <ProtectedRoute path='/profile/:userId' component={UserProfile} />
+      <ProtectedRoute path='/profile/:userId/groups' component={UserProfile} />
+      <ProtectedRoute path='/profile/:userId/events' component={UserProfile} />
+      <ProtectedRoute path='/profile/:userId/streams' component={UserProfile} />
       <ProtectedRoute path='/home' component={HomeContainer}/>
       <ProtectedRoute path='/groups/new' component={GroupFormContainer}/>
       <ProtectedRoute path='/groups/:groupId' component={GroupContainer}/>
+      <ProtectedRoute path='/events/:eventId' component={EventContainer}/>
       <Route exact path='/' component={SplashContainer} />
     </Switch>
     <Footer />
   </div>
 );
+// <ProtectedRoute path='/events/new' component={EventFormContainer}/>
 
 export default App;

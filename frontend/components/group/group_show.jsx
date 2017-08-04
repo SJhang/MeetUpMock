@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router';
+import { Link, withRouter } from 'react-router-dom';
 import GroupHeader from '../shared/group_header';
 import GroupSidebar from '../shared/group_sidebar';
 
@@ -53,33 +53,38 @@ class GroupShow extends React.Component {
     }
 
     return (
-      <div className="group-content">
-        <div className="group-main-content">
-          <GroupHeader
-            group={this.props.group}
-            groupId={this.props.groupId}
-            logout={this.props.logout}
-            addMember={this.props.addMember}
-            deleteMember={this.props.deleteMember}
-            members={this.props.members}/>
-          <div className="body group">
-            <GroupSidebar
-              group={this.props.group}
-              />
-            <div className={klass}>
-              <section className="description">
-                <div>{this.props.group.description}</div>
-                {this.displayMembers()}
-              </section>
-              <section className="children">
-                {this.props.children}
-              </section>
-            </div>
-          </div>
-        </div>
+      <div>
+        group show page
       </div>
     );
   }
 }
 
 export default withRouter(GroupShow);
+
+
+// <div className="group-content">
+//   <div className="group-main-content">
+//     <GroupHeader
+//       group={this.props.group}
+//       groupId={this.props.groupId}
+//       logout={this.props.logout}
+//       addMember={this.props.addMember}
+//       deleteMember={this.props.deleteMember}
+//       members={this.props.members}/>
+//     <div className="body group">
+//       <GroupSidebar
+//         group={this.props.group}
+//         />
+//       <div className={klass}>
+//         <section className="description">
+//           <div>{this.props.group.description}</div>
+//           {this.displayMembers()}
+//         </section>
+//         <section className="children">
+//           {this.props.children}
+//         </section>
+//       </div>
+//     </div>
+//   </div>
+// </div>

@@ -20,11 +20,24 @@ class Home extends React.Component {
     $(document).scrollTop(0);
   }
 
-  renderItems(prop) {
+  renderTitle() {
+    return this.state.isGroup ?
+      <div className="row">
+        <h2>Featured Groups</h2>
+        <p>Nearby Groups</p>
+        <hr/>
+      </div> :
+      <div className="row">
+        <h2>Featured Events</h2>
+        <p>Nearby Events</p>
+      </div>
+  }
+
+  renderItems() {
     const groups = this.props.groupList;
     const events = this.props.eventList;
 
-    return prop === "group" ? <MainOptions lists={groups} /> : <MainOptions lists={events} />
+    return this.state.isGroup ? <MainOptions lists={groups} /> : <MainOptions lists={events} />
   }
 
   handleButton(e) {
@@ -59,7 +72,7 @@ class Home extends React.Component {
             </div>
             <button type="submit" className="btn btn-default">Submit</button>
           </form>
-          <div className="btn btn-group" role="group">
+          <div className="btn-group navbar-form navbar-right" role="group">
             <button
               type="submit"
               className="btn btn-default active"
@@ -71,9 +84,11 @@ class Home extends React.Component {
           </div>
         </div>
         <div className="container">
+          { this.renderTitle() }
+          <br/>
           { this.state.isGroup ?
-            this.renderItems('group') :
-            this.renderItems('event') }
+            this.renderItems() :
+            this.renderItems() }
         </div>
       </div>
     );
