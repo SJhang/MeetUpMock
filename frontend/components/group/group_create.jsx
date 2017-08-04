@@ -73,38 +73,45 @@ class GroupCreate extends React.Component {
 
   render () {
     return(
-      <div className="create">
-        <section className="create-header">
+      <div>
+        <div className="create-header">
           <div className='header-overlay'></div>
           <div className="body">
             <h2>Start a New Meetup</h2>
             <h4>Find your flock</h4>
           </div>
-        </section>
+        </div>
 
-        <section className="create-body">
-          <GroupCreateLocation
-            nextStep={this.nextStep}
-            updateLocation={(city, state)=>this.updateLocation(city,state)}/>
-          <div className="next-body">
-            <div className="name">
-                <h6>SECOND STEP</h6>
-                <h2><i className="fa fa-users fa-1x" aria-hidden="true"></i>&nbsp;Name for your Meetup?</h2>
-                <input
-                  type="text"
-                  placeholder="Enter a group name"
-                  onChange={e => this.update('name', e)}></input>
-            </div>
-            <div className="descriptions">
-              <h2><i className="fa fa-quote-right fa-1x" aria-hidden="true"></i>&nbsp;Descriptions</h2>
-              <textarea
-                placeholder="Being descriptive will help"
-                onChange={e => this.update('description', e)}/>
-              <button onClick={this.handleSubmit.bind(this)}>Submit</button>
-            </div>
+        <form className="container group-form">
+          <label for="locationDiv">FIRST STEP</label>
+          <div className="form-group" id="locationDiv">
+            <label for="location">
+              <i className="fa fa-globe fa-1x" aria-hidden="true"></i>
+              &nbsp;
+              Set Location
+            </label>
+            <input type="search" className="form-control" id="location" placeholder="San Francisco, CA"></input>
+            <hr/>
           </div>
-        </section>
-
+          <label for="groupInfo">SECOND STEP</label>
+          <div className="form-group" id="groupInfo">
+            <label for="groupName">
+              <i className="fa fa-users fa-1x" aria-hidden="true"></i>
+              &nbsp;
+              Group Name
+            </label>
+            <input type="text" className="form-control" id="groupName" placeholder="Type in Group Name"></input>
+          </div>
+          <div className="form-group">
+            <label for="groupDesc">
+              <i className="fa fa-quote-right fa-1x" aria-hidden="true"></i>
+              &nbsp;
+              Group Description
+            </label>
+            <textarea className="form-control" id="groupDesc" placeholder="Type in descriptions about your new group. Being more specific helps you find great teammates."></textarea>
+          </div>
+          <button type="submit" className="btn btn-default">Submit</button>
+        </form>
       </div>
     );
   }

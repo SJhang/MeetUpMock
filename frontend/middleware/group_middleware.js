@@ -2,7 +2,6 @@ import {
   receiveAllGroups,
   receiveGroup,
   removeGroup,
-  getGroups,
   FETCH_ALL_GROUPS,
   FETCH_GROUP,
   CREATE_GROUP,
@@ -11,10 +10,7 @@ import {
   receiveErrors,
   ADD_MEMBER,
   DELETE_MEMBER,
-  POPULATE_GROUPS,
-  receivePopulatedGroups
 } from '../actions/group_actions';
-
 import {
   UPDATE_GROUP_SEARCH_PARAM
 } from '../actions/group_search_actions';
@@ -22,29 +18,28 @@ import {
   createGroup,
   deleteGroup,
   updateGroup,
-  fetchGroups,
-  fetchGroup,
+  getAllGroups,
+  getGroup,
   addMember,
   deleteMember,
-  populateGroups
 } from '../util/groups_api_util';
-import { hashHistory } from 'react-redux';
+import { createBrowserHistory }  from 'history';
 
 export default ({getState, dispatch}) => next => action => {
+  const history = createBrowserHistory();
   let success;
   let receiveAllGroupsSuccess = groups => dispatch(receiveAllGroups(groups));
   let receiveGroupSuccess = group => dispatch(receiveGroup(group));
   let removeGroupSuccess = group => dispatch(removeGroup(group));
   let failure = errors => dispatch(receiveErrors(errors.responseJSON));
-  let populateGroupSuccess = groups => dispatch(receivePopulatedGroups(groups));
 
   switch (action.type) {
     case FETCH_ALL_GROUPS:
       let searchParams = getState().searchParams;
-      fetchGroups(searchParams, receiveAllGroupsSuccess, failure);
+      getAllGroups(searchParams, receiveAllGroupsSuccess, failure);
       return next(action);
     case FETCH_GROUP:
-      fetchGroup(action.group, receiveGroupSuccess, failure);
+      getGroup(action.group, receiveGroupSuccess, failure);
       return next(action);
     case CREATE_GROUP:
       createGroup(action.group, receiveGroupSuccess, failure);
@@ -52,7 +47,7 @@ export default ({getState, dispatch}) => next => action => {
     case UPDATE_GROUP:
       success = group => {
         dispatch(receiveGroup(group));
-        hashHistory.push('groups/:groupId');
+        history.push('groups/:groupId');
       };
       updateGroup(action.group, success, failure);
       return next(action);
@@ -66,10 +61,7 @@ export default ({getState, dispatch}) => next => action => {
       deleteMember(action.member, receiveGroupSuccess, action.groupId);
       return next(action);
     case UPDATE_GROUP_SEARCH_PARAM:
-      dispatch(getGroups());
-      return next(action);
-    case POPULATE_GROUPS:
-      populateGroups(populateGroupSuccess);
+      dispatch(getAllGroups());
       return next(action);
     default:
       return next(action);

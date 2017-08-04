@@ -24,7 +24,7 @@ export const fetchEvent = id => ({
   id
 });
 
-export const fetchEvents = () => ({
+export const fetchAllEvents = () => ({
   type: FETCH_ALL_EVENTS
 });
 

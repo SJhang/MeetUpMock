@@ -41,7 +41,7 @@ class Footer extends React.Component{
         <div className="container">
           <div className="row">
             <div className="col-sm-6">
-              <Link className="title create" to={'/create'}>Start Recruiting</Link>
+              <Link className="title create" to={'/groups/new'}>Start Recruiting</Link>
             </div>
             <div className="col-sm-2 pull-right">
               {this.renderSessionButton()}

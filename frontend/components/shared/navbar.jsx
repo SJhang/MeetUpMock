@@ -68,7 +68,11 @@ class Navbar extends React.Component {
   //   logout={this.props.logout}/>
   headerText() {
     if (this.props.currentUser) {
-      return 
+      return (
+        <div className="nav navbar-nav navbar-right">
+          <img className="img-circle"></img>
+        </div>
+      )
     } else {
       return (
         <div className="nav navbar-nav navbar-right">
@@ -97,9 +101,7 @@ class Navbar extends React.Component {
             <a className="navbar-brand">GearUp</a>
           </div>
           <div className="collapse navbar-collapse" id="myNavbar">
-            <ul className="nav navbar-nav navbar-right">
-              {this.headerText()}
-            </ul>
+            {this.headerText()}
           </div>
         </div>
       </nav>

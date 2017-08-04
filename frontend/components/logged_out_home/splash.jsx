@@ -24,7 +24,6 @@ class Splash extends React.Component {
   }
 
   componentWillMount() {
-    this.props.fetchEvents();
   }
 
   handleGuestLogin(e) {

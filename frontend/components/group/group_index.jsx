@@ -3,7 +3,7 @@ import GroupsIndexItem from './group_index_item.jsx';
 import Masonry from 'react-masonry-component';
 
 const GroupsIndex = ({groups}) => {
-  const eachGroup = () => {
+  const renderItems = () => {
     return groups.map(group => (
         <GroupsIndexItem
           key={group.id}
@@ -25,7 +25,7 @@ const GroupsIndex = ({groups}) => {
     <div className="groups-index">
       <Masonry
         className={"group-index-masonry"}
-        elementType={'ul'}
+        elementType={'span'}
         options={masonryOptions}
         disableImagesLoaded={false}
         updateOnEachImageLoad={false}>

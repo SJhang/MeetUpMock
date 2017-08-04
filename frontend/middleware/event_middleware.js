@@ -7,7 +7,6 @@ import {
   CREATE_EVENT,
   UPDATE_EVENT,
   DELETE_EVENT,
-  receiveErrors,
   ADD_ATTENDEE,
   DELETE_ATTENDEE
 } from '../actions/event_actions';
@@ -15,14 +14,18 @@ import {
   createEvent,
   deleteEvent,
   updateEvent,
-  fetchEvents,
-  fetchEvent,
+  getAllEvents,
+  getEvent,
   addAttendee,
   deleteAttendee
 } from '../util/events_api_util';
-import { hashHistory } from 'react-redux';
+import {
+  UPDATE_EVENT_SEARCH_PARAM
+} from '../actions/event_search_actions';
+import { createBrowserHistory }  from 'history';
 
 export default ({dispatch}) => next => action => {
+  const history = createBrowserHistory();
   let success;
   let receiveAllEventsSuccess = events => dispatch(receiveAllEvents(events));
   let receiveEventSuccess = event => dispatch(receiveEvent(event));
@@ -31,10 +34,10 @@ export default ({dispatch}) => next => action => {
 
   switch (action.type) {
     case FETCH_ALL_EVENTS:
-      fetchEvents(receiveAllEventsSuccess, failure);
+      getAllEvents(receiveAllEventsSuccess, failure);
       return next(action);
     case FETCH_EVENT:
-      fetchEvent(action.id, receiveEventSuccess);
+      getEvent(action.id, receiveEventSuccess);
       return next(action);
     case CREATE_EVENT:
       createEvent(action.event, receiveEventSuccess);
@@ -42,7 +45,7 @@ export default ({dispatch}) => next => action => {
     case UPDATE_EVENT:
       success = event => {
         dispatch(receiveEvent(event));
-        hashHistory.push('events/:eventId');
+        history.push('events/:eventId');
       };
       updateEvent(action.event, success);
       return next(action);
@@ -54,6 +57,9 @@ export default ({dispatch}) => next => action => {
       return next(action);
     case DELETE_ATTENDEE:
       deleteAttendee(action.user, receiveEventSuccess, action.eventId);
+      return next(action);
+    case UPDATE_EVENT_SEARCH_PARAM:
+      dispatch(getAllEvents());
       return next(action);
     default:
       return next(action);

@@ -1,4 +1,4 @@
-export const fetchGroups = (params={}, success, errors) => {
+export const getAllGroups = (params={}, success, errors) => {
   $.ajax({
     url: 'api/groups',
     data: params,
@@ -7,14 +7,7 @@ export const fetchGroups = (params={}, success, errors) => {
   });
 };
 
-export const populateGroups = (success) => {
-  $.ajax({
-    url: 'api/groups',
-    success
-  });
-};
-
-export const fetchGroup = (id, success, errors) => {
+export const getGroup = (id, success, errors) => {
   $.ajax({
     method: "GET",
     url: `api/groups/${id}`,

@@ -1,11 +1,11 @@
-export const fetchEvents = (success) => {
+export const getAllEvents = (success) => {
   $.ajax({
     url: 'api/events',
     success
   });
 };
 
-export const fetchEvent = (id, success, errors) => {
+export const getEvent = (id, success, errors) => {
   $.ajax({
     url: `api/events/${id}`,
     success,
