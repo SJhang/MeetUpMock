@@ -4,7 +4,7 @@ import Masonry from 'react-masonry-component';
 const MainOptions = ({lists}) => {
   const renderItems = (lists) => {
     return lists.map(item =>
-      <div>{item.name || item.title}</div>
+      <div key={item.id}>{item.name || item.title}</div>
     )
   };
 

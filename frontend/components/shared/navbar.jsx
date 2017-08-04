@@ -68,6 +68,7 @@ class Navbar extends React.Component {
   //   logout={this.props.logout}/>
   headerText() {
     if (this.props.currentUser) {
+      debugger;
       return (
         <div className="nav navbar-nav navbar-right">
           <img className="img-circle"></img>
@@ -98,7 +99,7 @@ class Navbar extends React.Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand">GearUp</a>
+            <a className="navbar-brand" onClick={() => this.clickLogo()}>GearUp</a>
           </div>
           <div className="collapse navbar-collapse" id="myNavbar">
             {this.headerText()}
