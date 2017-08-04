@@ -7,76 +7,29 @@ class Navbar extends React.Component {
     super(props);
   }
 
-  closeDropDown() {
-    $(document).click(e => {
-      e.stopPropagation();
-      let dropdown = $(".dropdown-content");
-
-      if (dropdown.has(e.target).length === 0) {
-        dropdown.hide();
-      }
-    });
-  }
-
-  toggleDropDown() {
-    let dropdown = $(".dropdown-content");
-    dropdown.removeClass("hidden");
-    dropdown.mouseout(() => dropdown.addClass("hidden"));
-      $(document).click(e=> {
-        if ($(e.target).attr("class") === "dropdown-content") {
-          e.stopPropagation();
-        } else {
-          dropdown.addClass("hidden");
-        }
-      });
-  }
-
-  logout() {
-    debugger;
-    this.props.logout();
-    this.props.history.push('/');
-  }
-
-  login() {
-    debugger;
-    this.props.history.push('/login');
-  }
-
-  signup() {
-    debugger;
-    this.props.history.push('/signup');
-  }
-
-  redirectToProfile() {
-    debugger;
-    this.props.history.push(`/users/${this.props.currentUser.id}`);
-  }
-
-
-  clickLogo() {
-    if (this.props.currentUser) {
-      this.props.history.push('/home');
-    } else {
-      if (window.location.hash !== "") {
-        this.props.history.push('/');
-      }
-    }
-  }
-
-  // <ProfileButton
-  //   currentUser={this.props.currentUser}
-  //   logout={this.props.logout}/>
   headerText() {
     if (this.props.currentUser) {
-      debugger;
       return (
         <div className="nav navbar-nav navbar-right">
-          <img className="img-circle"></img>
+          <div className="dropdown nav-profile">
+            <button className="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img className="img-circle" width="40" src={this.props.currentUser.profile_img}></img>
+              <i className="fa fa-angle-down" aria-hidden="true"></i>
+            </button>
+            <ul className="dropdown-menu">
+              <br/>
+              <li><Link to={`/profile/${this.props.currentUser.username}`} className="dropdown-item">Profile</Link></li>
+              <li><Link to={`/profile/${this.props.currentUser.username}/setting`} className="dropdown-item">Setting</Link></li>
+              <hr/>
+              <li><a className="dropdown-item dropdown-logout" onClick={() => this.props.logout()}>Log Out</a></li>
+              <br/>
+            </ul>
+          </div>
         </div>
       )
     } else {
       return (
-        <div className="nav navbar-nav navbar-right">
+        <div className="nav navbar-nav navbar-right nav-buttons">
           <Link to={'/login'} className="btn btn-default navbar-btn">
             Log in
           </Link>
@@ -99,7 +52,9 @@ class Navbar extends React.Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <a className="navbar-brand" onClick={() => this.clickLogo()}>GearUp</a>
+            <Link
+              className="navbar-brand"
+              to={this.props.currentUser ? '/home' : '/'}>Gear<h3>Up</h3></Link>
           </div>
           <div className="collapse navbar-collapse" id="myNavbar">
             {this.headerText()}

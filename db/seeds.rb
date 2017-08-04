@@ -8,7 +8,7 @@
 
 User.create!(username: "sonikjhang", password: "asdfasdf", email: 'sonik4595@gmail.com', name: "Sonik Jhang",
   description: "I own this website. I am a software developer, currently a full time job seeker.",
-  profile_img: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1478641282/ycqub177sxp6ncqy7osj.jpg')
+  profile_img: 'https://res.cloudinary.com/dvob94x30/image/upload/c_thumb,w_277/v1501879901/18813508_10213006758387395_5751299461158664626_n_xetpq5.png')
 User.create!(username: "hyad", password: "asdfasdf", email: 'hypark1107@hotmail.com', name: "Christine Park",
   description: "Add me on Instagram hyparkx1107", profile_img: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1478643214/z0hkrqrqdwcjyv0mbyww.jpg')
 User.create!(username: "sunday", password: "12342134", email: 'sunday1122@naver.com', name: "Sunday Park",

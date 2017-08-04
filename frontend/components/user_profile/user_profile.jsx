@@ -1,6 +1,7 @@
 import React from 'react';
 import UploadButton from '../shared/upload_button';
 import {getLocation} from '../../util/user_api_util';
+import { Link, withRouter } from 'react-router-dom';
 
 class UserProfile extends React.Component {
   constructor(props) {
@@ -82,50 +83,56 @@ class UserProfile extends React.Component {
     );
   }
 
-  render () {
-    let klass;
-    if (this.props.user_image) {
-      klass = {backgroundImage: `url('${this.props.user_image}')`};
-    } else {
-      klass = {backgroundImage:
-        `url('https://res.cloudinary.com/dsetpdsls/image/upload/v1478804396/defaultIcon_unkrse.png')`};
-    }
-
-    let location = <h4>Loading...</h4>;
-    if (this.state.city) {
-      location = <h4>{this.state.city}, {this.state.state}</h4>;
-    }
-
+  render() {
     return (
-      <div className="profile-main-div">
-        <div className="profile-div">
-          <div className="profile-detail">
-            <div className="username">{this.props.currentUser}</div>
-            <div className="detail">
-              <h2>Name: {this.displayName()}</h2>
-              <h2>Location: {location} </h2>
-              <h2>Member Since: {this.memberSince()}</h2>
-              <h2>Email: {this.email()}</h2>
-              <h2>Description {this.selfBlurb()}</h2>
-            </div>
-            <a>Add bio</a>
-            <div className="groups">
-              {this.followingGroup()}
-            </div>
-            <div></div>
-          </div>
-          <div className="profile-picture">
-            <div className="image" style={klass}>
-            </div>
-            <div className="image-options">
-              <UploadButton
-                createImage={this.props.createImage} className="post-image-button"/>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+      <div>PROFILE</div>
+    )
   }
 }
+export default withRouter(UserProfile);
 
-export default UserProfile;
+// render () {
+//   let klass;
+//   if (this.props.user_image) {
+//     klass = {backgroundImage: `url('${this.props.user_image}')`};
+//   } else {
+//     klass = {backgroundImage:
+//       `url('https://res.cloudinary.com/dsetpdsls/image/upload/v1478804396/defaultIcon_unkrse.png')`};
+//   }
+//
+//   let location = <h4>Loading...</h4>;
+//   if (this.state.city) {
+//     location = <h4>{this.state.city}, {this.state.state}</h4>;
+//   }
+//
+//   return (
+//     <div className="profile-main-div">
+//       <div className="profile-div">
+//         <div className="profile-detail">
+//           <div className="username">{this.props.currentUser}</div>
+//           <div className="detail">
+//             <h2>Name: {this.displayName()}</h2>
+//             <h2>Location: {location} </h2>
+//             <h2>Member Since: {this.memberSince()}</h2>
+//             <h2>Email: {this.email()}</h2>
+//             <h2>Description {this.selfBlurb()}</h2>
+//           </div>
+//           <a>Add bio</a>
+//           <div className="groups">
+//             {this.followingGroup()}
+//           </div>
+//           <div></div>
+//         </div>
+//         <div className="profile-picture">
+//           <div className="image" style={klass}>
+//           </div>
+//           <div className="image-options">
+//             <UploadButton
+//               createImage={this.props.createImage} className="post-image-button"/>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+// }
