@@ -39,7 +39,7 @@ class UserProfile extends React.Component {
     let city = address.split(', ')[1];
     let state = address.split(', ')[2].split(" ")[0];
 
-    this.setState({city: city, state: state});
+    // this.setState({city: city, state: state});
     // this.props.updateUser({location: `${city, state}`});
   }
 

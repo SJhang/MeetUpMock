@@ -83,9 +83,9 @@ class GroupCreate extends React.Component {
         </div>
 
         <form className="container group-form">
-          <label for="locationDiv">FIRST STEP</label>
+          <label htmlFor="locationDiv">FIRST STEP</label>
           <div className="form-group" id="locationDiv">
-            <label for="location">
+            <label htmlFor="location">
               <i className="fa fa-globe fa-1x" aria-hidden="true"></i>
               &nbsp;
               Set Location
@@ -93,9 +93,9 @@ class GroupCreate extends React.Component {
             <input type="search" className="form-control" id="location" placeholder="San Francisco, CA"></input>
             <hr/>
           </div>
-          <label for="groupInfo">SECOND STEP</label>
+          <label htmlFor="groupInfo">SECOND STEP</label>
           <div className="form-group" id="groupInfo">
-            <label for="groupName">
+            <label htmlFor="groupName">
               <i className="fa fa-users fa-1x" aria-hidden="true"></i>
               &nbsp;
               Group Name
@@ -103,7 +103,7 @@ class GroupCreate extends React.Component {
             <input type="text" className="form-control" id="groupName" placeholder="Type in Group Name"></input>
           </div>
           <div className="form-group">
-            <label for="groupDesc">
+            <label htmlFor="groupDesc">
               <i className="fa fa-quote-right fa-1x" aria-hidden="true"></i>
               &nbsp;
               Group Description
