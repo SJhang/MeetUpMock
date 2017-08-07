@@ -116,25 +116,27 @@ We will hold an event once a month in Austin, TX for our members to socialize an
 Feel free to join the Facebook group https://www.facebook.com/groups/1376933885880962/", city: "Austin", state: "TX", organizer_id: 9, banner_img_url: "https://a248.e.akamai.net/secure.meetupstatic.com/photos/theme_head/3/7/8/4/full_3134212.jpeg", thumbnail_img_url: "https://res.cloudinary.com/dsetpdsls/image/upload/v1484572119/global_268579612_gle2tj.png")
 
 
-Event.create!(title: "Happy Hour", description: "Super Duper 15 dollar pitcher",
-  date: '18-06-12 10:34:09 PM', lat: "37.7913765", lng: "-122.3936249", group_id: 1,
+Event.create!(
+  title: "Happy Hour", description: "Super Duper 15 dollar pitcher",
+  date: DateTime.new(2016, 8, 10, 18, 30), lat: "37.7913765", lng: "-122.3936249", group_id: 1,
   thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484567464/Happy-Hour_hc7dar.jpg')
 Event.create!(title: "League", description: "hit diamond again",
-  date: '20-05-10 08:21:59 PM', lat: "37.7913765", lng: "-122.3936249", group_id: 2,
+  date: DateTime.new(2016, 10, 30, 20, 30), lat: "37.7913765", lng: "-122.3936249", group_id: 2,
   thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484743370/Vayne-League-of-Legends-Wallpaper-full-HD-3_ggi1rp.jpg')
 Event.create!(title: "Movie night", description: "For this week, we will be showing the Godfather",
-  date: '80-01-03 11:59:59 AM', lat: "37.7913765", lng: "-122.3936249", group_id: 2,
+  date: DateTime.new(2016, 12, 24, 21), lat: "37.7913765", lng: "-122.3936249", group_id: 2,
   thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484744409/korona-world-theater_10deaeb3_L___Selected_tyv6ss.jpg')
 Event.create!(title: "PingPong", description: "cleaniness matters",
-  date: '80-01-03 11:59:59 AM', lat: "37.7913765", lng: "-122.3936249", group_id: 4,
+  date: DateTime.new(2017, 1, 3, 15), lat: "37.7913765", lng: "-122.3936249", group_id: 4,
   thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484567466/untitled_text_yybgsm.jpg')
 Event.create!(title: "Golf", description: "cleaniness matters",
-  date: '80-01-03 11:59:59 AM', lat: "37.7913765", lng: "-122.3936249", group_id: 4,
+  date: DateTime.new(2017, 2, 5, 10), lat: "37.7913765", lng: "-122.3936249", group_id: 4,
   thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484567464/psx001tg004859_urfhfl.jpg')
 Event.create!(title: "Swimming", description: "cleaniness matters",
-  date: '80-01-03 11:59:59 AM', lat: "37.7913765", lng: "-122.3936249", group_id: 4,
+  date: DateTime.new(2017, 3, 14, 7), lat: "37.7913765", lng: "-122.3936249", group_id: 4,
   thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484567468/swimming_xv8sah.jpg')
-Event.create!(title: "Beer Pong", description: "Are you good at Beer Pong? Beer pong Challenge, this Friday starting at 10 P.M. Winner gets a Airpad mini", date: "17-01-20 10:00:00 PM", lat: "37.7913765", lng: "-122.3936249", group_id: 5,
+Event.create!(title: "Beer Pong", description: "Are you good at Beer Pong? Beer pong Challenge, this Friday starting at 10 P.M. Winner gets a Airpad mini",
+  date: DateTime.new(2017, 8, 8, 9, 30), lat: "37.7913765", lng: "-122.3936249", group_id: 5,
 thumbnail_img_url: "https://res.cloudinary.com/dsetpdsls/image/upload/v1484814140/beer_pong_logo_nobg_i84niy.png")
 
 rand_arr = Array.new(23) { rand(0...23) }

@@ -5,18 +5,16 @@ import {
  } from '../actions/user_actions';
 import merge from 'lodash/merge';
 
-let _defaultState = {
-  userDetail: {},
-  errors: []
-};
+let _defaultState = {};
 
 export const UserReducer = (state=_defaultState, action) => {
   let newState = merge({}, state);
   switch (action.type) {
     case RECEIVE_USER:
-      newState.userDetail = action.user;
-      return newState;
+      const newUser = {[action.user.id]: action.user}
+      return merge({}, state, newUser);
     case RECEIVE_ALL_USERS:
+      newState = action.users;
       return newState;
     case RECEIVE_ERRORS:
       let errors = action.errors;

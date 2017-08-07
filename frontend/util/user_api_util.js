@@ -14,17 +14,17 @@ export const getLocation = (url, success) => {
   });
 };
 
-export const fetchAllusers = (success) => {
+export const getAllusers = (success) => {
   $.ajax({
     url: 'api/users',
     success
   });
 };
 
-export const fetchUser = (id, success, errors) => {
+export const getUser = (id, success, error) => {
   $.ajax({
-    url: `api/users/${id}`,
+    url: `/api/users/${id}`,
     success,
-    errors
+    error
   });
 };

@@ -10,8 +10,8 @@ class EventShow extends React.Component {
       city: "",
       state: ""
     };
-    this.currentLocation = this.currentLocation.bind(this);
-    this.setLocation = this.setLocation.bind(this);
+    // this.currentLocation = this.currentLocation.bind(this);
+    // this.setLocation = this.setLocation.bind(this);
   }
 
   joinClickHandler() {
@@ -19,7 +19,7 @@ class EventShow extends React.Component {
   }
 
   componentDidMount() {
-    navigator.geolocation.getCurrentPosition(this.currentLocation);
+    // navigator.geolocation.getCurrentPosition(this.currentLocation);
   }
 
   attendees() {

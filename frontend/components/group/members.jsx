@@ -1,46 +1,32 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Members extends React.Component {
+  constructor(props) {
+    super(props);
 
-  eachMember() {
-    if (this.props.group.members) {
-      return this.props.group.members.map(member=> (
-        <div key={member.id} className="profile">{member.username}</div>
-      ));
-    } else {
-      return (<h4>Members mia</h4>);
+    this.state = {
+      organizer: {}
     }
   }
 
-  componentWillReceiveProps(newProps){
-
-  }
-
-  switchButton() {
-    if (this.props.members.length >= 1) {
-      if (this.props.members.some(member => member.username === this.props.currentUser)) {
-        return (<button onClick={this.props.deleteMember.bind(this, this.props.currentUser, this.props.groupId)}>Leave group</button>);
-      } else {
-        return (<button onClick={this.props.addMember.bind(this, this.props.currentUser, this.props.groupId)}>Join us!</button>);
-      }
-    } else {
-      return (<button onClick={this.props.addMember.bind(this, this.props.currentUser, this.props.groupId)}>Join us!</button>);
-    }
+  componentDidMount() {
+    this.props.findOrganizer(this.props.organizer_id);
   }
 
   render () {
     return (
-      <div className="member-content">
-        <div className="member-body">
-          <h1>We're &nbsp; {this.props.members.length}&nbsp; Members</h1>
+      <div className="container">
+        <h2>Members</h2>
+        <hr></hr>
+        <span className="members-container">
           <div>
-            {this.eachMember()}
+            <img className="rounded" src={this.state.organizer.profile_img} width="50"/>
           </div>
-        </div>
-        {this.switchButton()}
+        </span>
       </div>
     );
   }
 }
 
-export default Members;
+export default withRouter(Members);

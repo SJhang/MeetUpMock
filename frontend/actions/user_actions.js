@@ -1,3 +1,5 @@
+import * as APIUtil from '../util/user_api_util';
+
 export const UPDATE_USER = "UPDATE_USER";
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
@@ -25,8 +27,9 @@ export const receiveAllUsers = users => ({
   users
 });
 
-export const fetchAllUsers = () => ({
-  type: FETCH_ALL_USERS
+export const fetchAllUsers = (users) => ({
+  type: FETCH_ALL_USERS,
+  users
 });
 
 export const fetchUser = id => ({

@@ -25,8 +25,8 @@ const App = ({ children }) => (
       <ProtectedRoute path='/profile/:userId/streams' component={UserProfile} />
       <ProtectedRoute path='/home' component={HomeContainer}/>
       <ProtectedRoute path='/groups/new' component={GroupFormContainer}/>
-      <ProtectedRoute path='/groups/:groupId' component={GroupContainer}/>
-      <ProtectedRoute path='/events/:eventId' component={EventContainer}/>
+      <Route path='/groups/:groupId/:groupName' component={GroupContainer}/>
+      <Route path='/events/:eventId/:eventName' component={EventContainer}/>
       <Route exact path='/' component={SplashContainer} />
     </Switch>
     <Footer />

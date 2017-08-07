@@ -6,20 +6,11 @@ import { selectGroup } from '../../reducers/selectors';
 import { fetchUser } from '../../actions/user_actions';
 import values from 'lodash/values';
 
-const mapStateToProps = (state, {params}) => {
-  // let groupId = parseInt(params.groupId);
-  // let groupIndex = values(state.groups.groupIndex);
-  // let group = groupIndex[groupId] || {};
-  //
-  // let members = [];
-  // if (state.groups.groups[groupId]) {
-  //   members = state.groups.groups[groupId].members;
-  // }
-  // return {
-  //   groupId,
-  //   group,
-  //   members
-  // };
+const mapStateToProps = (state, { match }) => {
+  const group = selectGroup(state, match.params.groupId);
+  return (
+    group
+  )
 };
 
 const mapDispatchToProps = dispatch => ({
