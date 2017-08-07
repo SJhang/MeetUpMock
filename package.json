@@ -9,7 +9,6 @@
     "webpack": "webpack"
   },
   "scripts": {
-    "heroku-postbuild": "webpack --config webpack.config.prod.js",
     "postinstall": "webpack"
   },
   "keywords": [],
