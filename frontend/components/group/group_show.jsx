@@ -2,7 +2,8 @@ import React from 'react';
 import { Link, withRouter, Switch, Route } from 'react-router-dom';
 import Members from './members_container';
 import Calendar from '../shared/calendar';
-import Events from '../event/event_show_container';
+import Event from '../event/event_show_container';
+import EventIndex from '../event/event_index';
 
 class GroupShow extends React.Component {
   constructor(props) {
@@ -167,7 +168,8 @@ class GroupShow extends React.Component {
                     )
                   }} />
                 <Route path={`${this.props.match.url}/members`} {...this.props} component={Members}/>
-                <Route path={`${this.props.match.url}/events`} component={Events}/>
+                <Route path={`${this.props.match.url}/events`} component={EventIndex}/>
+                <Route path={`${this.props.match.url}/events/:eventId`} component={Event} />
                 <Route path={`${this.props.match.url}/calendar`} component={Calendar}/>
               </Switch>
             </div>
