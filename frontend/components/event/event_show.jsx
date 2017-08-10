@@ -107,7 +107,7 @@ class EventShow extends React.Component {
     let isAM = false;
     let hour = eventTime.getHours();
     let minute = eventTime.getMinutes();
-    
+
     if (hour > 12) {
       hour = hour % 12;
     } else {
@@ -123,7 +123,7 @@ class EventShow extends React.Component {
 
   render () {
     return (
-      <div className="container">
+      <div className="container event-show-container">
         <h2>{this.props.event.title}</h2>
 
         <dl className="row">
@@ -148,6 +148,8 @@ class EventShow extends React.Component {
               <img key={idx} src={ind.profile_img} className="img-circle" width='50'/>
             )) : '0 Attendees'}</dd>
         </dl>
+        <hr></hr>
+        <button type='button' className="btn btn-primary">RSVP</button>
       </div>
     );
   }

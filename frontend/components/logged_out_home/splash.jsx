@@ -45,7 +45,7 @@ class Splash extends React.Component {
 
           <div className="carousel-inner" role="listbox">
             <div className="item active">
-              <img src="http://diamondcreative.net/plus-v1.1/img/slider/slider_06.jpg"/>
+              <img src="https://res.cloudinary.com/dvob94x30/image/upload/v1502390485/PLAYERUNKNOWNS-BATTLEGROUNDS-12937712-1024x576_rjv1we.jpg"/>
               <div className="carousel-caption hidden-xs">
                 <h3>New Weapons in BattleGround</h3>
                 <p>Gather your squads to<br></br>win chicken.</p>
@@ -54,7 +54,7 @@ class Splash extends React.Component {
             </div>
 
             <div className="item">
-              <img src="http://diamondcreative.net/plus-v1.1/img/slider/slider_03.jpg"/>
+              <img src="https://res.cloudinary.com/dvob94x30/image/upload/c_scale,w_1024/v1502390024/695787_cpfbcg.png"/>
               <div className="carousel-caption hidden-xs">
                 <h3>New Heroes and Maps in Overwatch</h3>
                 <p>Dominate your game<br></br>with your teammates.</p>
