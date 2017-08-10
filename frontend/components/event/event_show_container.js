@@ -12,7 +12,17 @@ import { selectEvent } from '../../reducers/selectors';
 //   attendees,
 //   currentUser: state.session.currentUser
 // };
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state, {match}) => {
+  const event = selectEvent(state, match.params.eventId);
+  const rsvp = event.attendees || [];
+  const time = event.date;
+  return {
+    event,
+    rsvp,
+    time
+  }
+}
+
 
 const mapDispatchToProps = dispatch => ({
   updateEvent: event => dispatch(updateEvent(event)),

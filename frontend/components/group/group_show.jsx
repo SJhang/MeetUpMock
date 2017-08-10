@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter, Switch, Route } from 'react-router-dom';
 import Members from './members_container';
 import Calendar from '../shared/calendar';
-import Event from '../event/event_show_container';
+import EventShow from '../event/event_show_container';
 import EventIndex from '../event/event_index';
 
 class GroupShow extends React.Component {
@@ -47,7 +47,11 @@ class GroupShow extends React.Component {
       'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
     ];
     let isAM = dt.getHours() < 12 ? true : false;
-    return `${months[dt.getMonth()]} ${dt.getDate()}, ${dt.getFullYear()} ${dt.getHours() % 12}:${dt.getMinutes()} ${isAM ? "AM" : "PM"}`
+    let minutes = dt.getMinutes();
+    if (minutes < 10) {
+      minutes = '0' + minutes;
+    }
+    return `${months[dt.getMonth()]} ${dt.getDate()}, ${dt.getFullYear()} ${dt.getHours() % 12}:${minutes} ${isAM ? "AM" : "PM"}`
   }
 
   renderAbout() {
@@ -70,7 +74,7 @@ class GroupShow extends React.Component {
     return this.props.events.map((event, idx) => {
       return (
         <div key={idx}>
-          <h3>{event.title}</h3>
+          <Link to={`${this.props.match.url}/events/${event.id}`}><h3>{event.title}</h3></Link>
           <p>{this.parseEventDate(event.date)}</p>
           <h4>Attendants</h4>
           {
@@ -167,10 +171,10 @@ class GroupShow extends React.Component {
                       </div>
                     )
                   }} />
-                <Route path={`${this.props.match.url}/members`} {...this.props} component={Members}/>
-                <Route path={`${this.props.match.url}/events`} component={EventIndex}/>
-                <Route path={`${this.props.match.url}/events/:eventId`} component={Event} />
-                <Route path={`${this.props.match.url}/calendar`} component={Calendar}/>
+                <Route exact path={`${this.props.match.url}/members`} {...this.props} component={Members}/>
+                <Route exact path={`${this.props.match.url}/events`} component={EventIndex}/>
+                <Route path={`${this.props.match.url}/events/:eventId`} component={EventShow} />
+                <Route exact path={`${this.props.match.url}/calendar`} component={Calendar}/>
               </Switch>
             </div>
           </div>

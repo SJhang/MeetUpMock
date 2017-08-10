@@ -55,7 +55,6 @@ class GroupCreateLocation extends React.Component {
           <h6>FIRST STEP</h6>
           <h2><i className="fa fa-globe fa-1x" aria-hidden="true"></i>&nbsp;What's your new groups hometown?</h2>
           <Autocomplete
-              style={{width: '90%'}}
               ref={autocomplete => {this.autocomplete = autocomplete; }}
               onClick={()=>this.clearField()}
               onPlaceSelected={(place) => {
