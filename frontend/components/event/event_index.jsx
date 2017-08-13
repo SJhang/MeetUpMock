@@ -4,7 +4,6 @@ const EventIndex = (props) => {
   const singleEvent = event => {
     return (
       <div>
-        <div>{event.group_id}</div>
         <h3>{event.title}</h3>
         <div>{event.attendees.length} going</div>
       </div>
@@ -15,7 +14,7 @@ const EventIndex = (props) => {
     const dates = {};
     return (
       <div>
-        {singleEvent()}
+        {events}
       </div>
     )
   }

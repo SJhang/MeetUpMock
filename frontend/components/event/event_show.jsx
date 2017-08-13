@@ -145,7 +145,7 @@ class EventShow extends React.Component {
           <dd className="col-sm-9 col-xs-9 col-9">{
               this.props.event.attendees ?
               this.props.event.attendees.map((ind, idx) => (
-              <img key={idx} src={ind.profile_img} className="img-circle" width='50'/>
+              <img key={idx} src={ind.profile_img} className="rounded" width='50'/>
             )) : '0 Attendees'}</dd>
         </dl>
         <hr></hr>
