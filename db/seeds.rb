@@ -38,14 +38,14 @@ User.create!(username: "nikeshoes", password: "198237482", email: 'just@do.it', 
 
 Group.create!(name: "app Academy", description: "Number one bootcamp",
   city: "San Francisco", state: "CA", organizer_id: 1,
-  thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484797377/28983bbc0ac0a12cde1c0dc3fc818b4b_gk3udx.png',
+  thumbnail_img_url: 'https://res.cloudinary.com/dvob94x30/image/upload/v1502992894/appacademy_logo_aewtl1.png',
   banner_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484797192/Screen_Shot_2017-01-18_at_9.39.15_PM_s1ikhl.png')
 Group.create!(name: "New Parents Meetup", description: "Please join us in our different adventures that offer the opportunity to meet other moms, gather information, form friendships and build a network of resources.
 
 We look forward to welcoming you into our group.",
   city: "San Francisco", state: "CA", organizer_id: 2,
-  thumbnail_img_url: "https://res.cloudinary.com/dsetpdsls/image/upload/v1484802560/global_12844783_sptq3e.jpg")
-Group.create!(name: "San Jose Cat Meetup", description: "Dogs have masters; cats have servants. If this sounds like your house, let's get catty! Share tips, tricks and stories about life with our cute, curious and, yes, often crazy cats. Everyone welcome, but residents of the five boroughs of San Jose and nearby suburbs especially encouraged to join!", city: "San Jose", state: "CA", organizer_id: 3, thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484802856/global_20957497_p5zub6.jpg')
+  thumbnail_img_url: "https://res.cloudinary.com/dvob94x30/image/upload/v1502992894/19420629_10154749897222749_5233171063885730521_n_t1zui7.jpg")
+Group.create!(name: "San Jose Cat Meetup", description: "Dogs have masters; cats have servants. If this sounds like your house, let's get catty! Share tips, tricks and stories about life with our cute, curious and, yes, often crazy cats. Everyone welcome, but residents of the five boroughs of San Jose and nearby suburbs especially encouraged to join!", city: "San Jose", state: "CA", organizer_id: 3, thumbnail_img_url: 'https://res.cloudinary.com/dvob94x30/image/upload/v1502992894/pure-grey-cat-female-51a5dade1fd23_jmcsup.png')
 Group.create!(name: "Austin Dog House", description: "This is a social club for responsible dog lovers and their social dogs. Membership is free we have no monthly fee's.  Only members can participate in any of the events posted on this page. Some play dates are off leash and divided into size specific categories. We have four themed off leash mixers at Austin Party Animals loft venue, Valentines day, St. Patrick's day, Halloween & Christmas. We have pool parties at a nearby facility in the summer.
 
 CHICAGO PARTY ANIMALS OFF LEASH RULES
@@ -76,9 +76,9 @@ CHICAGO PARTY ANIMALS OFF LEASH RULES
 
 ..* Have fun!
 
-Josie & Mr. Big", city: "Austin", state: "TX", organizer_id: 3, thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484813999/1238036_10201991481652361_1800958299_n_edt93u.jpg')
-Group.create!(name: "UT parties", description: "drink up", city: "Austin", state: "TX", organizer_id: 4,
-  thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484820882/university-of-texas-longhorns-ncaa-logo-wall-poster-rp6137_mamvm0.jpg')
+Josie & Mr. Big", city: "Austin", state: "TX", organizer_id: 3, thumbnail_img_url: 'https://res.cloudinary.com/dvob94x30/image/upload/v1502992894/corgi-1_y1vb4v.jpg')
+Group.create!(name: "UT LAN parties", description: "FTW!!!", city: "Austin", state: "TX", organizer_id: 4,
+  thumbnail_img_url: 'https://res.cloudinary.com/dvob94x30/image/upload/v1502992894/lego-legends-of-Lego_cmnoty.jpg')
 Group.create!(name: "Ruby on Rails", description: "What I have to know Ruby to join this group?
 
 If you are interested in designing better software, you are welcome to join us. But you are expected to learn the basics of Ruby on your own if you don't already know a lot of Ruby.
@@ -103,17 +103,17 @@ What activities should you expect?
 • Sharing session from well-known Rubyists in San Francisco.
 
 • Tips on learning iOS, RubyMotion, Javascript frameworks, Node.js from a Ruby background.",
-city: "San Francisco", state: "CA", organizer_id: 5, thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484830127/ruby-on-rails_ntaowg.jpg')
+city: "San Francisco", state: "CA", organizer_id: 5, thumbnail_img_url: 'https://res.cloudinary.com/dvob94x30/image/upload/v1502993648/images_wxhp0l.png')
 Group.create!(name: "SnowBoard Dummies", description: "Starbucks meeting", city: "Austin", state: "TX",
-  organizer_id: 5, thumbnail_img_url: 'https://res.cloudinary.com/dsetpdsls/image/upload/v1484830202/snowboarding_w01ecq.jpg')
+  organizer_id: 5, thumbnail_img_url: 'https://res.cloudinary.com/dvob94x30/image/upload/c_scale,w_1024/v1502992895/url-2_wpwpqo.png')
 Group.create!(name: "Free Yoga Austin", description: "Find free yoga classes throughout Austin! I started this group because I'd like members to be aware of all the free yoga going on around town. It's an easy way to try out different styles of yoga, taught by different instructors, and see what you like!
 
-Notify me of other free community classes and I'll add them; also if you are a fellow yoga instructor who teaches a sponsored class (free for students) in Austin, join the group and I'll add it!", city: "Austin", state: "TX", organizer_id: 10, thumbnail_img_url: "https://res.cloudinary.com/dsetpdsls/image/upload/v1484571880/global_433283783_lspab4.jpg")
+Notify me of other free community classes and I'll add them; also if you are a fellow yoga instructor who teaches a sponsored class (free for students) in Austin, join the group and I'll add it!", city: "Austin", state: "TX", organizer_id: 10, thumbnail_img_url: "https://res.cloudinary.com/dvob94x30/image/upload/v1502992894/5654ce08-6598-420a-ba05-15a5de1d4284-600_q60_mvczxp.jpg")
 Group.create!(name: "Youtube Partners", description: "This networking event is for anyone who is or is interested in becoming a Youtube Partner; a creator of professional video content published onto Youtube. We are open to anyone looking to meet fellow users of Youtube, and we're also open to discussion about other video-sharing websites, too. We really want these events to be a friendly atmosphere that can facilitate the emerging Austin web television scene.
 
 We will hold an event once a month in Austin, TX for our members to socialize and network with one another.
 
-Feel free to join the Facebook group https://www.facebook.com/groups/1376933885880962/", city: "Austin", state: "TX", organizer_id: 9, banner_img_url: "https://a248.e.akamai.net/secure.meetupstatic.com/photos/theme_head/3/7/8/4/full_3134212.jpeg", thumbnail_img_url: "https://res.cloudinary.com/dsetpdsls/image/upload/v1484572119/global_268579612_gle2tj.png")
+Feel free to join the Facebook group https://www.facebook.com/groups/1376933885880962/", city: "Austin", state: "TX", organizer_id: 9, banner_img_url: "https://a248.e.akamai.net/secure.meetupstatic.com/photos/theme_head/3/7/8/4/full_3134212.jpeg", thumbnail_img_url: "https://res.cloudinary.com/dvob94x30/image/upload/c_scale,w_1024/v1502992894/YouTube-TV_fn3mfe.jpg")
 
 
 Event.create!(

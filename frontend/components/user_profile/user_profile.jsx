@@ -83,9 +83,26 @@ class UserProfile extends React.Component {
     );
   }
 
+  renderImage() {
+    return (
+      this.props.currentUser.profile_img ?
+      this.props.currentUser.profile_img :
+      'https://res.cloudinary.com/dsetpdsls/image/upload/v1478804396/defaultIcon_unkrse.png'
+    )
+  }
   render() {
     return (
-      <div>PROFILE</div>
+      <div className="container user-profile">
+        <div className="col-xs-8 d-flex ">
+
+        </div>
+        <div className='col-xs-4 d-flex flex-column justify-content-around'>
+          <img src={this.renderImage()} className="rounded" width='200' height='200'></img>
+          <hr></hr>
+          <UploadButton
+            createImage={this.props.createImage}/>
+        </div>
+      </div>
     )
   }
 }
@@ -106,33 +123,33 @@ export default withRouter(UserProfile);
 //   }
 //
 //   return (
-//     <div className="profile-main-div">
-//       <div className="profile-div">
-//         <div className="profile-detail">
-//           <div className="username">{this.props.currentUser}</div>
-//           <div className="detail">
-//             <h2>Name: {this.displayName()}</h2>
-//             <h2>Location: {location} </h2>
-//             <h2>Member Since: {this.memberSince()}</h2>
-//             <h2>Email: {this.email()}</h2>
-//             <h2>Description {this.selfBlurb()}</h2>
-//           </div>
-//           <a>Add bio</a>
-//           <div className="groups">
-//             {this.followingGroup()}
-//           </div>
-//           <div></div>
-//         </div>
-//         <div className="profile-picture">
-//           <div className="image" style={klass}>
-//           </div>
-//           <div className="image-options">
-//             <UploadButton
-//               createImage={this.props.createImage} className="post-image-button"/>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
+    // <div className="profile-main-div">
+    //   <div className="profile-div">
+    //     <div className="profile-detail">
+    //       <div className="username">{this.props.currentUser}</div>
+    //       <div className="detail">
+    //         <h2>Name: {this.displayName()}</h2>
+    //         <h2>Location: {location} </h2>
+    //         <h2>Member Since: {this.memberSince()}</h2>
+    //         <h2>Email: {this.email()}</h2>
+    //         <h2>Description {this.selfBlurb()}</h2>
+    //       </div>
+    //       <a>Add bio</a>
+    //       <div className="groups">
+    //         {this.followingGroup()}
+    //       </div>
+    //       <div></div>
+    //     </div>
+    //     <div className="profile-picture">
+    //       <div className="image" style={klass}>
+    //       </div>
+    //       <div className="image-options">
+    //         <UploadButton
+    //           createImage={this.props.createImage} className="post-image-button"/>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
 //   );
 // }
 // }

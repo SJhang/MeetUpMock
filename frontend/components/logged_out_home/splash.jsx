@@ -49,7 +49,7 @@ class Splash extends React.Component {
               <div className="carousel-caption hidden-xs">
                 <h3>New Weapons in BattleGround</h3>
                 <p>Gather your squads to<br></br>win chicken.</p>
-                  <button className="btn btn-danger">READ MORE</button>
+                  <Link className="btn btn-danger" to={this.props.currentUser ? '/home' : '/signup'}>READ MORE</Link>
               </div>
             </div>
 
@@ -58,7 +58,7 @@ class Splash extends React.Component {
               <div className="carousel-caption hidden-xs">
                 <h3>New Heroes and Maps in Overwatch</h3>
                 <p>Dominate your game<br></br>with your teammates.</p>
-                <button className="btn btn-danger">READ MORE</button>
+                <Link className="btn btn-danger" to={this.props.currentUser ? '/home' : '/signup'}>READ MORE</Link>
               </div>
             </div>
           </div>

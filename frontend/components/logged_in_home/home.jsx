@@ -86,9 +86,7 @@ class Home extends React.Component {
         <div className="container">
           { this.renderTitle() }
           <br/>
-          { this.state.isGroup ?
-            this.renderItems() :
-            this.renderItems() }
+          { this.renderItems() }
         </div>
       </div>
     );
