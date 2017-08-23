@@ -15,7 +15,7 @@ const UploadButton = (props) => {
   };
 
   return (
-    <button type='button' onClick={upload} className="btn btn-primary upload-button">Upload image</button>
+    <button type='button' onClick={upload} className="btn btn-primary upload-button align-self-center">Upload image</button>
   );
 };
 

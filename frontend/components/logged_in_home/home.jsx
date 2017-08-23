@@ -18,6 +18,7 @@ class Home extends React.Component {
 
   componentDidMount() {
     $(document).scrollTop(0);
+    console.log(this.props.searchParams)
   }
 
   renderTitle() {
@@ -68,7 +69,12 @@ class Home extends React.Component {
         <div className="container search-nav">
           <form className="navbar-form navbar-left" role="search">
             <div className="form-group">
-              <input type="text" className="form-control" placeholder="Search"></input>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Search"
+                value={this.props.searchParams.search}
+                onChange={ e => this.props.updateGroupSearchParam('search', e.target.value)}></input>
             </div>
             <button type="submit" className="btn btn-default">Submit</button>
           </form>

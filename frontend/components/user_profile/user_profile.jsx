@@ -13,7 +13,7 @@ class UserProfile extends React.Component {
     };
     this.currentLocation = this.currentLocation.bind(this);
     this.setLocation = this.setLocation.bind(this);
-    // this.memberSince = this.memberSince.bind(this);
+    this.memberSince = this.memberSince.bind(this);
   }
 
   currentLocation(pos) {
@@ -39,8 +39,8 @@ class UserProfile extends React.Component {
     let city = address.split(', ')[1];
     let state = address.split(', ')[2].split(" ")[0];
 
-    // this.setState({city: city, state: state});
-    // this.props.updateUser({location: `${city, state}`});
+    this.setState({city: city, state: state});
+    this.props.updateUser({location: `${city, state}`});
   }
 
   componentDidMount() {
@@ -53,28 +53,14 @@ class UserProfile extends React.Component {
   // member account created at
   memberSince() {
     let month, day, year;
-    const registered_at = Date.apply(this.props.currentUser.created_at).split(" ");
-
-    month = registered_at[1];
-    day = registered_at[2];
-    year = registered_at[3];
-    return <h4>{month} {day}, {year}</h4>;
-  }
-
-  email() {
-    if (this.props.currentUser.email) {
-      return <h4>{this.props.currentUser.email}</h4>;
-    } else {
-      return <h4>n/a</h4>;
-    }
-  }
-
-  selfBlurb() {
-    if (this.props.currentUser.description) {
-      return <text>{this.props.currentUser.description}</text>;
-    } else {
-      return <h4>fill in your blurb</h4>;
-    }
+    const registered_at = new Date(this.props.currentUser.created_at);
+    let months = [
+      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+    ]
+    month = registered_at.getMonth();
+    day = registered_at.getDate();
+    year = registered_at.getFullYear();
+    return `${months[month]} ${day}, ${year}`;
   }
 
   followingGroup() {
@@ -90,14 +76,47 @@ class UserProfile extends React.Component {
       'https://res.cloudinary.com/dsetpdsls/image/upload/v1478804396/defaultIcon_unkrse.png'
     )
   }
+
+  renderLocation() {
+    if (this.state.city) {
+      return (
+        `${this.state.city}, ${this.state.state}`
+      )
+    } else {
+      return (
+        <div>
+          <i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+          <span className="sr-only">Loading...</span>
+        </div>
+      )
+    }
+  }
   render() {
     return (
       <div className="container user-profile">
-        <div className="col-xs-8 d-flex ">
+        <div className="col-xs-8">
+          <dl className="dl-horizontal">
+            <dt>Username</dt>
+            <dd>{this.props.currentUser.username}</dd>
 
+            <dt>Location</dt>
+            <dd>{this.renderLocation()}</dd>
+
+            <dt>Member Since</dt>
+            <dd>{this.memberSince()}</dd>
+
+            <dt>Email</dt>
+            <dd>{this.props.currentUser.email}</dd>
+
+            <dt>About Me</dt>
+            <dd>{this.props.currentUser.description}</dd>
+
+            <dt>Following Groups</dt>
+            <dd>No groups yet</dd>
+          </dl>
         </div>
-        <div className='col-xs-4 d-flex flex-column justify-content-around'>
-          <img src={this.renderImage()} className="rounded" width='200' height='200'></img>
+        <div className='col-xs-4'>
+          <img src={this.renderImage()} className="rounded align-self-center" width='200' height='200'></img>
           <hr></hr>
           <UploadButton
             createImage={this.props.createImage}/>

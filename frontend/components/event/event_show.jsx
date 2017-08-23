@@ -10,8 +10,8 @@ class EventShow extends React.Component {
       city: "",
       state: ""
     };
-    // this.currentLocation = this.currentLocation.bind(this);
-    // this.setLocation = this.setLocation.bind(this);
+    this.currentLocation = this.currentLocation.bind(this);
+    this.setLocation = this.setLocation.bind(this);
   }
 
 
@@ -20,7 +20,7 @@ class EventShow extends React.Component {
   }
 
   componentDidMount() {
-    // navigator.geolocation.getCurrentPosition(this.currentLocation);
+    navigator.geolocation.getCurrentPosition(this.currentLocation);
   }
 
   attendees() {
@@ -84,8 +84,8 @@ class EventShow extends React.Component {
     let city = address.split(', ')[1];
     let state = address.split(', ')[2].split(" ")[0];
 
-    // this.setState({city: city, state: state});
-    // this.props.updateUser({location: `${city, state}`});
+    this.props.updateUser({location: `${city, state}`});
+    this.setState({city: city, state: state});
   }
 
   parseDate(date) {
@@ -126,23 +126,23 @@ class EventShow extends React.Component {
       <div className="container event-show-container">
         <h2>{this.props.event.title}</h2>
 
-        <dl className="row">
+        <dl className="dl-horizontal">
 
-          <dt className="col-sm-3 col-xs-3 col-3">Time</dt>
-          <dd className="col-sm-9 col-xs-9 col-9">
+          <dt>Time</dt>
+          <dd>
             {this.parseDate(this.props.time)}
             <br></br>
             <strong>{this.parseTime(this.props.time)}</strong>
           </dd>
 
-          <dt className="col-sm-3 col-xs-3 col-3">Location</dt>
-          <dd className="col-sm-9 col-xs-9 col-9">San Francisco, CA</dd>
+          <dt>Location</dt>
+          <dd>San Francisco, CA</dd>
 
-          <dt className="col-sm-3 col-xs-3 col-3">Description</dt>
-          <dd className="col-sm-9 col-xs-9 col-9">{this.props.event.description}</dd>
+          <dt>Description</dt>
+          <dd>{this.props.event.description}</dd>
 
-          <dt className="col-sm-3 col-xs-3 col-3">RSVP</dt>
-          <dd className="col-sm-9 col-xs-9 col-9">{
+          <dt>RSVP</dt>
+          <dd>{
               this.props.event.attendees ?
               this.props.event.attendees.map((ind, idx) => (
               <img key={idx} src={ind.profile_img} className="rounded" width='50'/>
