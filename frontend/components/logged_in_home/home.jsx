@@ -73,8 +73,8 @@ class Home extends React.Component {
                 type="text"
                 className="form-control"
                 placeholder="Search"
-                value={this.props.searchParams.search}
-                onChange={ e => this.props.updateGroupSearchParam('search', e.target.value)}></input>
+                value={this.props.searchParams.groupSearch}
+                onChange={ e => this.props.updateGroupSearchParam('groupSearch', e.target.value)}></input>
             </div>
             <button type="submit" className="btn btn-default">Submit</button>
           </form>

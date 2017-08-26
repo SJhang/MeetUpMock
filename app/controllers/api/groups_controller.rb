@@ -1,11 +1,11 @@
 class Api::GroupsController < ApplicationController
   def index
     @groups = Group.includes(:members).all
-    if params[:search] && !params[:search].empty?
+    if params[:groupSearch] && !params[:groupSearch].empty?
       @groups = @groups.where(
         [
           'name ILIKE :searchQuery OR description ILIKE :searchQuery OR city ILIKE :searchQuery OR state ILIKE :searchQuery',
-          { searchQuery: "%#{params[:search]}%" }
+          { searchQuery: "%#{params[:groupSearch]}%" }
         ]
       )
     else

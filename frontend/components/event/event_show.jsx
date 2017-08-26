@@ -142,11 +142,14 @@ class EventShow extends React.Component {
           <dd>{this.props.event.description}</dd>
 
           <dt>RSVP</dt>
-          <dd>{
+          <dd>
+            {
               this.props.event.attendees ?
               this.props.event.attendees.map((ind, idx) => (
-              <img key={idx} src={ind.profile_img} className="rounded" width='50'/>
-            )) : '0 Attendees'}</dd>
+                <img key={idx} src={ind.profile_img} className="rounded" width='50'/>
+              )) : '0 Attendees'
+            }
+          </dd>
         </dl>
         <hr></hr>
         <button type='button' className="btn btn-primary">RSVP</button>
