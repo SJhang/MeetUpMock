@@ -9,7 +9,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.scss']
   },
   module: {
     loaders: [
@@ -25,15 +25,3 @@ module.exports = {
   },
   devtool: 'source-maps'
 };
-// plugins:[
-//   new webpack.DefinePlugin({
-//     'process.env':{
-//       'NODE_ENV': JSON.stringify('production')
-//     }
-//   }),
-//   new webpack.optimize.UglifyJsPlugin({
-//     compress:{
-//       warnings: true
-//     }
-//   })
-// ]
