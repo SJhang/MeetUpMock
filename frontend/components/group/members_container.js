@@ -9,7 +9,6 @@ const mapStateToProps = (state, { match }) => {
   let group = selectGroup(state, match.path.split('/')[2]);
   let members = group.members;
   let organizer = selectOrganizer(state, group.organizer_id);
-  debugger;
   return {
     members,
     organizer
