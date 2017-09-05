@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import Home from './home';
 import { logout } from '../../actions/session_actions';
 import { fetchAllGroups, fetchGroup } from '../../actions/group_actions';
+import { fetchAllUsers } from '../../actions/user_actions';
 import { fetchAllEvents } from '../../actions/event_actions';
 import { updateGroupSearchParam } from '../../actions/group_search_actions';
 import { updateEventSearchParam } from '../../actions/event_search_actions';
@@ -18,6 +19,7 @@ const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   fetchAllEvents: () => dispatch(fetchAllEvents()),
   fetchAllGroups: () => dispatch(fetchAllGroups()),
+  fetchAllUsers: () => dispatch(fetchAllUsers()),
   fetchGroup: id => dispatch(fetchGroup(id)),
   updateGroupSearchParam: (searchParam, value) =>
     dispatch(updateGroupSearchParam(searchParam, value))

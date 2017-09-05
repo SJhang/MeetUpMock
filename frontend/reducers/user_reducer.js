@@ -15,7 +15,7 @@ export const UserReducer = (state=_defaultState, action) => {
       return merge({}, state, newUser);
     case RECEIVE_ALL_USERS:
       newState = action.users;
-      return newState;
+      return merge({}, state, newState);
     case RECEIVE_ERRORS:
       let errors = action.errors;
       newState.errors = errors;

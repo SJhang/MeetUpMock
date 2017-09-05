@@ -14,6 +14,7 @@ class Home extends React.Component {
   componentWillMount() {
     this.props.fetchAllGroups();
     this.props.fetchAllEvents();
+    this.props.fetchAllUsers();
   }
 
   componentDidMount() {

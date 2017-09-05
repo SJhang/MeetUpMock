@@ -14,7 +14,7 @@ export const getLocation = (url, success) => {
   });
 };
 
-export const getAllusers = (success) => {
+export const getAllUsers = (success) => {
   $.ajax({
     url: 'api/users',
     success

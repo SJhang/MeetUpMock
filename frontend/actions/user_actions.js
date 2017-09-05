@@ -27,9 +27,8 @@ export const receiveAllUsers = users => ({
   users
 });
 
-export const fetchAllUsers = (users) => ({
-  type: FETCH_ALL_USERS,
-  users
+export const fetchAllUsers = () => ({
+  type: FETCH_ALL_USERS
 });
 
 export const fetchUser = id => ({

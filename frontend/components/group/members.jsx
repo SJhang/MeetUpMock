@@ -11,7 +11,11 @@ class Members extends React.Component {
   }
 
   componentDidMount() {
-    this.props.findOrganizer(this.props.organizer_id);
+
+  }
+
+  updateOrganizer() {
+    this.setState({organizer: this.props.user});
   }
 
   render () {
@@ -21,7 +25,7 @@ class Members extends React.Component {
         <hr></hr>
         <span className="members-container">
           <div>
-            <img className="rounded" src={this.state.organizer.profile_img} width="50"/>
+            <img className="rounded" src={this.props.organizer.profile_img} width="50"/>
           </div>
         </span>
       </div>

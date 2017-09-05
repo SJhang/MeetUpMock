@@ -1,11 +1,13 @@
 import {
   UPDATE_USER,
   receiveUser,
+  receiveAllUsers,
   receiveErrors,
   fetchUser,
-  FETCH_USER
+  FETCH_USER,
+  FETCH_ALL_USERS
 } from '../actions/user_actions';
-import { updateUser, getUser } from '../util/user_api_util';
+import { getAllUsers, updateUser, getUser } from '../util/user_api_util';
 import { createBrowserHistory } from 'history';
 
 export const UserMiddleware = ({getState, dispatch}) => next => action => {
@@ -15,6 +17,10 @@ export const UserMiddleware = ({getState, dispatch}) => next => action => {
   const history = createBrowserHistory();
 
   switch (action.type) {
+    case FETCH_ALL_USERS:
+      let receiveAllUsersSuccess = (users) => dispatch(receiveAllUsers(users));
+      getAllUsers(receiveAllUsersSuccess);
+      return next(action);
     case FETCH_USER:
       receiveUserSuccess = user => dispatch(receiveUser(user));
       getUser(action.id, receiveUserSuccess, failure)

@@ -4,7 +4,7 @@ import session from './session_reducer';
 import groups from './group_reducer';
 import events from './event_reducer';
 import searchParams from './group_search_reducer';
-import user from './user_reducer';
+import users from './user_reducer';
 
 export default combineReducers ({
   routing,
@@ -12,5 +12,5 @@ export default combineReducers ({
   groups,
   events,
   searchParams,
-  user
+  users
 });
