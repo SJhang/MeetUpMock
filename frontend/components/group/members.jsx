@@ -25,7 +25,8 @@ class Members extends React.Component {
         <hr></hr>
         <span className="members-container">
           <div>
-            <img className="rounded" src={this.props.organizer.profile_img} width="50"/>
+            <img className="rounded" id="organzier" src={this.props.organizer.profile_img} width="50"/>
+            {this.props.organizer.name}
           </div>
         </span>
       </div>
